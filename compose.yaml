@@ -1,0 +1,20 @@
+services:
+    portfolio:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        user: 'node'
+        restart: unless-stopped
+        init: true
+        ports:
+            - 5173:5173 # vite dev
+            - 4173:4173 # vite preview
+        volumes:
+            - /etc/localtime:/etc/localtime:ro
+            - .:/home/node/app
+        logging:
+            driver: 'json-file'
+            options:
+                max-size: '10m'
+        extra_hosts:
+            host.docker.internal: host-gateway

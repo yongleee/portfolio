@@ -34,6 +34,21 @@ export const TYPED_LINES = [site.title, 'OPEN TO WORK', 'BUILDING THE FUTURE']
 
 export const NAV_SECTIONS = ['about', 'skills', 'projects', 'contact'] as const
 
+/** The About section's terminal session: each command and its output lines. */
+export const TERMINAL: { cmd: string; out: string[]; ok?: boolean }[] = [
+    { cmd: 'whoami', out: ['Full-Stack Developer & Digital Architect'] },
+    {
+        cmd: 'cat bio.txt',
+        out: [
+            'I build at the intersection of performance',
+            'and aesthetics — systems that scale to',
+            'millions and interfaces that feel alive.',
+        ],
+    },
+    { cmd: 'ls ./interests', out: ['systems_design/  ai_research/  gamedev/  oss/'] },
+    { cmd: 'echo $STATUS', out: ['AVAILABLE FOR CONTRACT WORK'], ok: true },
+]
+
 export const STATS: [value: string, label: string][] = [
     ['05+', 'YEARS ACTIVE'],
     ['30+', 'PROJECTS SHIPPED'],
@@ -42,9 +57,22 @@ export const STATS: [value: string, label: string][] = [
 ]
 
 export const SKILLS = [
-    'React', 'TypeScript', 'Node.js', 'Python', 'Rust',
-    'WebGL', 'Three.js', 'GraphQL', 'PostgreSQL', 'Redis',
-    'Docker', 'Kubernetes', 'AWS', 'WebAssembly', 'Go', 'TensorFlow',
+    'React',
+    'TypeScript',
+    'Node.js',
+    'Python',
+    'Rust',
+    'WebGL',
+    'Three.js',
+    'GraphQL',
+    'PostgreSQL',
+    'Redis',
+    'Docker',
+    'Kubernetes',
+    'AWS',
+    'WebAssembly',
+    'Go',
+    'TensorFlow',
 ]
 
 export interface Project {
@@ -59,24 +87,40 @@ export interface Project {
 
 export const PROJECTS: Project[] = [
     {
-        num: '01', name: 'NEURAL INTERFACE', img: 'AI DASHBOARD',
+        num: '01',
+        name: 'NEURAL INTERFACE',
+        img: 'AI DASHBOARD',
         desc: 'Real-time ML inference dashboard with live data visualization and predictive analytics.',
-        tags: ['React', 'TensorFlow', 'WebGL'], gh: '#', live: '#',
+        tags: ['React', 'TensorFlow', 'WebGL'],
+        gh: '#',
+        live: '#',
     },
     {
-        num: '02', name: 'VOID PROTOCOL', img: 'SECURE COMMS',
+        num: '02',
+        name: 'VOID PROTOCOL',
+        img: 'SECURE COMMS',
         desc: 'Decentralized zero-knowledge messaging layer — provably private, chain-agnostic.',
-        tags: ['Rust', 'Solidity', 'WASM'], gh: '#', live: '#',
+        tags: ['Rust', 'Solidity', 'WASM'],
+        gh: '#',
+        live: '#',
     },
     {
-        num: '03', name: 'CHROME RUNNER', img: 'GAME ENGINE',
+        num: '03',
+        name: 'CHROME RUNNER',
+        img: 'GAME ENGINE',
         desc: 'Custom 3D game engine written from scratch with a deferred rendering pipeline.',
-        tags: ['C++', 'OpenGL', 'GLSL'], gh: '#', live: '#',
+        tags: ['C++', 'OpenGL', 'GLSL'],
+        gh: '#',
+        live: '#',
     },
     {
-        num: '04', name: 'DATA PHANTOM', img: 'ANALYTICS',
+        num: '04',
+        name: 'DATA PHANTOM',
+        img: 'ANALYTICS',
         desc: 'Event-stream analytics platform handling millions of rows at sub-millisecond latency.',
-        tags: ['Go', 'Kafka', 'ClickHouse'], gh: '#', live: '#',
+        tags: ['Go', 'Kafka', 'ClickHouse'],
+        gh: '#',
+        live: '#',
     },
 ]
 

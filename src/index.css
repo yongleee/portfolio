@@ -10,8 +10,8 @@
 
 @theme inline {
     --font-heading: var(--font-sans);
-    --font-sans: 'Rajdhani', sans-serif;
-    --font-mono: 'Share Tech Mono', monospace;
+    --font-sans: "Rajdhani", sans-serif;
+    --font-mono: "Share Tech Mono", monospace;
     --color-hot: var(--hot);
     --color-online: var(--online);
     --color-sidebar-ring: var(--sidebar-ring);
@@ -94,79 +94,135 @@
 }
 
 @layer base {
-  * {
-    @apply border-border outline-ring/50;
+    * {
+        @apply border-border outline-ring/50;
     }
-  body {
-    @apply bg-background text-foreground;
+    html {
+        @apply scroll-smooth font-sans;
     }
-  html {
-    @apply scroll-smooth font-sans;
+    body {
+        @apply overflow-x-hidden bg-background text-foreground;
     }
-  body {
-    @apply overflow-x-hidden;
+    ::-webkit-scrollbar {
+        width: 3px;
     }
-  ::-webkit-scrollbar { width: 3px; }
-  ::-webkit-scrollbar-track { background: var(--background); }
-  ::-webkit-scrollbar-thumb { background: var(--primary); }
+    ::-webkit-scrollbar-track {
+        background: var(--background);
+    }
+    ::-webkit-scrollbar-thumb {
+        background: var(--primary);
+    }
 }
 
 /* Effects with no library equivalent. Entrances use tw-animate-css, scroll
    reveal and card tilt use Motion; everything else is Tailwind utilities. */
 @theme {
-  --text-shadow-glow-sm: 0 0 8px currentColor;
-  --text-shadow-glow: 0 0 12px color-mix(in srgb, var(--primary) 50%, transparent),
-    0 0 32px color-mix(in srgb, var(--primary) 18%, transparent);
+    --text-shadow-glow-sm: 0 0 8px currentColor;
+    --text-shadow-glow:
+        0 0 12px color-mix(in srgb, var(--primary) 50%, transparent),
+        0 0 32px color-mix(in srgb, var(--primary) 18%, transparent);
 
-  --animate-blink: blink 1s infinite;
-  --animate-blink-slow: blink 2.4s infinite;
+    --animate-blink: blink 1s infinite;
+    --animate-blink-slow: blink 2.4s infinite;
 
-  @keyframes blink { 0%, 100% { opacity: 1 } 50% { opacity: 0 } }
-  @keyframes glitch-a {
-    0%, 82%, 100% { opacity: 0 }
-    83%, 86% { opacity: 1; clip-path: inset(8% 0 72% 0); transform: translate(-5px, 1px) }
-    87%, 90% { opacity: 1; clip-path: inset(55% 0 12% 0); transform: translate(5px, -1px) }
-    91% { opacity: 0 }
-  }
-  @keyframes glitch-b {
-    0%, 83%, 100% { opacity: 0 }
-    84%, 87% { opacity: 1; clip-path: inset(38% 0 48% 0); transform: translate(4px, 2px) }
-    88%, 92% { opacity: 1; clip-path: inset(70% 0 8% 0); transform: translate(-3px, -2px) }
-    93% { opacity: 0 }
-  }
+    @keyframes blink {
+        0%,
+        100% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0;
+        }
+    }
+    @keyframes glitch-a {
+        0%,
+        82%,
+        100% {
+            opacity: 0;
+        }
+        83%,
+        86% {
+            opacity: 1;
+            clip-path: inset(8% 0 72% 0);
+            transform: translate(-5px, 1px);
+        }
+        87%,
+        90% {
+            opacity: 1;
+            clip-path: inset(55% 0 12% 0);
+            transform: translate(5px, -1px);
+        }
+        91% {
+            opacity: 0;
+        }
+    }
+    @keyframes glitch-b {
+        0%,
+        83%,
+        100% {
+            opacity: 0;
+        }
+        84%,
+        87% {
+            opacity: 1;
+            clip-path: inset(38% 0 48% 0);
+            transform: translate(4px, 2px);
+        }
+        88%,
+        92% {
+            opacity: 1;
+            clip-path: inset(70% 0 8% 0);
+            transform: translate(-3px, -2px);
+        }
+        93% {
+            opacity: 0;
+        }
+    }
 }
 
 /* RGB-split glitch: duplicates data-text in both accents and flickers slices. */
 @utility glitch {
-  position: relative;
-  &::before, &::after {
-    content: attr(data-text);
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-  }
-  &::before { color: var(--primary); animation: glitch-a 9s infinite; }
-  &::after  { color: var(--hot); animation: glitch-b 9s infinite 0.15s; }
-  @media (prefers-reduced-motion: reduce) {
-    &::before, &::after { display: none; }
-  }
+    position: relative;
+    &::before,
+    &::after {
+        content: attr(data-text);
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+    }
+    &::before {
+        color: var(--primary);
+        animation: glitch-a 9s infinite;
+    }
+    &::after {
+        color: var(--hot);
+        animation: glitch-b 9s infinite 0.15s;
+    }
+    @media (prefers-reduced-motion: reduce) {
+        &::before,
+        &::after {
+            display: none;
+        }
+    }
 }
 
 /* Full-viewport CRT scanline overlay. */
 @utility scanlines {
-  &::after {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background: repeating-linear-gradient(0deg, transparent 0 3px, rgb(0 0 0 / 0.055) 3px 4px);
-    pointer-events: none;
-    z-index: 9999;
-  }
+    &::after {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background: repeating-linear-gradient(0deg, transparent 0 3px, rgb(0 0 0 / 0.055) 3px 4px);
+        pointer-events: none;
+        z-index: 9999;
+    }
 }
 
 /* Diagonal hatch for project image placeholders. */
 @utility bg-hatch {
-  background: repeating-linear-gradient(45deg,
-    color-mix(in srgb, var(--primary) 2.5%, transparent) 0 10px,
-    color-mix(in srgb, var(--primary) 5%, transparent) 10px 20px);
+    background: repeating-linear-gradient(
+        45deg,
+        color-mix(in srgb, var(--primary) 2.5%, transparent) 0 10px,
+        color-mix(in srgb, var(--primary) 5%, transparent) 10px 20px
+    );
 }
