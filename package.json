@@ -6,6 +6,8 @@
     "scripts": {
         "dev": "vite",
         "build": "tsc -b && vite build",
+        "fetch-commits": "node --env-file-if-exists=.env scripts/fetch-commits.ts",
+        "build:deploy": "npm run fetch-commits && npm run build",
         "lint": "oxlint",
         "format": "biome format --write",
         "format:check": "biome format",
