@@ -1,0 +1,61 @@
+{
+    "skill_name": "add-portfolio-project",
+    "evals": [
+        {
+            "id": 1,
+            "prompt": "add my client-a project to my portfolio. the code is in ~/client-a (backend and frontend repos)",
+            "expected_output": "A new PROJECTS entry in src/config.ts with every field filled from real repo facts, a generic public name and anonymized client, numbering kept contiguous, and a public/projects/<slug>/ folder with one wireframe SVG per ImageSlot at the slot's ratio, passing lint, build and check_artwork.py.",
+            "files": [],
+            "assertions": [
+                {
+                    "name": "entry-added-with-all-fields",
+                    "text": "src/config.ts has exactly one new PROJECTS entry and it type-checks (npm run build passes)."
+                },
+                {
+                    "name": "numbering-contiguous",
+                    "text": "PROJECTS num values run 01..NN with no gaps or duplicates after the change."
+                },
+                {
+                    "name": "placed-by-recency",
+                    "text": "The new entry sits where its year puts it in the most-recent-first order of PROJECTS, or where the user asked."
+                },
+                {
+                    "name": "every-slot-has-artwork",
+                    "text": "images has a path for every member of the ImageSlot type and each path exists under public/."
+                },
+                {
+                    "name": "ratios-match-slots",
+                    "text": "check_artwork.py prints no ratio warnings for the new folder."
+                },
+                {
+                    "name": "no-codename-or-client",
+                    "text": "Neither the slug, file names, SVG text nor the entry's text contains the internal codename 'client-a' or the client's name."
+                },
+                {
+                    "name": "metrics-countable",
+                    "text": "Each of the 3 metrics can be traced to a count in the repos (findings.md or summary.md says how it was counted); none is a performance or usage figure."
+                },
+                {
+                    "name": "asks-what-git-cannot-tell",
+                    "text": "questions.md covers role, team size, client naming and project name."
+                },
+                {
+                    "name": "no-secrets-read",
+                    "text": "The run never opened a real env file (.env, .env.local, .env.prod...) in the source repos; value-free templates like .env.example are allowed."
+                },
+                {
+                    "name": "artwork-rendered",
+                    "text": "Every SVG was rendered to PNG with render_svgs.sh and looked at before hand-back."
+                },
+                {
+                    "name": "duration-ignores-outliers",
+                    "text": "duration reflects the sustained active period (Aug 2024 - Apr 2025 here), not a span stretched by the isolated Dec 2025 commits."
+                },
+                {
+                    "name": "identifying-lists-generalized",
+                    "text": "The text does not list the client's full, distinctive set of regulated sectors verbatim, or the hand-back flags it as an identifying detail."
+                }
+            ]
+        }
+    ]
+}
