@@ -57,6 +57,15 @@ function serialize(snapshot: Snapshot) {
     return `{\n    "generatedAt": ${JSON.stringify(snapshot.generatedAt)},\n    "projects": ${projects}\n}\n`
 }
 
+/** A fetch failure's code (ECONNREFUSED, ERR_INVALID_URL…); its message can contain the URL. */
+function errorCode(error: unknown) {
+    type Coded = { code?: unknown; errors?: Coded[] }
+    const cause = (error as { cause?: Coded })?.cause
+    // A host with several addresses fails with an AggregateError: one coded error per address.
+    const code = cause?.code ?? cause?.errors?.[0]?.code
+    return typeof code === 'string' ? code : 'unknown'
+}
+
 /** Thrown with only a status so callers can log it without leaking the URL. */
 class GitLabError extends Error {}
 
@@ -75,8 +84,8 @@ async function collect(
         let res: Response
         try {
             res = await fetch(url, { headers: { 'PRIVATE-TOKEN': token } })
-        } catch {
-            throw new GitLabError('network error')
+        } catch (error) {
+            throw new GitLabError(`network error (${errorCode(error)})`)
         }
         if (!res.ok) throw new GitLabError(`HTTP ${res.status}`)
 
