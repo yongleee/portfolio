@@ -1,0 +1,42 @@
+# Weekly: fetch my GitLab commit counts, commit the JSON if it changed.
+# The push then triggers the normal Netlify deploy. Secrets: see README → "Commit activity".
+name: Refresh commit activity
+
+on:
+    schedule:
+        - cron: '0 3 * * 1' # Mondays 03:00 UTC
+    workflow_dispatch: # "Run workflow" button in the Actions tab
+
+permissions:
+    contents: write # needed to push the updated JSON
+
+jobs:
+    fetch:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v5
+
+            - uses: actions/setup-node@v5
+              with:
+                  node-version-file: .nvmrc
+
+            # No npm ci: the script only uses Node built-ins, so no third-party code sees the token.
+            - name: Fetch commit counts
+              run: npm run fetch-commits -- --strict
+              env:
+                  GITLAB_URL: ${{ secrets.GITLAB_URL }}
+                  GITLAB_TOKEN: ${{ secrets.GITLAB_TOKEN }}
+                  GITLAB_AUTHOR_EMAILS: ${{ secrets.GITLAB_AUTHOR_EMAILS }}
+                  COMMIT_SOURCES: ${{ secrets.COMMIT_SOURCES }}
+
+            - name: Commit and push if changed
+              run: |
+                  if git diff --quiet -- src/data/commit-activity.json; then
+                      echo "No changes"
+                      exit 0
+                  fi
+                  git config user.name 'github-actions[bot]'
+                  git config user.email '41898283+github-actions[bot]@users.noreply.github.com'
+                  git add src/data/commit-activity.json
+                  git commit -m 'chore: refresh commit activity'
+                  git push
