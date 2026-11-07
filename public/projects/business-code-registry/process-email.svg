@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="9" letter-spacing="1" text-anchor="middle">
+    <!-- Sketch: queued email notifications over SMTP. -->
+    <defs>
+        <marker id="arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto">
+            <path d="M0 0l8 4-8 4z" fill="#00eeff" />
+        </marker>
+        <g id="mail">
+            <rect width="18" height="12" fill="#0b1a28" stroke="#00eeff" stroke-opacity=".7" />
+            <path d="M0 0l9 7 9-7" fill="none" stroke="#00eeff" stroke-opacity=".7" />
+        </g>
+    </defs>
+
+    <rect width="400" height="300" fill="#07111c" />
+    <text x="24" y="36" font-size="10" letter-spacing="2" fill="#00eeff" text-anchor="start">03 // NOTIFY</text>
+    <rect x="24" y="44" width="352" height="1" fill="#16324a" />
+
+    <!-- triggers -->
+    <g fill="#0b1a28" stroke="#2a4a66">
+        <rect x="20" y="70" width="92" height="36" />
+        <rect x="20" y="116" width="92" height="36" />
+    </g>
+    <text x="66" y="85" fill="#c8d8f0">FEEDBACK /</text>
+    <text x="66" y="98" fill="#c8d8f0">ENQUIRY</text>
+    <text x="66" y="138" fill="#c8d8f0">ADMIN REPLY</text>
+
+    <g fill="none" stroke="#00eeff" stroke-width="1.5">
+        <path d="M112 88h10v20h6" />
+        <path d="M112 134h10v-20h6" marker-end="url(#arrow)" />
+    </g>
+
+    <!-- queue -->
+    <rect x="132" y="88" width="96" height="44" rx="22" fill="#0d2133" stroke="#00eeff" stroke-opacity=".6" />
+    <use href="#mail" x="146" y="104" />
+    <use href="#mail" x="171" y="104" />
+    <use href="#mail" x="196" y="104" />
+    <text x="180" y="150" fill="#4a6a88">REDIS QUEUE</text>
+
+    <!-- workers -->
+    <path d="M228 110h22" fill="none" stroke="#00eeff" stroke-width="1.5" marker-end="url(#arrow)" />
+    <rect x="258" y="80" width="56" height="26" fill="#0b1a28" stroke="#2a4a66" />
+    <rect x="258" y="114" width="56" height="26" fill="#0b1a28" stroke="#2a4a66" />
+    <text x="286" y="96" fill="#c8d8f0">WORKER</text>
+    <text x="286" y="130" fill="#c8d8f0">WORKER</text>
+    <path d="M300 140c0 14-28 14-28 0" fill="none" stroke="#ff0066" stroke-width="1.5" stroke-dasharray="3 2" />
+    <text x="286" y="166" fill="#ff0066">RETRY ×3</text>
+
+    <!-- smtp -->
+    <path d="M314 110h18" fill="none" stroke="#00eeff" stroke-width="1.5" marker-end="url(#arrow)" />
+    <rect x="340" y="94" width="40" height="30" fill="#00eeff" fill-opacity=".12" stroke="#00eeff" />
+    <path d="M340 94l20 15 20-15" fill="none" stroke="#00eeff" />
+    <text x="360" y="142" fill="#4a6a88">SMTP</text>
+
+    <!-- notes -->
+    <rect x="24" y="188" width="352" height="1" fill="#16324a" />
+    <g fill="#c8d8f0" text-anchor="start">
+        <text x="30" y="212"><tspan fill="#00eeff">›</tspan> QUEUED ONLY AFTER THE DB COMMIT</text>
+        <text x="30" y="234"><tspan fill="#00eeff">›</tspan> ADMINS + SUBMITTER NOTIFIED</text>
+        <text x="30" y="256"><tspan fill="#00eeff">›</tspan> RATE-LIMITED TO 30 EMAILS / MIN</text>
+        <text x="30" y="278"><tspan fill="#00eeff">›</tspan> 3 RETRIES PER EMAIL</text>
+    </g>
+</svg>

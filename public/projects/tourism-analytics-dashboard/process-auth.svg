@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="8" letter-spacing="1">
+    <!-- Process: how the API checks every bearer token. Hash it, try Redis, fall back to Graph, cache a 200 for five minutes, send a 401 back to sign-in and fail closed when Graph is unreachable. Diagram only. -->
+    <defs>
+        <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+            <path d="M0 0L10 5 0 10z" fill="#00eeff" />
+        </marker>
+        <marker id="arr2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+            <path d="M0 0L10 5 0 10z" fill="#4a6a88" />
+        </marker>
+    </defs>
+
+    <rect width="400" height="300" fill="#07111c" />
+    <rect x="10" y="10" width="380" height="280" rx="4" fill="#0b1a28" stroke="#16324a" />
+    <path d="M14 10h372a4 4 0 0 1 4 4v14H10V14a4 4 0 0 1 4-4z" fill="#00eeff" />
+    <text x="20" y="23" fill="#07111c" font-weight="bold" font-size="9" letter-spacing="1.5">AUTH // EVERY REQUEST</text>
+
+    <!-- row A -->
+    <g fill="#0a1724" stroke="#2a4a66">
+        <rect x="20" y="52" width="90" height="28" rx="3" />
+        <rect x="135" y="52" width="100" height="28" rx="3" />
+    </g>
+    <rect x="260" y="52" width="100" height="28" rx="3" fill="#0a1724" stroke="#00eeff" />
+    <g text-anchor="middle">
+        <text x="65" y="69" fill="#c8d8f0">BEARER</text>
+        <text x="185" y="69" fill="#c8d8f0">SHA-256 KEY</text>
+        <text x="310" y="69" fill="#00eeff">REDIS</text>
+    </g>
+    <g stroke="#00eeff" stroke-width="1.5" marker-end="url(#arr)">
+        <path d="M110 66h23" />
+        <path d="M235 66h23" />
+    </g>
+
+    <!-- row B -->
+    <rect x="260" y="128" width="100" height="28" rx="3" fill="#0a1724" stroke="#ff0066" stroke-opacity=".7" />
+    <text x="310" y="145" fill="#ff0066" text-anchor="middle">GRAPH /ME</text>
+    <path d="M310 80v46" stroke="#4a6a88" stroke-dasharray="3 3" marker-end="url(#arr2)" />
+    <text x="318" y="106" fill="#4a6a88">MISS</text>
+
+    <!-- hit: straight to the route -->
+    <path d="M360 66h20v158h-18" fill="none" stroke="#00eeff" stroke-width="1.5" marker-end="url(#arr)" />
+    <text x="388" y="140" fill="#00eeff" transform="rotate(90 388 140)" text-anchor="middle">HIT</text>
+
+    <!-- row C outcomes -->
+    <rect x="20" y="210" width="100" height="28" rx="3" fill="#ff0066" fill-opacity=".12" stroke="#ff0066" stroke-opacity=".7" />
+    <rect x="140" y="210" width="100" height="28" rx="3" fill="#ffb020" fill-opacity=".12" stroke="#ffb020" stroke-opacity=".7" />
+    <rect x="260" y="210" width="100" height="28" rx="3" fill="#00eeff" fill-opacity=".14" stroke="#00eeff" />
+    <g text-anchor="middle">
+        <text x="70" y="227" fill="#ff0066">503 · CLOSED</text>
+        <text x="190" y="227" fill="#ffb020">401 · SIGN IN</text>
+        <text x="310" y="227" fill="#00eeff">NEXT()</text>
+    </g>
+    <path d="M310 156v52" stroke="#00eeff" stroke-width="1.5" marker-end="url(#arr)" />
+    <text x="318" y="180" fill="#00eeff">200</text>
+    <text x="318" y="192" fill="#00eeff">CACHE</text>
+    <path d="M260 150h-70v58" fill="none" stroke="#ffb020" stroke-opacity=".8" marker-end="url(#arr2)" />
+    <text x="196" y="186" fill="#ffb020">401</text>
+    <path d="M260 136H70v72" fill="none" stroke="#ff0066" stroke-opacity=".8" marker-end="url(#arr2)" />
+    <text x="76" y="186" fill="#ff0066">TIMEOUT</text>
+
+    <path d="M20 256h340" stroke="#14304a" />
+    <text x="20" y="274" fill="#4a6a88">5 MIN TTL · REDIS DOWN → LIVE CHECK</text>
+</svg>

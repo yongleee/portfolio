@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="9" letter-spacing="1">
+    <!-- Process sketch: silent SSO between two Keycloak instances, the hop behind the case file's challenge. Generic labels only. -->
+    <defs>
+        <marker id="arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+            <path d="M0 0l8 4-8 4z" fill="#00eeff" />
+        </marker>
+        <marker id="arrow-hot" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+            <path d="M0 0l8 4-8 4z" fill="#ff0066" />
+        </marker>
+        <marker id="arrow-dim" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+            <path d="M0 0l8 4-8 4z" fill="#4a6a88" />
+        </marker>
+    </defs>
+
+    <rect width="400" height="300" fill="#07111c" />
+
+    <!-- lifelines -->
+    <rect x="10" y="14" width="100" height="26" fill="#0b1a28" stroke="#2a4a66" />
+    <text x="60" y="31" fill="#c8d8f0" text-anchor="middle">BROWSER</text>
+    <rect x="150" y="14" width="100" height="26" fill="#0d2133" stroke="#00eeff" stroke-opacity=".8" />
+    <text x="200" y="31" fill="#c8d8f0" text-anchor="middle">APP A · SP</text>
+    <rect x="290" y="14" width="100" height="26" fill="#0b1a28" stroke="#2a4a66" />
+    <text x="340" y="31" fill="#c8d8f0" text-anchor="middle">APP B · IDP</text>
+    <g stroke="#16324a" stroke-dasharray="3 3">
+        <path d="M60 40V276" />
+        <path d="M200 40V276" />
+        <path d="M340 40V276" />
+    </g>
+
+    <!-- happy path -->
+    <g fill="none" stroke="#00eeff" stroke-width="1.2" marker-end="url(#arrow)">
+        <path d="M200 76H336" />
+        <path d="M340 108H204" />
+        <path d="M200 206H64" />
+    </g>
+    <text x="270" y="70" fill="#00eeff" text-anchor="middle">PROMPT=NONE</text>
+    <text x="270" y="102" fill="#c8d8f0" text-anchor="middle">AUTH CODE</text>
+
+    <rect x="135" y="124" width="130" height="58" fill="#0b1a28" stroke="#00eeff" stroke-opacity=".6" />
+    <text x="200" y="140" fill="#c8d8f0" text-anchor="middle">FIND LINK</text>
+    <text x="200" y="154" font-size="8" fill="#4a6a88" text-anchor="middle">ELSE LINK OR CREATE</text>
+    <text x="200" y="168" font-size="8" fill="#ffb020" text-anchor="middle">SKIP 1ST BROKER</text>
+
+    <text x="130" y="200" fill="#c8d8f0" text-anchor="middle">SIGNED IN</text>
+
+    <!-- no upstream session -->
+    <g fill="none" stroke-width="1.2" stroke-dasharray="4 3">
+        <path d="M340 238H204" stroke="#ff0066" marker-end="url(#arrow-hot)" />
+        <path d="M200 266H64" stroke="#4a6a88" marker-end="url(#arrow-dim)" />
+    </g>
+    <text x="270" y="232" fill="#ff0066" text-anchor="middle">LOGIN_REQUIRED</text>
+    <text x="130" y="260" fill="#4a6a88" text-anchor="middle">LOGIN FORM</text>
+
+    <text x="10" y="294" font-size="8" fill="#2a4a66">A SAVED-PROMPT NOTE GUARDS AGAINST REDIRECT LOOPS</text>
+</svg>

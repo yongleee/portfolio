@@ -1,83 +1,92 @@
-import { motion, useMotionValue, useReducedMotion, useSpring } from 'motion/react'
-import type { PointerEvent } from 'react'
-import { Badge } from '@/components/ui/badge'
-import { Card } from '@/components/ui/card'
+import type { MouseEvent } from 'react'
 import { PROJECTS, type Project } from '@/config'
+import { cn } from '@/lib/utils'
+import { Panel } from './Panel'
 import { Section } from './Section'
+import { TechTag } from './TechTag'
 
-const MAX_TILT_DEG = 9
-const SPRING = { stiffness: 300, damping: 30 }
+const imageBox = 'mx-3 mt-3 border'
 
 function ProjectCard({ project }: { project: Project }) {
-    const reducedMotion = useReducedMotion()
-    const rotateX = useSpring(useMotionValue(0), SPRING)
-    const rotateY = useSpring(useMotionValue(0), SPRING)
+    const caseFile = `#project-${project.num}`
 
-    const onPointerMove = (e: PointerEvent<HTMLDivElement>) => {
-        if (reducedMotion || e.pointerType !== 'mouse') return
-        const r = e.currentTarget.getBoundingClientRect()
-        rotateX.set(-((e.clientY - r.top) / r.height - 0.5) * MAX_TILT_DEG)
-        rotateY.set(((e.clientX - r.left) / r.width - 0.5) * MAX_TILT_DEG)
-    }
-    const onPointerLeave = () => {
-        rotateX.set(0)
-        rotateY.set(0)
+    // The whole card opens the case file; its own links keep their targets.
+    const onClick = (e: MouseEvent<HTMLDivElement>) => {
+        if (!(e.target as Element).closest('a')) window.location.hash = caseFile
     }
 
     return (
-        <motion.div
-            className="group"
-            style={{ rotateX, rotateY, transformPerspective: 700 }}
-            whileHover={reducedMotion ? undefined : { y: -5 }}
-            onPointerMove={onPointerMove}
-            onPointerLeave={onPointerLeave}
+        <Panel
+            label={`PROJECT_${project.num}`}
+            code={project.img}
+            onClick={onClick}
+            className={cn(
+                'group h-full cursor-pointer transition-[translate,border-color,box-shadow] duration-200',
+                // Hover: lift, and the frame, header strip and corner turn cyan.
+                'hover:-translate-y-1 hover:border-primary hover:shadow-[0_18px_40px_rgb(0_0_0/0.5),0_0_26px_color-mix(in_srgb,var(--primary)_14%,transparent)]',
+                'hover:after:bg-primary hover:**:data-[slot=panel-head]:bg-primary motion-reduce:hover:translate-y-0',
+            )}
         >
-            <Card className="relative h-full gap-0 py-0 ring-border transition-shadow duration-300 group-hover:shadow-[0_18px_48px_rgb(0_0_0/0.5),0_0_28px_color-mix(in_srgb,var(--primary)_8%,transparent)] group-hover:ring-primary/35 before:absolute before:inset-x-0 before:top-0 before:z-1 before:h-0.5 before:origin-left before:scale-x-0 before:bg-linear-to-r before:from-primary before:to-hot before:transition-transform before:duration-300 group-hover:before:scale-x-100">
-                <div className="flex h-44 items-center justify-center border-b bg-hatch font-mono text-[10px] tracking-[3px] text-muted-foreground">
+            {/* Artwork keeps its own 1200×352 proportions; the placeholder uses the design's 16:8. */}
+            {project.images?.card ? (
+                <img
+                    src={project.images.card}
+                    alt={project.img}
+                    className={cn(imageBox, 'aspect-[1200/352] object-cover')}
+                />
+            ) : (
+                <div
+                    className={cn(
+                        imageBox,
+                        'flex aspect-[16/8] items-center justify-center bg-hatch font-mono text-[10px] tracking-[3px] text-muted-foreground',
+                    )}
+                >
                     [ {project.img} ]
                 </div>
-                <div className="flex flex-1 flex-col px-6 py-5.5">
-                    <div className="mb-1.5 font-mono text-[10px] tracking-[2px] text-primary">
-                        PROJECT_{project.num}
-                    </div>
-                    <h3 className="mb-2.5 text-[21px] font-bold">{project.name}</h3>
-                    <p className="mb-4 text-[13.5px] leading-[1.65] text-muted-foreground">
-                        {project.desc}
-                    </p>
-                    <div className="mb-5 flex flex-wrap gap-1.75">
-                        {project.tags.map((tag) => (
-                            <Badge
-                                key={tag}
-                                variant="outline"
-                                className="h-auto border-primary/22 bg-primary/4 px-2.5 py-0.75 font-mono text-[10px] font-normal tracking-[1px] text-primary"
-                            >
-                                {tag}
-                            </Badge>
-                        ))}
-                    </div>
-                    <div className="mt-auto flex gap-4.5">
-                        {[
+            )}
+            <div className="flex flex-1 flex-col px-5.5 pt-5 pb-5.5">
+                <h3 className="mb-2.5 text-[28px] leading-none font-bold tracking-[1px] transition-colors group-hover:text-primary">
+                    {project.name}
+                </h3>
+                <p className="mb-4 text-[15px] leading-[1.55] text-pretty text-muted-foreground">
+                    {project.desc}
+                </p>
+                <div className="mb-4.5 flex flex-wrap gap-1.75">
+                    {project.tags.map((tag) => (
+                        <TechTag key={tag}>{tag}</TechTag>
+                    ))}
+                </div>
+                <div className="mt-auto flex flex-wrap gap-x-5 gap-y-2 border-t border-dashed pt-3.5">
+                    {(
+                        [
+                            ['// CASE FILE', caseFile],
                             ['// GITHUB', project.gh],
                             ['// LIVE DEMO', project.live],
-                        ].map(([label, href]) => (
+                        ] satisfies [string, string | undefined][]
+                    )
+                        // GitHub and live links are optional; show only the ones that are set.
+                        .filter((link): link is [string, string] => !!link[1])
+                        .map(([label, href], i) => (
                             <a
                                 key={label}
                                 href={href}
-                                className="font-mono text-[11px] tracking-[2px] text-muted-foreground transition-colors hover:text-primary"
+                                className={cn(
+                                    'font-mono text-[11px] tracking-[2px] transition-colors hover:text-hot',
+                                    i === 0 ? 'text-hot' : 'text-muted-foreground',
+                                )}
                             >
                                 {label}
                             </a>
                         ))}
-                    </div>
                 </div>
-            </Card>
-        </motion.div>
+            </div>
+        </Panel>
     )
 }
 
 export function Projects() {
     return (
-        <Section id="projects" label="// 03. PROJECTS" title="WORK LOG">
+        <Section id="projects" idx="03" title="WORK LOG">
             <div className="grid gap-6.5 md:grid-cols-2">
                 {PROJECTS.map((project) => (
                     <ProjectCard key={project.num} project={project} />

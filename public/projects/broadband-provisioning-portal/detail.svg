@@ -1,0 +1,139 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="9" letter-spacing="1">
+    <!-- Detail: the Connected Devices tool inside the broadband workspace, listing the devices on a customer's router, fetched live. Wireframe only: no real data. -->
+    <defs>
+        <pattern id="dots" width="16" height="16" patternUnits="userSpaceOnUse">
+            <circle cx="1" cy="1" r="1" fill="#14304a" />
+        </pattern>
+        <filter id="shadow" x="-20%" y="-20%" width="140%" height="160%" color-interpolation-filters="sRGB">
+            <feDropShadow dx="0" dy="18" stdDeviation="22" flood-color="#000" flood-opacity=".55" />
+        </filter>
+        <g id="drow">
+            <rect width="700" height="38" fill="#0a1724" />
+            <rect y="37" width="700" height="1" fill="#14304a" />
+            <rect x="48" y="11" width="120" height="8" rx="2" fill="#c8d8f0" fill-opacity=".75" />
+            <rect x="48" y="24" width="80" height="5" rx="2" fill="#1b3550" />
+        </g>
+        <g id="wifi">
+            <path d="M0 6a12 12 0 0 1 20 0M4 10a7 7 0 0 1 12 0" fill="none" stroke="#4a6a88" stroke-width="1.6" />
+            <circle cx="10" cy="14" r="2" fill="#4a6a88" />
+        </g>
+        <g id="lan">
+            <rect x="2" y="2" width="16" height="12" rx="2" fill="none" stroke="#4a6a88" stroke-width="1.6" />
+            <path d="M6 14v3M14 14v3" stroke="#4a6a88" stroke-width="1.6" />
+        </g>
+        <g id="b5">
+            <rect width="44" height="16" rx="8" fill="#00eeff" fill-opacity=".12" stroke="#00eeff" stroke-opacity=".6" />
+            <text x="22" y="11" fill="#00eeff" font-size="8" text-anchor="middle">5G</text>
+        </g>
+        <g id="b2">
+            <rect width="44" height="16" rx="8" fill="#7c8cff" fill-opacity=".12" stroke="#7c8cff" stroke-opacity=".6" />
+            <text x="22" y="11" fill="#7c8cff" font-size="8" text-anchor="middle">2.4G</text>
+        </g>
+    </defs>
+
+    <rect width="800" height="500" fill="#07111c" />
+    <rect width="800" height="500" fill="url(#dots)" />
+
+    <rect x="30" y="26" width="740" height="450" rx="8" fill="#0a1724" stroke="#16324a" filter="url(#shadow)" />
+
+    <!-- compact workspace header -->
+    <rect x="30" y="26" width="740" height="56" rx="8" fill="#0b1a28" />
+    <rect x="30" y="74" width="740" height="8" fill="#0b1a28" />
+    <text x="50" y="48" fill="#4a6a88">MODEM ID</text>
+    <rect x="50" y="56" width="150" height="12" rx="2" fill="#c8d8f0" fill-opacity=".85" />
+    <rect x="214" y="54" width="60" height="16" rx="8" fill="#00eeff" fill-opacity=".12" stroke="#00eeff" stroke-opacity=".6" />
+    <rect x="226" y="59" width="36" height="6" rx="2" fill="#00eeff" />
+    <text x="320" y="48" fill="#4a6a88">RGW SERIAL</text>
+    <rect x="320" y="58" width="100" height="7" rx="2" fill="#2a4a66" />
+    <text x="460" y="48" fill="#4a6a88">PACKAGE</text>
+    <rect x="460" y="58" width="90" height="7" rx="2" fill="#2a4a66" />
+
+    <!-- section nav -->
+    <rect x="30" y="82" width="740" height="32" fill="#07111c" />
+    <rect x="30" y="113" width="740" height="1" fill="#14304a" />
+    <text x="50" y="102" fill="#4a6a88">OVERVIEW</text>
+    <text x="140" y="102" fill="#00eeff">CONNECTED DEVICES</text>
+    <rect x="132" y="111" width="122" height="3" fill="#00eeff" />
+    <text x="286" y="102" fill="#4a6a88">PROVISIONING</text>
+    <text x="400" y="102" fill="#4a6a88">DIAGNOSTICS</text>
+
+    <!-- tool header -->
+    <rect x="50" y="134" width="170" height="12" rx="2" fill="#c8d8f0" fill-opacity=".85" />
+    <rect x="50" y="154" width="250" height="7" rx="2" fill="#2a4a66" />
+    <rect x="530" y="132" width="110" height="22" rx="11" fill="#ff0066" fill-opacity=".12" stroke="#ff0066" stroke-opacity=".6" />
+    <circle cx="546" cy="143" r="4" fill="#ff0066" />
+    <text x="556" y="146" fill="#ff0066" font-size="8">LIVE / ROUTER</text>
+    <rect x="652" y="132" width="98" height="22" rx="4" fill="none" stroke="#00eeff" stroke-opacity=".8" />
+    <path d="M668 139a6 6 0 1 1-2 5" fill="none" stroke="#00eeff" stroke-width="1.5" />
+    <path d="M664 137v4h4" fill="none" stroke="#00eeff" stroke-width="1.5" />
+    <text x="688" y="147" fill="#00eeff">REFRESH</text>
+
+    <!-- table -->
+    <rect x="50" y="176" width="700" height="26" fill="#0d2133" />
+    <g fill="#4a6a88">
+        <text x="98" y="193">HOSTNAME</text>
+        <text x="300" y="193">INTERFACE</text>
+        <text x="440" y="193">BAND</text>
+        <text x="560" y="193">SIGNAL</text>
+    </g>
+    <g>
+        <use href="#drow" x="50" y="202" />
+        <use href="#drow" x="50" y="240" />
+        <use href="#drow" x="50" y="278" />
+        <use href="#drow" x="50" y="316" />
+        <use href="#drow" x="50" y="354" />
+        <use href="#drow" x="50" y="392" />
+    </g>
+    <!-- type icons -->
+    <use href="#wifi" x="64" y="212" />
+    <use href="#wifi" x="64" y="250" />
+    <use href="#lan" x="64" y="287" />
+    <use href="#wifi" x="64" y="326" />
+    <use href="#wifi" x="64" y="364" />
+    <use href="#lan" x="64" y="401" />
+    <!-- interface -->
+    <g fill="#2a4a66">
+        <rect x="300" y="217" width="70" height="7" rx="2" />
+        <rect x="300" y="255" width="70" height="7" rx="2" />
+        <rect x="300" y="293" width="50" height="7" rx="2" />
+        <rect x="300" y="331" width="70" height="7" rx="2" />
+        <rect x="300" y="369" width="70" height="7" rx="2" />
+        <rect x="300" y="407" width="50" height="7" rx="2" />
+    </g>
+    <!-- band -->
+    <use href="#b5" x="440" y="213" />
+    <use href="#b2" x="440" y="251" />
+    <text x="462" y="300" fill="#4a6a88" text-anchor="middle">—</text>
+    <use href="#b5" x="440" y="327" />
+    <use href="#b2" x="440" y="365" />
+    <text x="462" y="414" fill="#4a6a88" text-anchor="middle">—</text>
+    <!-- signal meters -->
+    <g transform="translate(560 214)">
+        <rect width="120" height="6" rx="3" fill="#1b3550" />
+        <rect width="96" height="6" rx="3" fill="#00eeff" />
+    </g>
+    <g transform="translate(560 252)">
+        <rect width="120" height="6" rx="3" fill="#1b3550" />
+        <rect width="54" height="6" rx="3" fill="#ffb020" />
+    </g>
+    <text x="560" y="300" fill="#4a6a88">WIRED</text>
+    <g transform="translate(560 328)">
+        <rect width="120" height="6" rx="3" fill="#1b3550" />
+        <rect width="80" height="6" rx="3" fill="#00eeff" />
+    </g>
+    <g transform="translate(560 366)">
+        <rect width="120" height="6" rx="3" fill="#1b3550" />
+        <rect width="26" height="6" rx="3" fill="#ff0066" />
+    </g>
+    <text x="560" y="414" fill="#4a6a88">WIRED</text>
+    <g fill="#2a4a66">
+        <rect x="690" y="213" width="40" height="7" rx="2" />
+        <rect x="690" y="251" width="40" height="7" rx="2" />
+        <rect x="690" y="327" width="40" height="7" rx="2" />
+        <rect x="690" y="365" width="40" height="7" rx="2" />
+    </g>
+
+    <!-- footer -->
+    <rect x="50" y="446" width="130" height="7" rx="2" fill="#1b3550" />
+    <text x="750" y="453" fill="#4a6a88" text-anchor="end">6 DEVICES</text>
+</svg>

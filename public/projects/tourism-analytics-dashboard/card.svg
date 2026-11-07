@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 352" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="9" letter-spacing="1.5">
+    <!-- Work-log card: a tourism overview dashboard with trip-type tabs, KPI cards compared to the previous period, a visitor trend line and a top-five ranking. Wireframe only: no real data. -->
+    <defs>
+        <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse">
+            <circle cx="2" cy="2" r="1" fill="#14304a" />
+        </pattern>
+        <radialGradient id="glow" cx=".5" cy=".5" r=".5">
+            <stop offset="0" stop-color="#00eeff" stop-opacity=".08" />
+            <stop offset="1" stop-color="#00eeff" stop-opacity="0" />
+        </radialGradient>
+        <linearGradient id="area" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#00eeff" stop-opacity=".22" />
+            <stop offset="1" stop-color="#00eeff" stop-opacity="0" />
+        </linearGradient>
+        <g id="kpi">
+            <rect width="150" height="78" fill="#0a1724" stroke="#14304a" />
+            <rect x="14" y="14" width="74" height="6" rx="2" fill="#1b3550" />
+            <rect x="14" y="32" width="92" height="14" rx="2" fill="#c8d8f0" fill-opacity=".85" />
+        </g>
+        <g id="up">
+            <path d="M0 6l5-6 5 6z" fill="#00eeff" />
+            <rect x="14" y="0" width="34" height="6" rx="2" fill="#00eeff" fill-opacity=".8" />
+        </g>
+        <g id="down">
+            <path d="M0 0l5 6 5-6z" fill="#ff0066" />
+            <rect x="14" y="0" width="30" height="6" rx="2" fill="#ff0066" fill-opacity=".8" />
+        </g>
+        <g id="rank">
+            <circle cx="8" cy="0" r="7" fill="#1b3550" stroke="#2a4a66" />
+            <rect x="24" y="-3" width="62" height="6" rx="2" fill="#2a4a66" />
+            <rect x="110" y="-3" width="36" height="6" rx="2" fill="#c8d8f0" fill-opacity=".7" />
+        </g>
+    </defs>
+
+    <rect width="1200" height="352" fill="#07111c" />
+    <rect width="1200" height="352" fill="url(#dots)" />
+    <ellipse cx="600" cy="190" rx="520" ry="200" fill="url(#glow)" />
+
+    <!-- top bar: trip-type tabs, date filter, export -->
+    <rect width="1200" height="44" fill="#0d2133" />
+    <path d="M0 44h1200" stroke="#16324a" />
+    <rect x="40" y="16" width="96" height="12" rx="2" fill="#c8d8f0" fill-opacity=".85" />
+    <g fill="#4a6a88">
+        <text x="196" y="26">DOMESTIC</text>
+        <text x="296" y="26">INBOUND</text>
+        <text x="390" y="26">OUTBOUND</text>
+    </g>
+    <text x="196" y="26" fill="#00eeff">DOMESTIC</text>
+    <path d="M196 34h70" stroke="#00eeff" stroke-width="2" />
+    <rect x="780" y="12" width="150" height="20" rx="3" fill="#07111c" stroke="#2a4a66" />
+    <rect x="796" y="19" width="10" height="7" rx="1" fill="none" stroke="#4a6a88" />
+    <rect x="816" y="19" width="88" height="6" rx="2" fill="#c8d8f0" fill-opacity=".7" />
+    <rect x="944" y="12" width="84" height="20" rx="3" fill="#00eeff" />
+    <text x="986" y="26" fill="#07111c" text-anchor="middle" font-weight="bold">EXPORT</text>
+
+    <!-- left rail (crops on narrow cards) -->
+    <rect x="0" y="44" width="150" height="308" fill="#0a1724" />
+    <path d="M150 44v308" stroke="#14304a" />
+    <g fill="#1b3550">
+        <rect x="24" y="100" width="72" height="6" rx="2" />
+        <rect x="24" y="124" width="84" height="6" rx="2" />
+        <rect x="24" y="148" width="64" height="6" rx="2" />
+        <rect x="24" y="172" width="78" height="6" rx="2" />
+    </g>
+    <rect x="16" y="68" width="118" height="22" rx="2" fill="#00eeff" fill-opacity=".12" />
+    <rect x="16" y="68" width="3" height="22" fill="#00eeff" />
+    <rect x="28" y="76" width="80" height="6" rx="2" fill="#00eeff" />
+
+    <!-- KPI cards vs previous period -->
+    <use href="#kpi" x="190" y="64" />
+    <use href="#kpi" x="356" y="64" />
+    <use href="#kpi" x="522" y="64" />
+    <use href="#kpi" x="688" y="64" />
+    <use href="#up" x="204" y="124" />
+    <use href="#up" x="370" y="124" />
+    <use href="#down" x="536" y="124" />
+    <use href="#up" x="702" y="124" />
+
+    <!-- trend chart -->
+    <rect x="190" y="158" width="648" height="160" fill="#0a1724" stroke="#14304a" />
+    <text x="202" y="176" fill="#4a6a88">VISITORS OVER TIME</text>
+    <path d="M214 296h604" stroke="#2a4a66" />
+    <g fill="none" stroke="#14304a" stroke-dasharray="2 4">
+        <path d="M214 212h604M214 240h604M214 268h604" />
+    </g>
+    <path d="M214 270L264 262 314 266 364 248 414 252 464 236 514 240 564 222 614 228 664 210 714 216 764 200 818 204V296H214z" fill="url(#area)" />
+    <path d="M214 270L264 262 314 266 364 248 414 252 464 236 514 240 564 222 614 228 664 210 714 216 764 200 818 204" fill="none" stroke="#00eeff" stroke-width="2" />
+    <circle cx="764" cy="200" r="4" fill="#07111c" stroke="#00eeff" stroke-width="2" />
+
+    <!-- top five -->
+    <rect x="858" y="64" width="170" height="254" fill="#0a1724" stroke="#14304a" />
+    <text x="870" y="82" fill="#4a6a88">TOP 5</text>
+    <use href="#rank" x="872" y="112" />
+    <use href="#rank" x="872" y="156" />
+    <use href="#rank" x="872" y="200" />
+    <use href="#rank" x="872" y="244" />
+    <use href="#rank" x="872" y="288" />
+    <g fill="#00eeff">
+        <rect x="896" y="122" width="122" height="3" rx="1" />
+        <rect x="896" y="166" width="96" height="3" rx="1" fill-opacity=".7" />
+        <rect x="896" y="210" width="74" height="3" rx="1" fill-opacity=".5" />
+        <rect x="896" y="254" width="52" height="3" rx="1" fill-opacity=".35" />
+        <rect x="896" y="298" width="36" height="3" rx="1" fill-opacity=".25" />
+    </g>
+
+    <!-- right column (crops on narrow cards) -->
+    <rect x="1048" y="64" width="132" height="254" fill="#0a1724" stroke="#14304a" />
+    <text x="1060" y="82" fill="#4a6a88">MODE</text>
+    <circle cx="1114" cy="150" r="40" fill="none" stroke="#1b3550" stroke-width="14" />
+    <circle cx="1114" cy="150" r="40" fill="none" stroke="#00eeff" stroke-width="14" stroke-dasharray="150 252" transform="rotate(-90 1114 150)" />
+    <circle cx="1114" cy="150" r="40" fill="none" stroke="#7c8cff" stroke-width="14" stroke-dasharray="60 252" stroke-dashoffset="-150" transform="rotate(-90 1114 150)" />
+    <g fill="#1b3550">
+        <rect x="1060" y="220" width="80" height="6" rx="2" />
+        <rect x="1060" y="240" width="64" height="6" rx="2" />
+        <rect x="1060" y="260" width="72" height="6" rx="2" />
+    </g>
+</svg>

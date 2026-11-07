@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 352" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="9" letter-spacing="1.5">
+    <!-- Work-log card: a sector dashboard with an abstract hex-tile choropleth, a click-to-highlight bar chart and the shared quarter slider. Wireframe only: no real data or geography. -->
+    <defs>
+        <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse">
+            <circle cx="2" cy="2" r="1" fill="#14304a" />
+        </pattern>
+        <radialGradient id="glow" cx=".5" cy=".5" r=".5">
+            <stop offset="0" stop-color="#00eeff" stop-opacity=".08" />
+            <stop offset="1" stop-color="#00eeff" stop-opacity="0" />
+        </radialGradient>
+        <path id="hex" d="M0-20L17.3-10V10L0 20-17.3 10V-10z" />
+        <g id="hexmap" fill="#00eeff" stroke="#0a1724" stroke-width="2">
+            <use href="#hex" x="34.6" y="0" fill-opacity=".25" />
+            <use href="#hex" x="69.2" y="0" fill-opacity=".45" />
+            <use href="#hex" x="103.8" y="0" fill-opacity=".3" />
+            <use href="#hex" x="17.3" y="30" fill-opacity=".2" />
+            <use href="#hex" x="51.9" y="30" fill-opacity=".55" />
+            <use href="#hex" x="86.5" y="30" fill-opacity=".8" />
+            <use href="#hex" x="121.1" y="30" fill-opacity=".4" />
+            <use href="#hex" x="155.7" y="30" fill-opacity=".15" />
+            <use href="#hex" x="0" y="60" fill-opacity=".35" />
+            <use href="#hex" x="34.6" y="60" fill-opacity=".7" />
+            <use href="#hex" x="69.2" y="60" fill-opacity=".95" />
+            <use href="#hex" x="103.8" y="60" fill-opacity=".6" />
+            <use href="#hex" x="138.4" y="60" fill-opacity=".3" />
+            <use href="#hex" x="51.9" y="90" fill-opacity=".5" />
+            <use href="#hex" x="86.5" y="90" fill-opacity=".4" />
+            <use href="#hex" x="121.1" y="90" fill-opacity=".25" />
+            <use href="#hex" x="69.2" y="120" fill-opacity=".3" />
+            <use href="#hex" x="103.8" y="120" fill-opacity=".15" />
+        </g>
+    </defs>
+
+    <rect width="1200" height="352" fill="#07111c" />
+    <rect width="1200" height="352" fill="url(#dots)" />
+    <ellipse cx="600" cy="180" rx="520" ry="200" fill="url(#glow)" />
+
+    <!-- top nav -->
+    <rect width="1200" height="44" fill="#0d2133" />
+    <path d="M0 44h1200" stroke="#16324a" />
+    <rect x="40" y="16" width="96" height="12" rx="2" fill="#c8d8f0" fill-opacity=".85" />
+    <g fill="#4a6a88">
+        <text x="420" y="26">DASHBOARDS</text>
+        <text x="540" y="26">CATALOGUE</text>
+        <text x="652" y="26">QUERY</text>
+        <text x="730" y="26">REPORTS</text>
+    </g>
+    <path d="M420 34h76" stroke="#00eeff" stroke-width="2" />
+    <rect x="1080" y="12" width="80" height="20" rx="3" fill="none" stroke="#00eeff" />
+    <text x="1120" y="26" fill="#00eeff" text-anchor="middle">LOGIN</text>
+
+    <!-- left rail (crops on narrow cards) -->
+    <rect x="0" y="44" width="150" height="308" fill="#0a1724" />
+    <path d="M150 44v308" stroke="#14304a" />
+    <g fill="#1b3550">
+        <rect x="24" y="76" width="90" height="6" rx="2" />
+        <rect x="24" y="100" width="72" height="6" rx="2" />
+        <rect x="24" y="148" width="84" height="6" rx="2" />
+        <rect x="24" y="172" width="64" height="6" rx="2" />
+        <rect x="24" y="196" width="78" height="6" rx="2" />
+    </g>
+    <rect x="16" y="118" width="118" height="22" rx="2" fill="#00eeff" fill-opacity=".12" />
+    <rect x="16" y="118" width="3" height="22" fill="#00eeff" />
+    <rect x="28" y="126" width="80" height="6" rx="2" fill="#00eeff" />
+
+    <!-- map panel -->
+    <rect x="190" y="64" width="260" height="236" fill="#0a1724" stroke="#14304a" />
+    <text x="202" y="82" fill="#4a6a88">BY REGION</text>
+    <g transform="translate(234 116) scale(1.05)">
+        <use href="#hexmap" />
+        <use href="#hex" x="69.2" y="60" fill="none" stroke="#c8d8f0" stroke-width="2" />
+    </g>
+
+    <!-- bar chart panel -->
+    <rect x="470" y="64" width="540" height="236" fill="#0a1724" stroke="#14304a" />
+    <text x="482" y="82" fill="#4a6a88">SUBSCRIPTIONS BY QUARTER</text>
+    <rect x="924" y="72" width="74" height="18" rx="9" fill="#00eeff" fill-opacity=".12" stroke="#00eeff" stroke-opacity=".6" />
+    <rect x="938" y="78" width="46" height="6" rx="2" fill="#00eeff" />
+    <path d="M498 270h490" stroke="#2a4a66" />
+    <g fill="none" stroke="#14304a" stroke-dasharray="2 4">
+        <path d="M498 120h490M498 170h490M498 220h490" />
+    </g>
+    <g fill="#2a4a66" fill-opacity=".55">
+        <rect x="508" y="204" width="26" height="66" />
+        <rect x="548" y="196" width="26" height="74" />
+        <rect x="588" y="186" width="26" height="84" />
+        <rect x="628" y="180" width="26" height="90" />
+        <rect x="668" y="168" width="26" height="102" />
+        <rect x="708" y="160" width="26" height="110" />
+        <rect x="748" y="150" width="26" height="120" />
+        <rect x="828" y="134" width="26" height="136" />
+        <rect x="868" y="126" width="26" height="144" />
+        <rect x="908" y="116" width="26" height="154" />
+        <rect x="948" y="108" width="26" height="162" />
+    </g>
+    <rect x="788" y="142" width="26" height="128" fill="#00eeff" />
+    <g fill="#1b3550">
+        <rect x="510" y="282" width="22" height="6" rx="2" />
+        <rect x="670" y="282" width="22" height="6" rx="2" />
+        <rect x="790" y="282" width="22" height="6" rx="2" />
+        <rect x="950" y="282" width="22" height="6" rx="2" />
+    </g>
+
+    <!-- KPI tiles (crop on narrow cards) -->
+    <g fill="#0a1724" stroke="#14304a">
+        <rect x="1030" y="64" width="150" height="70" />
+        <rect x="1030" y="147" width="150" height="70" />
+        <rect x="1030" y="230" width="150" height="70" />
+    </g>
+    <g fill="#1b3550">
+        <rect x="1044" y="78" width="70" height="6" rx="2" />
+        <rect x="1044" y="161" width="58" height="6" rx="2" />
+        <rect x="1044" y="244" width="80" height="6" rx="2" />
+    </g>
+    <rect x="1044" y="96" width="90" height="14" rx="2" fill="#c8d8f0" fill-opacity=".85" />
+    <rect x="1044" y="179" width="76" height="14" rx="2" fill="#c8d8f0" fill-opacity=".85" />
+    <rect x="1044" y="262" width="96" height="14" rx="2" fill="#c8d8f0" fill-opacity=".85" />
+
+    <!-- quarter slider -->
+    <rect x="190" y="322" width="820" height="4" rx="2" fill="#1b3550" />
+    <rect x="190" y="322" width="612" height="4" rx="2" fill="#00eeff" />
+    <circle cx="802" cy="324" r="8" fill="#07111c" stroke="#00eeff" stroke-width="2.5" />
+</svg>

@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="9" letter-spacing="1" text-anchor="middle">
+    <!-- Sketch: the server-only boundary. Credentials live and get attached on the server, never in the browser. -->
+    <defs>
+        <marker id="arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto">
+            <path d="M0 0l8 4-8 4z" fill="#00eeff" />
+        </marker>
+        <g id="key">
+            <circle cx="4" cy="4" r="3.5" fill="none" stroke="#ffb020" stroke-width="1.5" />
+            <path d="M7.5 4h8M12 4v3M15 4v3" fill="none" stroke="#ffb020" stroke-width="1.5" />
+        </g>
+    </defs>
+
+    <rect width="400" height="300" fill="#07111c" />
+    <text x="24" y="36" font-size="10" letter-spacing="2" fill="#00eeff" text-anchor="start">02 // BOUNDARY</text>
+    <rect x="24" y="44" width="352" height="1" fill="#16324a" />
+
+    <!-- browser -->
+    <rect x="20" y="80" width="110" height="64" fill="#0b1a28" stroke="#2a4a66" />
+    <text x="75" y="98" fill="#c8d8f0">BROWSER</text>
+    <rect x="34" y="110" width="82" height="20" rx="10" fill="#00eeff" fill-opacity=".12" stroke="#00eeff" stroke-opacity=".6" />
+    <text x="75" y="123" fill="#00eeff">HTTPONLY</text>
+    <text x="75" y="162" fill="#4a6a88">NO SECRETS</text>
+
+    <!-- wall -->
+    <path d="M160 64v116" stroke="#ff0066" stroke-width="1.5" stroke-dasharray="5 3" />
+    <text x="160" y="60" fill="#ff0066">SERVER-ONLY</text>
+
+    <!-- server stack -->
+    <g fill="#0b1a28" stroke="#2a4a66">
+        <rect x="190" y="78" width="84" height="26" />
+        <rect x="290" y="78" width="90" height="26" />
+        <rect x="190" y="126" width="84" height="26" />
+        <rect x="290" y="126" width="90" height="26" />
+    </g>
+    <text x="232" y="94" fill="#c8d8f0">ROUTE</text>
+    <text x="335" y="94" fill="#c8d8f0">SERVICE</text>
+    <text x="232" y="142" fill="#c8d8f0">CLIENT</text>
+    <text x="335" y="142" fill="#c8d8f0">UPSTREAM</text>
+    <use href="#key" x="204" y="162" />
+    <text x="250" y="170" fill="#ffb020">TOKEN</text>
+
+    <g fill="none" stroke="#00eeff" stroke-width="1.5" marker-end="url(#arrow)">
+        <path d="M130 91h56" />
+        <path d="M274 91h12" />
+        <path d="M335 104v10H232v8" />
+        <path d="M274 139h12" />
+    </g>
+
+    <!-- notes -->
+    <rect x="24" y="188" width="352" height="1" fill="#16324a" />
+    <g fill="#c8d8f0" text-anchor="start">
+        <text x="30" y="212"><tspan fill="#00eeff">›</tspan> SERVER MODULES IMPORT SERVER-ONLY</text>
+        <text x="30" y="234"><tspan fill="#00eeff">›</tspan> BUILD FAILS IF A CLIENT FILE PULLS ONE IN</text>
+        <text x="30" y="256"><tspan fill="#00eeff">›</tspan> SESSION + HF TOKENS IN HTTPONLY COOKIES</text>
+        <text x="30" y="278"><tspan fill="#00eeff">›</tspan> UPSTREAM ERRORS WRAPPED, NOT PASSED ON</text>
+    </g>
+</svg>

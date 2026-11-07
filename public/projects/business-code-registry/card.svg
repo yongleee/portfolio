@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 352" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="10" letter-spacing="1.5">
+    <!-- Work-log card: wide crop of the admin console. Wireframe only. -->
+    <defs>
+        <g id="row">
+            <rect width="760" height="40" fill="#0a1724" />
+            <rect y="39" width="760" height="1" fill="#14304a" />
+            <rect x="16" y="15" width="64" height="10" rx="2" fill="#2a4a66" />
+            <rect x="680" y="11" width="18" height="18" rx="3" fill="none" stroke="#2a4a66" />
+            <rect x="708" y="11" width="18" height="18" rx="3" fill="none" stroke="#2a4a66" />
+        </g>
+        <g id="pub"><rect width="70" height="18" rx="9" fill="#00eeff" fill-opacity=".12" stroke="#00eeff" stroke-opacity=".6" /><rect x="15" y="6" width="40" height="6" rx="3" fill="#00eeff" /></g>
+        <g id="edt"><rect width="70" height="18" rx="9" fill="#ffb020" fill-opacity=".12" stroke="#ffb020" stroke-opacity=".6" /><rect x="15" y="6" width="40" height="6" rx="3" fill="#ffb020" /></g>
+        <g id="new"><rect width="70" height="18" rx="9" fill="#7c8cff" fill-opacity=".12" stroke="#7c8cff" stroke-opacity=".6" /><rect x="15" y="6" width="40" height="6" rx="3" fill="#7c8cff" /></g>
+        <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
+            <stop offset=".55" stop-color="#07111c" stop-opacity="0" />
+            <stop offset="1" stop-color="#07111c" />
+        </linearGradient>
+    </defs>
+
+    <rect width="1200" height="352" fill="#07111c" />
+
+    <!-- sidebar -->
+    <rect x="0" width="150" height="352" fill="#0a1724" />
+    <rect x="149" width="1" height="352" fill="#14304a" />
+    <rect x="24" y="24" width="28" height="28" rx="5" fill="#00eeff" fill-opacity=".9" />
+    <rect x="62" y="34" width="56" height="9" rx="2" fill="#2a4a66" />
+    <rect x="10" y="118" width="130" height="32" rx="3" fill="#00eeff" fill-opacity=".1" />
+    <rect x="10" y="118" width="3" height="32" fill="#00eeff" />
+    <g fill="#2a4a66">
+        <rect x="26" y="83" width="14" height="14" rx="3" /><rect x="50" y="86" width="64" height="8" rx="2" />
+        <rect x="26" y="163" width="14" height="14" rx="3" /><rect x="50" y="166" width="56" height="8" rx="2" />
+        <rect x="26" y="203" width="14" height="14" rx="3" /><rect x="50" y="206" width="70" height="8" rx="2" />
+        <rect x="26" y="243" width="14" height="14" rx="3" /><rect x="50" y="246" width="50" height="8" rx="2" />
+        <rect x="26" y="283" width="14" height="14" rx="3" /><rect x="50" y="286" width="62" height="8" rx="2" />
+    </g>
+    <rect x="26" y="127" width="14" height="14" rx="3" fill="#00eeff" /><rect x="50" y="130" width="74" height="8" rx="2" fill="#00eeff" />
+
+    <!-- top bar -->
+    <rect x="150" width="1050" height="56" fill="#0a1724" />
+    <rect x="150" y="55" width="1050" height="1" fill="#14304a" />
+    <rect x="182" y="24" width="70" height="8" rx="2" fill="#2a4a66" />
+    <rect x="262" y="24" width="96" height="8" rx="2" fill="#4a6a88" />
+    <circle cx="1160" cy="28" r="12" fill="#1b3550" stroke="#2a4a66" />
+
+    <!-- heading + actions -->
+    <rect x="182" y="80" width="220" height="16" rx="2" fill="#c8d8f0" fill-opacity=".85" />
+    <rect x="182" y="106" width="300" height="8" rx="2" fill="#2a4a66" />
+    <rect x="830" y="80" width="112" height="32" rx="3" fill="#00eeff" />
+    <rect x="852" y="92" width="68" height="8" rx="2" fill="#07111c" />
+
+    <!-- table -->
+    <rect x="182" y="132" width="760" height="32" fill="#0d2133" />
+    <g fill="#4a6a88">
+        <rect x="198" y="145" width="44" height="7" rx="2" />
+        <rect x="282" y="145" width="70" height="7" rx="2" />
+        <rect x="560" y="145" width="50" height="7" rx="2" />
+        <rect x="860" y="145" width="50" height="7" rx="2" />
+    </g>
+    <use href="#row" x="182" y="164" />
+    <use href="#row" x="182" y="204" />
+    <use href="#row" x="182" y="244" />
+    <use href="#row" x="182" y="284" />
+    <use href="#row" x="182" y="324" />
+    <g fill="#1b3550">
+        <rect x="282" y="179" width="220" height="10" rx="2" />
+        <rect x="282" y="219" width="170" height="10" rx="2" />
+        <rect x="282" y="259" width="240" height="10" rx="2" />
+        <rect x="282" y="299" width="150" height="10" rx="2" />
+        <rect x="282" y="339" width="200" height="10" rx="2" />
+    </g>
+    <use href="#pub" x="560" y="175" />
+    <use href="#edt" x="560" y="215" />
+    <use href="#pub" x="560" y="255" />
+    <use href="#new" x="560" y="295" />
+    <use href="#pub" x="560" y="335" />
+    <rect x="182" y="204" width="760" height="40" fill="#00eeff" fill-opacity=".05" />
+
+    <rect x="150" width="1050" height="352" fill="url(#fade)" />
+
+    <!-- publish toast -->
+    <rect x="968" y="80" width="208" height="112" fill="#0b1a28" stroke="#00eeff" stroke-opacity=".6" />
+    <rect x="968" y="80" width="208" height="20" fill="#00eeff" />
+    <text x="978" y="94" font-weight="bold" fill="#07111c">PUBLISHING</text>
+    <circle cx="1162" cy="90" r="4" fill="#ff0066" />
+    <rect x="980" y="114" width="130" height="8" rx="2" fill="#c8d8f0" fill-opacity=".85" />
+    <rect x="980" y="134" width="184" height="8" fill="#0d2133" />
+    <rect x="980" y="134" width="156" height="8" fill="#00eeff" />
+    <text x="980" y="164" fill="#4a6a88">INSERT CHUNKS</text>
+    <text x="1164" y="164" fill="#00eeff" text-anchor="end">85%</text>
+    <rect x="980" y="174" width="90" height="6" rx="2" fill="#1b3550" />
+</svg>

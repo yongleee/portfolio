@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" font-family="ui-monospace, Menlo, Consolas, monospace">
+    <!-- Public search portal on a phone. Wireframe only: no real data. -->
+    <defs>
+        <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse">
+            <circle cx="2" cy="2" r="1" fill="#14304a" />
+        </pattern>
+        <clipPath id="screen"><rect x="162" y="102" width="276" height="596" rx="26" /></clipPath>
+        <g id="result">
+            <rect width="244" height="74" rx="6" fill="#0b1a28" stroke="#16324a" />
+            <rect x="14" y="14" width="58" height="12" rx="2" fill="#00eeff" fill-opacity=".85" />
+            <rect x="14" y="36" width="190" height="7" rx="2" fill="#2a4a66" />
+            <rect x="14" y="52" width="140" height="7" rx="2" fill="#1b3550" />
+            <path d="M218 14h12v16l-6-5-6 5z" fill="none" stroke="#4a6a88" stroke-width="1.5" />
+        </g>
+    </defs>
+
+    <rect width="600" height="800" fill="#07111c" />
+    <rect width="600" height="800" fill="url(#dots)" />
+
+    <!-- phone -->
+    <rect x="150" y="90" width="300" height="620" rx="36" fill="#0d2133" stroke="#2a4a66" stroke-width="2" />
+    <g clip-path="url(#screen)">
+        <rect x="162" y="102" width="276" height="596" fill="#07111c" />
+
+        <!-- status + header -->
+        <rect x="180" y="116" width="34" height="7" rx="2" fill="#4a6a88" />
+        <rect x="392" y="116" width="28" height="7" rx="2" fill="#4a6a88" />
+        <rect x="180" y="140" width="22" height="22" rx="5" fill="#00eeff" fill-opacity=".9" />
+        <rect x="210" y="147" width="60" height="8" rx="2" fill="#2a4a66" />
+        <rect x="374" y="141" width="46" height="20" rx="10" fill="none" stroke="#2a4a66" />
+        <rect x="376" y="143" width="22" height="16" rx="8" fill="#00eeff" fill-opacity=".2" />
+        <text x="381" y="155" font-size="8" fill="#00eeff">EN</text>
+        <text x="403" y="155" font-size="8" fill="#4a6a88">BM</text>
+
+        <!-- hero -->
+        <rect x="180" y="188" width="170" height="14" rx="2" fill="#c8d8f0" fill-opacity=".85" />
+        <rect x="180" y="210" width="120" height="14" rx="2" fill="#c8d8f0" fill-opacity=".85" />
+        <rect x="180" y="234" width="200" height="7" rx="2" fill="#2a4a66" />
+
+        <!-- search -->
+        <rect x="178" y="258" width="244" height="40" rx="20" fill="#0b1a28" stroke="#00eeff" stroke-opacity=".6" />
+        <circle cx="200" cy="278" r="7" fill="none" stroke="#00eeff" stroke-width="2" />
+        <path d="M205 283l5 5" stroke="#00eeff" stroke-width="2" />
+        <rect x="218" y="274" width="110" height="8" rx="2" fill="#2a4a66" />
+        <rect x="388" y="264" width="28" height="28" rx="14" fill="#00eeff" />
+        <path d="M396 278h12m-4-4l4 4-4 4" fill="none" stroke="#07111c" stroke-width="2" />
+
+        <!-- mode tabs -->
+        <rect x="178" y="312" width="244" height="30" rx="4" fill="#0a1724" />
+        <rect x="180" y="314" width="80" height="26" rx="3" fill="#00eeff" fill-opacity=".15" stroke="#00eeff" stroke-opacity=".5" />
+        <text x="196" y="331" font-size="8" letter-spacing="1" fill="#00eeff">KEYWORD</text>
+        <text x="280" y="331" font-size="8" letter-spacing="1" fill="#4a6a88">CODE</text>
+        <text x="342" y="331" font-size="8" letter-spacing="1" fill="#4a6a88">STRUCTURE</text>
+
+        <!-- results -->
+        <use href="#result" x="178" y="356" />
+        <use href="#result" x="178" y="440" />
+        <use href="#result" x="178" y="524" />
+
+        <!-- assistant sheet -->
+        <rect x="162" y="590" width="276" height="120" rx="18" fill="#0b1a28" stroke="#2a4a66" />
+        <rect x="280" y="598" width="40" height="4" rx="2" fill="#2a4a66" />
+        <circle cx="192" cy="626" r="11" fill="#ff0066" fill-opacity=".2" stroke="#ff0066" />
+        <rect x="186" y="623" width="12" height="6" rx="2" fill="#ff0066" />
+        <rect x="210" y="614" width="170" height="26" rx="10" fill="#0d2133" />
+        <rect x="222" y="624" width="120" height="6" rx="2" fill="#4a6a88" />
+        <rect x="290" y="648" width="132" height="22" rx="10" fill="#00eeff" fill-opacity=".18" />
+        <rect x="302" y="656" width="90" height="6" rx="2" fill="#00eeff" />
+    </g>
+    <rect x="262" y="96" width="76" height="4" rx="2" fill="#2a4a66" />
+</svg>

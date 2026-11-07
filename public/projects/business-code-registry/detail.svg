@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="10" letter-spacing="1">
+    <!-- Live publish progress, streamed over SSE. Wireframe only. -->
+    <defs>
+        <g id="done">
+            <circle r="9" fill="#00eeff" fill-opacity=".15" stroke="#00eeff" />
+            <path d="M-4 0l3 3 5-6" fill="none" stroke="#00eeff" stroke-width="2" />
+        </g>
+        <g id="todo"><circle r="9" fill="none" stroke="#2a4a66" /></g>
+    </defs>
+
+    <rect width="800" height="400" fill="#07111c" />
+
+    <!-- dialog -->
+    <rect x="40" y="36" width="420" height="328" fill="#0b1a28" stroke="#00eeff" stroke-opacity=".5" />
+    <rect x="40" y="36" width="420" height="22" fill="#00eeff" />
+    <text x="52" y="51" font-weight="bold" fill="#07111c" letter-spacing="2">PUBLISH // STREAMING</text>
+    <circle cx="444" cy="47" r="4" fill="#ff0066" />
+
+    <rect x="60" y="78" width="200" height="12" rx="2" fill="#c8d8f0" fill-opacity=".85" />
+    <rect x="60" y="98" width="140" height="7" rx="2" fill="#2a4a66" />
+
+    <!-- progress -->
+    <rect x="60" y="122" width="380" height="10" fill="#0d2133" />
+    <rect x="60" y="122" width="323" height="10" fill="#00eeff" />
+    <rect x="383" y="122" width="2" height="10" fill="#c8d8f0" />
+    <text x="60" y="152" fill="#4a6a88">STEP 6 / 7</text>
+    <text x="408" y="152" fill="#00eeff">85%</text>
+
+    <!-- steps -->
+    <path d="M78 178v156" stroke="#16324a" stroke-width="2" />
+    <path d="M78 178v130" stroke="#00eeff" stroke-opacity=".5" stroke-width="2" />
+    <use href="#done" x="78" y="178" />
+    <use href="#done" x="78" y="204" />
+    <use href="#done" x="78" y="230" />
+    <use href="#done" x="78" y="256" />
+    <use href="#done" x="78" y="282" />
+    <circle cx="78" cy="308" r="9" fill="#07111c" stroke="#00eeff" stroke-width="2" />
+    <circle cx="78" cy="308" r="4" fill="#00eeff" />
+    <circle cx="78" cy="308" r="14" fill="none" stroke="#00eeff" stroke-opacity=".3" />
+    <use href="#todo" x="78" y="334" />
+    <g fill="#c8d8f0">
+        <text x="100" y="182">START</text>
+        <text x="100" y="208">EXPIRE PREVIOUS</text>
+        <text x="100" y="234">MARK PUBLISHED</text>
+        <text x="100" y="260">SYNC MASTER TABLE</text>
+        <text x="100" y="286">SYNC TYPE TABLE</text>
+    </g>
+    <text x="100" y="312" fill="#00eeff">INSERT CHUNKS</text>
+    <text x="100" y="338" fill="#4a6a88">NOTIFY SEARCH INDEX</text>
+    <g fill="#4a6a88" text-anchor="end">
+        <text x="440" y="182">OK</text>
+        <text x="440" y="208">OK</text>
+        <text x="440" y="234">OK</text>
+        <text x="440" y="260">OK</text>
+        <text x="440" y="286">OK</text>
+        <text x="440" y="338">—</text>
+    </g>
+    <rect x="300" y="303" width="100" height="6" fill="#0d2133" />
+    <rect x="300" y="303" width="76" height="6" fill="#00eeff" fill-opacity=".7" />
+    <text x="440" y="312" fill="#00eeff" text-anchor="end">34/40</text>
+
+    <!-- event stream -->
+    <rect x="490" y="36" width="270" height="328" fill="#050d16" stroke="#16324a" />
+    <text x="504" y="56" fill="#4a6a88" letter-spacing="2">TEXT/EVENT-STREAM</text>
+    <rect x="490" y="66" width="270" height="1" fill="#16324a" />
+    <g font-size="9.5">
+        <text x="504" y="88" fill="#4a6a88">event: <tspan fill="#c8d8f0">start</tspan></text>
+        <text x="504" y="102" fill="#2a4a66">data: {"progress":0}</text>
+        <text x="504" y="124" fill="#4a6a88">event: <tspan fill="#c8d8f0">expiring</tspan></text>
+        <text x="504" y="138" fill="#2a4a66">data: {"progress":10}</text>
+        <text x="504" y="160" fill="#4a6a88">event: <tspan fill="#c8d8f0">publishing</tspan></text>
+        <text x="504" y="174" fill="#2a4a66">data: {"progress":20}</text>
+        <text x="504" y="196" fill="#4a6a88">event: <tspan fill="#c8d8f0">sync</tspan></text>
+        <text x="504" y="210" fill="#2a4a66">data: {"progress":40}</text>
+        <text x="504" y="232" fill="#4a6a88">event: <tspan fill="#00eeff">chunk</tspan></text>
+        <text x="504" y="246" fill="#2a4a66">data: {"done":33,"total":40}</text>
+        <text x="504" y="268" fill="#4a6a88">event: <tspan fill="#00eeff">chunk</tspan></text>
+        <text x="504" y="282" fill="#2a4a66">data: {"done":34,"total":40}</text>
+    </g>
+    <rect x="504" y="296" width="7" height="12" fill="#00eeff" />
+</svg>

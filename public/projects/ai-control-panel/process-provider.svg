@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="9" letter-spacing="1" text-anchor="middle">
+    <!-- Sketch: registering a direct model, verified against the live provider and the model catalog. -->
+    <defs>
+        <marker id="arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto">
+            <path d="M0 0l8 4-8 4z" fill="#00eeff" />
+        </marker>
+    </defs>
+
+    <rect width="400" height="300" fill="#07111c" />
+    <text x="24" y="36" font-size="10" letter-spacing="2" fill="#00eeff" text-anchor="start">01 // ADD A MODEL</text>
+    <rect x="24" y="44" width="352" height="1" fill="#16324a" />
+
+    <!-- nodes -->
+    <g fill="#0b1a28" stroke="#2a4a66">
+        <rect x="20" y="70" width="80" height="30" />
+        <rect x="124" y="70" width="92" height="30" />
+        <rect x="240" y="70" width="92" height="30" />
+        <rect x="124" y="128" width="92" height="30" />
+    </g>
+    <rect x="240" y="128" width="92" height="30" fill="#0d2133" stroke="#00eeff" />
+    <rect x="20" y="128" width="80" height="30" fill="#00eeff" fill-opacity=".12" stroke="#00eeff" />
+
+    <g fill="#c8d8f0">
+        <text x="60" y="88">PROVIDER</text>
+        <text x="170" y="88">FETCH LIST</text>
+        <text x="286" y="88">PICK MODEL</text>
+        <text x="286" y="146">CATALOG</text>
+        <text x="170" y="146">LIVE TEST</text>
+    </g>
+    <text x="60" y="146" fill="#00eeff">SAVE</text>
+    <g fill="#4a6a88">
+        <text x="286" y="174">CAPS + RATES</text>
+        <text x="170" y="174">OPTIONAL</text>
+        <text x="60" y="174">AUTO-NAMED</text>
+    </g>
+
+    <g fill="none" stroke="#00eeff" stroke-width="1.5" marker-end="url(#arrow)">
+        <path d="M100 85h20" />
+        <path d="M216 85h20" />
+        <path d="M286 100v24" />
+        <path d="M240 143h-20" />
+        <path d="M124 143h-20" />
+    </g>
+
+    <!-- notes -->
+    <rect x="24" y="188" width="352" height="1" fill="#16324a" />
+    <g fill="#c8d8f0" text-anchor="start">
+        <text x="30" y="212"><tspan fill="#00eeff">›</tspan> MODEL LIST FETCHED FROM THE PROVIDER</text>
+        <text x="30" y="234"><tspan fill="#00eeff">›</tspan> CATALOG FILLS CAPABILITIES + PRICING</text>
+        <text x="30" y="256"><tspan fill="#00eeff">›</tspan> TYPED RATES KEPT WHERE IT HAS NONE</text>
+        <text x="30" y="278"><tspan fill="#00eeff">›</tspan> LIVE TEST BEFORE THE MODEL IS SAVED</text>
+    </g>
+</svg>

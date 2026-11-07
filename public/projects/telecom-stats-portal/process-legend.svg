@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="9" letter-spacing="1">
+    <!-- Process: toggling a series off in the legend hides it and recalculates the total line from the visible series only. Wireframe only: no real data. -->
+    <defs>
+        <pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse">
+            <circle cx="2" cy="2" r="1" fill="#14304a" />
+        </pattern>
+    </defs>
+
+    <rect width="400" height="300" fill="#07111c" />
+    <rect width="400" height="300" fill="url(#dots)" />
+    <text x="20" y="26" fill="#4a6a88" letter-spacing="2">LEGEND // RECOMPUTE TOTAL</text>
+
+    <!-- legend -->
+    <rect x="20" y="40" width="84" height="20" rx="10" fill="#00eeff" fill-opacity=".12" stroke="#00eeff" stroke-opacity=".6" />
+    <rect x="30" y="47" width="10" height="6" fill="#00eeff" />
+    <text x="46" y="53" fill="#c8d8f0">SERIES A</text>
+    <rect x="112" y="40" width="84" height="20" rx="10" fill="none" stroke="#2a4a66" stroke-dasharray="3 3" />
+    <rect x="122" y="47" width="10" height="6" fill="none" stroke="#4a6a88" />
+    <text x="138" y="53" fill="#4a6a88">SERIES B</text>
+    <path d="M136 50h52" stroke="#4a6a88" />
+    <rect x="204" y="40" width="84" height="20" rx="10" fill="#7c8cff" fill-opacity=".12" stroke="#7c8cff" stroke-opacity=".6" />
+    <rect x="214" y="47" width="10" height="6" fill="#7c8cff" />
+    <text x="230" y="53" fill="#c8d8f0">SERIES C</text>
+    <path d="M304 50h14" stroke="#c8d8f0" stroke-width="2" />
+    <circle cx="311" cy="50" r="3" fill="#07111c" stroke="#c8d8f0" stroke-width="1.5" />
+    <text x="324" y="53" fill="#c8d8f0">TOTAL</text>
+
+    <!-- cursor on the toggled chip -->
+    <path d="M178 54l0 14 4-4 3 6 3-1.5-3-6h5z" fill="#c8d8f0" stroke="#07111c" />
+
+    <!-- axes -->
+    <path d="M50 90v140h310" fill="none" stroke="#2a4a66" />
+    <g fill="none" stroke="#14304a" stroke-dasharray="2 4">
+        <path d="M50 120h310M50 160h310M50 200h310" />
+    </g>
+
+    <!-- hidden series B: ghost outlines -->
+    <g fill="none" stroke="#2a4a66" stroke-dasharray="3 2">
+        <rect x="60" y="166" width="24" height="20" />
+        <rect x="104" y="157" width="24" height="22" />
+        <rect x="148" y="148" width="24" height="24" />
+        <rect x="192" y="139" width="24" height="26" />
+        <rect x="236" y="130" width="24" height="28" />
+        <rect x="280" y="121" width="24" height="30" />
+        <rect x="324" y="112" width="24" height="32" />
+    </g>
+    <!-- series A -->
+    <g fill="#00eeff" fill-opacity=".8">
+        <rect x="60" y="200" width="24" height="30" />
+        <rect x="104" y="196" width="24" height="34" />
+        <rect x="148" y="192" width="24" height="38" />
+        <rect x="192" y="188" width="24" height="42" />
+        <rect x="236" y="184" width="24" height="46" />
+        <rect x="280" y="180" width="24" height="50" />
+        <rect x="324" y="176" width="24" height="54" />
+    </g>
+    <!-- series C -->
+    <g fill="#7c8cff" fill-opacity=".8">
+        <rect x="60" y="186" width="24" height="14" />
+        <rect x="104" y="179" width="24" height="17" />
+        <rect x="148" y="172" width="24" height="20" />
+        <rect x="192" y="165" width="24" height="23" />
+        <rect x="236" y="158" width="24" height="26" />
+        <rect x="280" y="151" width="24" height="29" />
+        <rect x="324" y="144" width="24" height="32" />
+    </g>
+
+    <!-- old total (with B) and recomputed total -->
+    <polyline points="72,166 116,157 160,148 204,139 248,130 292,121 336,112" fill="none" stroke="#4a6a88" stroke-dasharray="4 3" />
+    <polyline points="72,186 116,179 160,172 204,165 248,158 292,151 336,144" fill="none" stroke="#c8d8f0" stroke-width="2" />
+    <g fill="#07111c" stroke="#c8d8f0" stroke-width="1.5">
+        <circle cx="72" cy="186" r="3" />
+        <circle cx="116" cy="179" r="3" />
+        <circle cx="160" cy="172" r="3" />
+        <circle cx="204" cy="165" r="3" />
+        <circle cx="248" cy="158" r="3" />
+        <circle cx="292" cy="151" r="3" />
+        <circle cx="336" cy="144" r="3" />
+    </g>
+    <path d="M336 112v28" stroke="#ff0066" stroke-width="1.5" />
+    <path d="M332 136l4 6 4-6" fill="none" stroke="#ff0066" stroke-width="1.5" />
+
+    <!-- footnote -->
+    <rect x="30" y="250" width="340" height="32" fill="#0a1724" stroke="#14304a" />
+    <text x="200" y="264" fill="#c8d8f0" text-anchor="middle">TOTAL = SUM OF VISIBLE SERIES</text>
+    <text x="200" y="276" fill="#4a6a88" text-anchor="middle">CLICK A LEGEND ITEM → RECOMPUTE</text>
+</svg>

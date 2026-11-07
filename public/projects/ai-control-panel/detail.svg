@@ -1,0 +1,134 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="9" letter-spacing="1.5">
+    <!-- Signature feature: the model group editor, with a schema-driven routing strategy, weighted members and guardrails. Wireframe only: no real data. -->
+    <defs>
+        <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse">
+            <circle cx="2" cy="2" r="1" fill="#14304a" />
+        </pattern>
+        <filter id="lift" x="-10%" y="-10%" width="120%" height="130%">
+            <feDropShadow dy="18" stdDeviation="22" flood-color="#000" flood-opacity=".55" />
+        </filter>
+        <g id="member">
+            <rect width="406" height="38" fill="#0a1724" stroke="#14304a" />
+            <g fill="#4a6a88">
+                <circle cx="12" cy="14" r="1.5" /><circle cx="18" cy="14" r="1.5" />
+                <circle cx="12" cy="19" r="1.5" /><circle cx="18" cy="19" r="1.5" />
+                <circle cx="12" cy="24" r="1.5" /><circle cx="18" cy="24" r="1.5" />
+            </g>
+            <rect x="236" y="16" width="110" height="6" rx="3" fill="#14304a" />
+            <rect x="356" y="9" width="40" height="20" rx="3" fill="#07111c" stroke="#2a4a66" />
+            <rect x="364" y="16" width="20" height="6" rx="2" fill="#c8d8f0" fill-opacity=".7" />
+        </g>
+    </defs>
+
+    <rect width="800" height="500" fill="#07111c" />
+    <rect width="800" height="500" fill="url(#dots)" />
+
+    <!-- sheet -->
+    <rect x="40" y="30" width="720" height="440" rx="6" fill="#0b1a28" stroke="#16324a" filter="url(#lift)" />
+    <path d="M46 30h708a6 6 0 0 1 6 6v16H40V36a6 6 0 0 1 6-6z" fill="#00eeff" />
+    <text x="56" y="45" fill="#07111c" font-weight="bold">MODEL GROUP // EDIT</text>
+    <text x="744" y="45" fill="#07111c" font-weight="bold" text-anchor="end">SCHEMA-DRIVEN</text>
+
+    <!-- name -->
+    <text x="64" y="78" fill="#4a6a88">NAME</text>
+    <rect x="64" y="84" width="406" height="28" rx="3" fill="#07111c" stroke="#2a4a66" />
+    <rect x="76" y="95" width="132" height="7" rx="2" fill="#c8d8f0" fill-opacity=".85" />
+
+    <!-- strategy -->
+    <text x="64" y="138" fill="#4a6a88">ROUTING STRATEGY</text>
+    <rect x="64" y="144" width="100" height="28" rx="3" fill="#00eeff" fill-opacity=".15" stroke="#00eeff" />
+    <rect x="166" y="144" width="100" height="28" rx="3" fill="#0a1724" stroke="#14304a" />
+    <rect x="268" y="144" width="100" height="28" rx="3" fill="#0a1724" stroke="#14304a" />
+    <rect x="370" y="144" width="100" height="28" rx="3" fill="#0a1724" stroke="#14304a" />
+    <g text-anchor="middle">
+        <text x="114" y="161" fill="#00eeff">WEIGHTED</text>
+        <text x="216" y="161" fill="#4a6a88">FALLBACK</text>
+        <text x="318" y="161" fill="#4a6a88">ROUND ROBIN</text>
+        <text x="420" y="161" fill="#4a6a88">COST</text>
+    </g>
+
+    <!-- members -->
+    <text x="64" y="198" fill="#4a6a88">MEMBERS</text>
+    <text x="470" y="198" fill="#4a6a88" text-anchor="end">WEIGHT</text>
+
+    <use href="#member" x="64" y="204" />
+    <rect x="96" y="215" width="158" height="8" rx="2" fill="#c8d8f0" fill-opacity=".85" />
+    <rect x="96" y="227" width="70" height="6" rx="2" fill="#1b3550" />
+    <rect x="300" y="220" width="50" height="6" rx="3" fill="#00eeff" />
+
+    <use href="#member" x="64" y="250" />
+    <rect x="96" y="261" width="124" height="8" rx="2" fill="#c8d8f0" fill-opacity=".85" />
+    <rect x="96" y="273" width="88" height="6" rx="2" fill="#1b3550" />
+    <rect x="300" y="266" width="33" height="6" rx="3" fill="#7c8cff" />
+
+    <use href="#member" x="64" y="296" />
+    <rect x="96" y="307" width="146" height="8" rx="2" fill="#c8d8f0" fill-opacity=".85" />
+    <rect x="96" y="319" width="62" height="6" rx="2" fill="#1b3550" />
+    <rect x="300" y="312" width="16" height="6" rx="3" fill="#ffb020" />
+
+    <use href="#member" x="64" y="342" />
+    <rect x="96" y="353" width="110" height="8" rx="2" fill="#c8d8f0" fill-opacity=".85" />
+    <rect x="96" y="365" width="78" height="6" rx="2" fill="#1b3550" />
+    <rect x="300" y="358" width="11" height="6" rx="3" fill="#4a6a88" />
+
+    <rect x="64" y="392" width="406" height="28" rx="3" fill="none" stroke="#2a4a66" stroke-dasharray="4 3" />
+    <text x="267" y="409" fill="#4a6a88" text-anchor="middle">+ ADD MEMBER</text>
+
+    <!-- divider -->
+    <path d="M494 72v348" stroke="#14304a" stroke-dasharray="4 4" />
+
+    <!-- traffic split -->
+    <text x="512" y="78" fill="#4a6a88">TRAFFIC SPLIT</text>
+    <rect x="512" y="88" width="109" height="14" fill="#00eeff" />
+    <rect x="621" y="88" width="73" height="14" fill="#7c8cff" />
+    <rect x="694" y="88" width="36" height="14" fill="#ffb020" />
+    <rect x="730" y="88" width="24" height="14" fill="#4a6a88" />
+    <g>
+        <rect x="512" y="118" width="10" height="10" fill="#00eeff" />
+        <rect x="532" y="120" width="120" height="6" rx="2" fill="#2a4a66" />
+        <rect x="512" y="138" width="10" height="10" fill="#7c8cff" />
+        <rect x="532" y="140" width="96" height="6" rx="2" fill="#2a4a66" />
+        <rect x="512" y="158" width="10" height="10" fill="#ffb020" />
+        <rect x="532" y="160" width="110" height="6" rx="2" fill="#2a4a66" />
+        <rect x="512" y="178" width="10" height="10" fill="#4a6a88" />
+        <rect x="532" y="180" width="84" height="6" rx="2" fill="#2a4a66" />
+    </g>
+
+    <!-- guardrails -->
+    <text x="512" y="222" fill="#4a6a88">GUARDRAILS</text>
+    <rect x="512" y="230" width="104" height="22" rx="11" fill="#00eeff" fill-opacity=".12" stroke="#00eeff" stroke-opacity=".6" />
+    <text x="564" y="244" fill="#00eeff" text-anchor="middle">PII MARKERS</text>
+    <rect x="624" y="230" width="76" height="22" rx="11" fill="#00eeff" fill-opacity=".12" stroke="#00eeff" stroke-opacity=".6" />
+    <text x="662" y="244" fill="#00eeff" text-anchor="middle">SECRETS</text>
+    <rect x="512" y="260" width="140" height="22" rx="11" fill="#00eeff" fill-opacity=".12" stroke="#00eeff" stroke-opacity=".6" />
+    <text x="582" y="274" fill="#00eeff" text-anchor="middle">PROMPT INJECTION</text>
+    <rect x="660" y="260" width="40" height="22" rx="11" fill="none" stroke="#2a4a66" stroke-dasharray="3 3" />
+    <text x="680" y="274" fill="#4a6a88" text-anchor="middle">+</text>
+
+    <!-- middleware bindings on this group -->
+    <text x="512" y="314" fill="#4a6a88">BINDINGS</text>
+    <g fill="#0a1724" stroke="#14304a">
+        <rect x="512" y="322" width="230" height="26" />
+        <rect x="512" y="352" width="230" height="26" />
+        <rect x="512" y="382" width="230" height="26" />
+    </g>
+    <g fill="#00eeff">
+        <circle cx="530" cy="335" r="4" />
+        <circle cx="530" cy="365" r="4" />
+        <circle cx="530" cy="395" r="4" />
+    </g>
+    <g fill="#2a4a66">
+        <rect x="550" y="332" width="110" height="6" rx="2" />
+        <rect x="550" y="362" width="84" height="6" rx="2" />
+        <rect x="550" y="392" width="132" height="6" rx="2" />
+    </g>
+
+    <!-- footer -->
+    <path d="M40 432h720" stroke="#14304a" />
+    <rect x="560" y="440" width="80" height="22" rx="3" fill="none" stroke="#2a4a66" />
+    <text x="600" y="455" fill="#c8d8f0" text-anchor="middle">CANCEL</text>
+    <rect x="650" y="440" width="94" height="22" rx="3" fill="#00eeff" />
+    <text x="697" y="455" fill="#07111c" font-weight="bold" text-anchor="middle">SAVE GROUP</text>
+    <rect x="64" y="447" width="10" height="10" rx="5" fill="#00eeff" fill-opacity=".25" stroke="#00eeff" />
+    <rect x="84" y="449" width="150" height="6" rx="2" fill="#1b3550" />
+</svg>

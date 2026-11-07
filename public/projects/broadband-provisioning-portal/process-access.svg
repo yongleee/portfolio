@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="8" letter-spacing="1">
+    <!-- Process: the broadband list's access mode comes from the user's permissions, then every row is filtered to the user's subscriber groups, all on the server. Wireframe only: no real data. -->
+    <defs>
+        <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+            <path d="M0 0l10 5-10 5z" fill="#00eeff" />
+        </marker>
+        <marker id="arr-dim" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+            <path d="M0 0l10 5-10 5z" fill="#4a6a88" />
+        </marker>
+    </defs>
+
+    <rect width="400" height="300" fill="#07111c" />
+
+    <text x="20" y="26" fill="#4a6a88" font-size="9" letter-spacing="2">MODE, THEN SCOPE</text>
+
+    <!-- request -->
+    <rect x="20" y="40" width="84" height="30" rx="4" fill="#0d2133" stroke="#16324a" />
+    <text x="62" y="58" fill="#c8d8f0" text-anchor="middle">LIST REQ</text>
+    <path d="M104 55h22" stroke="#00eeff" marker-end="url(#arr)" />
+
+    <!-- decision -->
+    <path d="M168 31l38 24-38 24-38-24z" fill="#0a1724" stroke="#00eeff" stroke-opacity=".7" />
+    <text x="168" y="58" fill="#00eeff" text-anchor="middle">PERMS?</text>
+
+    <!-- outcomes -->
+    <path d="M206 55h18V44h26" fill="none" stroke="#00eeff" marker-end="url(#arr)" />
+    <rect x="254" y="34" width="126" height="22" rx="11" fill="#00eeff" fill-opacity=".12" stroke="#00eeff" stroke-opacity=".6" />
+    <text x="317" y="48" fill="#00eeff" text-anchor="middle">BROWSE + SEARCH</text>
+
+    <path d="M224 55v24h26" fill="none" stroke="#7c8cff" marker-end="url(#arr)" />
+    <rect x="254" y="68" width="126" height="22" rx="11" fill="#7c8cff" fill-opacity=".12" stroke="#7c8cff" stroke-opacity=".6" />
+    <text x="317" y="82" fill="#7c8cff" text-anchor="middle">SEARCH ONLY, 4+</text>
+
+    <path d="M168 79v34h82" fill="none" stroke="#4a6a88" stroke-dasharray="4 3" marker-end="url(#arr-dim)" />
+    <rect x="254" y="102" width="126" height="22" rx="11" fill="#ff0066" fill-opacity=".12" stroke="#ff0066" stroke-opacity=".6" />
+    <text x="317" y="116" fill="#ff0066" text-anchor="middle">403, ITEM HIDDEN</text>
+    <text x="176" y="108" fill="#4a6a88">voip only</text>
+
+    <!-- scope chain -->
+    <rect x="20" y="146" width="360" height="1" fill="#14304a" />
+    <text x="20" y="168" fill="#4a6a88" font-size="9" letter-spacing="2">SUBSCRIBER SCOPE</text>
+    <g>
+        <rect x="20" y="180" width="76" height="30" rx="4" fill="#0d2133" stroke="#16324a" />
+        <text x="58" y="198" fill="#c8d8f0" text-anchor="middle">ROLES</text>
+        <path d="M96 195h12" stroke="#00eeff" marker-end="url(#arr)" />
+        <rect x="112" y="180" width="76" height="30" rx="4" fill="#0d2133" stroke="#16324a" />
+        <text x="150" y="198" fill="#c8d8f0" text-anchor="middle">GROUPS</text>
+        <path d="M188 195h12" stroke="#00eeff" marker-end="url(#arr)" />
+        <rect x="204" y="180" width="80" height="30" rx="4" fill="#0d2133" stroke="#16324a" />
+        <text x="244" y="198" fill="#c8d8f0" text-anchor="middle">PACKAGES</text>
+        <path d="M284 195h12" stroke="#00eeff" marker-end="url(#arr)" />
+        <rect x="300" y="180" width="80" height="30" rx="4" fill="#0d2133" stroke="#00eeff" stroke-opacity=".6" />
+        <text x="340" y="198" fill="#00eeff" text-anchor="middle">ROWS</text>
+    </g>
+
+    <!-- results -->
+    <rect x="20" y="228" width="174" height="52" rx="5" fill="#0a1724" stroke="#16324a" />
+    <text x="32" y="246" fill="#c8d8f0">IN SCOPE</text>
+    <rect x="32" y="256" width="120" height="6" rx="2" fill="#2a4a66" />
+    <rect x="32" y="266" width="90" height="6" rx="2" fill="#2a4a66" />
+    <rect x="206" y="228" width="174" height="52" rx="5" fill="#0a1724" stroke="#ff0066" stroke-opacity=".6" />
+    <text x="218" y="246" fill="#ff0066">OUT OF SCOPE</text>
+    <text x="218" y="262" fill="#4a6a88">open or act: 403</text>
+    <text x="218" y="274" fill="#4a6a88">search: no permission</text>
+</svg>

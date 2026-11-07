@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="9" letter-spacing="1">
+    <!-- Process: a chart's request through the BFF and the layered Express API to SQL Server, and the response rules applied on the way back. Wireframe only: no real tables or hosts. -->
+    <defs>
+        <pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse">
+            <circle cx="2" cy="2" r="1" fill="#14304a" />
+        </pattern>
+        <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+            <path d="M0 0L10 5 0 10z" fill="#00eeff" />
+        </marker>
+        <g id="step">
+            <rect width="110" height="34" fill="#0b1a28" stroke="#2a4a66" />
+        </g>
+    </defs>
+
+    <rect width="400" height="300" fill="#07111c" />
+    <rect width="400" height="300" fill="url(#dots)" />
+    <text x="20" y="26" fill="#4a6a88" letter-spacing="2">REQUEST // CHART TO SQL</text>
+
+    <!-- outbound row -->
+    <use href="#step" x="20" y="42" />
+    <use href="#step" x="145" y="42" />
+    <use href="#step" x="270" y="42" />
+    <!-- inbound row -->
+    <use href="#step" x="20" y="110" />
+    <use href="#step" x="145" y="110" />
+    <use href="#step" x="270" y="110" />
+    <rect x="20" y="110" width="110" height="34" fill="none" stroke="#00eeff" />
+
+    <g fill="#c8d8f0" text-anchor="middle">
+        <text x="75" y="63">CHART HOOK</text>
+        <text x="200" y="63">BFF PROXY</text>
+        <text x="325" y="63">ROUTE</text>
+        <text x="325" y="131">CONTROLLER</text>
+        <text x="200" y="131">SERVICE</text>
+    </g>
+    <text x="75" y="131" fill="#00eeff" text-anchor="middle">SQL VIEW</text>
+
+    <g fill="none" stroke="#00eeff" stroke-width="1.5" marker-end="url(#arrow)">
+        <path d="M130 59h13" />
+        <path d="M255 59h13" />
+        <path d="M325 76v32" />
+        <path d="M270 127h-13" />
+        <path d="M145 127h-13" />
+        <path d="M75 144v34" />
+    </g>
+    <text x="333" y="96" fill="#4a6a88">POST</text>
+    <text x="83" y="166" fill="#4a6a88">ROWS</text>
+
+    <!-- response rules -->
+    <rect x="20" y="180" width="360" height="104" fill="#0a1724" stroke="#14304a" />
+    <rect x="20" y="180" width="360" height="18" fill="#00eeff" />
+    <text x="30" y="193" fill="#07111c" font-weight="bold">RESPONSE // RULES</text>
+    <g fill="none" stroke="#00eeff" stroke-width="1.5">
+        <path d="M32 214l3 3 6-6" />
+        <path d="M32 234l3 3 6-6" />
+        <path d="M32 254l3 3 6-6" />
+        <path d="M32 274l3 3 6-6" />
+    </g>
+    <g fill="#c8d8f0">
+        <text x="50" y="218">ORDER BY YEAR, QUARTER</text>
+        <text x="50" y="238">SUM ACROSS ROWS, NOT AVG</text>
+        <text x="50" y="258">NUMBERS, NOT STRINGS</text>
+        <text x="50" y="278">CONSISTENT ROUTES + SHAPES</text>
+    </g>
+</svg>

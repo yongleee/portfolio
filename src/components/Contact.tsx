@@ -1,31 +1,48 @@
 import { SOCIALS, site } from '@/config'
 import { CyberButton } from './CyberButton'
+import { Panel } from './Panel'
 import { Section } from './Section'
 
 export function Contact() {
     return (
-        <Section id="contact" label="// 04. CONTACT" className="pb-30 text-center md:pb-30">
-            <h2 className="mb-3.5 text-[clamp(44px,9vw,110px)] leading-none font-bold tracking-[-1px] text-transparent transition-[-webkit-text-stroke-color,text-shadow] duration-300 [-webkit-text-stroke:1px_var(--muted-foreground)] hover:[-webkit-text-stroke-color:var(--primary)] hover:text-shadow-[0_0_80px_color-mix(in_srgb,var(--primary)_14%,transparent)]">
-                LET'S BUILD
-            </h2>
-            <p className="mb-9.5 font-mono text-xs tracking-[3px] text-muted-foreground">
-                READY TO COLLABORATE? INITIATE TRANSMISSION.
-            </p>
-            <CyberButton asChild>
-                <a href={`mailto:${site.email}`}>SEND MESSAGE</a>
-            </CyberButton>
-            <ul className="mt-9.5 flex flex-wrap justify-center gap-x-9 gap-y-3">
-                {SOCIALS.map(([label, href]) => (
-                    <li key={label}>
-                        <a
-                            href={href}
-                            className="font-mono text-[11px] tracking-[3px] text-muted-foreground transition-colors hover:text-primary hover:text-shadow-glow-sm"
-                        >
-                            {label}
-                        </a>
-                    </li>
-                ))}
-            </ul>
+        <Section id="contact" idx="04" title="CONTACT">
+            <div className="grid items-center gap-10 md:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)]">
+                <div>
+                    <p className="skew-x-[-8deg] text-[clamp(60px,10vw,140px)] leading-[0.82] font-bold tracking-[-1px] text-hot text-shadow-glow-hot">
+                        LET'S
+                        <span className="block text-transparent text-shadow-none [-webkit-text-stroke:1.5px_var(--primary)]">
+                            BUILD
+                        </span>
+                    </p>
+                    <p className="mt-6 font-mono text-xs tracking-[3px] text-muted-foreground">
+                        Deets to reach me.
+                    </p>
+                </div>
+                <Panel label="TRANSMIT" code="SECURE">
+                    <div className="p-5.5">
+                        <CyberButton asChild className="w-full">
+                            <a href={`mailto:${site.email}`}>SEND MESSAGE</a>
+                        </CyberButton>
+                        <ul className="mt-4.5">
+                            {SOCIALS.map(([label, href]) => (
+                                <li key={label}>
+                                    <a
+                                        href={href}
+                                        {...(href.endsWith('.pdf') && {
+                                            target: '_blank',
+                                            rel: 'noopener noreferrer',
+                                        })}
+                                        className="flex items-center justify-between border-b px-1 py-3 text-[17px] font-semibold tracking-[2px] transition-[color,padding] duration-150 hover:pl-3 hover:text-primary focus-visible:pl-3 focus-visible:text-primary"
+                                    >
+                                        {label}
+                                        <i className="font-mono text-xs text-hot not-italic">→</i>
+                                    </a>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                </Panel>
+            </div>
         </Section>
     )
 }

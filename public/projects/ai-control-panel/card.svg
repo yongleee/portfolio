@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 352" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="9" letter-spacing="1.5">
+    <!-- Work-log card: wide crop of the usage dashboard (KPI tiles, spend by model, top keys). Wireframe only: no real data. -->
+    <defs>
+        <!-- one stacked bar, 100 units tall from the baseline; scaled per bar -->
+        <g id="sbar">
+            <rect y="-50" width="17" height="50" fill="#00eeff" />
+            <rect y="-80" width="17" height="30" fill="#7c8cff" />
+            <rect y="-92" width="17" height="12" fill="#ffb020" />
+            <rect y="-100" width="17" height="8" fill="#4a6a88" />
+        </g>
+        <g id="kpi">
+            <rect width="188" height="62" rx="4" fill="#0b1a28" stroke="#16324a" />
+            <rect x="14" y="32" width="84" height="14" rx="2" fill="#c8d8f0" fill-opacity=".85" />
+        </g>
+        <g id="toprow">
+            <rect width="140" height="7" rx="2" fill="#2a4a66" />
+            <rect x="180" width="150" height="7" rx="3" fill="#14304a" />
+        </g>
+    </defs>
+
+    <rect width="1200" height="352" fill="#07111c" />
+
+    <!-- sidebar -->
+    <rect width="150" height="352" fill="#0a1724" />
+    <rect x="150" width="1" height="352" fill="#14304a" />
+    <rect x="20" y="16" width="22" height="22" rx="4" fill="#00eeff" />
+    <rect x="52" y="23" width="70" height="8" rx="2" fill="#c8d8f0" fill-opacity=".85" />
+    <g fill="#1b3550">
+        <rect x="20" y="70" width="12" height="12" rx="2" /><rect x="42" y="72" width="64" height="8" rx="2" />
+        <rect x="20" y="102" width="12" height="12" rx="2" /><rect x="42" y="104" width="78" height="8" rx="2" />
+        <rect x="20" y="134" width="12" height="12" rx="2" /><rect x="42" y="136" width="56" height="8" rx="2" />
+        <rect x="20" y="166" width="12" height="12" rx="2" /><rect x="42" y="168" width="60" height="8" rx="2" />
+        <rect x="20" y="230" width="12" height="12" rx="2" /><rect x="42" y="232" width="58" height="8" rx="2" />
+    </g>
+    <rect x="10" y="190" width="130" height="28" rx="4" fill="#00eeff" fill-opacity=".12" />
+    <rect x="20" y="198" width="12" height="12" rx="2" fill="#00eeff" />
+    <rect x="42" y="200" width="66" height="8" rx="2" fill="#00eeff" />
+
+    <!-- top bar -->
+    <rect x="151" width="1049" height="44" fill="#07111c" />
+    <rect x="151" y="44" width="1049" height="1" fill="#14304a" />
+    <rect x="176" y="18" width="64" height="8" rx="2" fill="#2a4a66" />
+    <text x="250" y="25" fill="#4a6a88">/</text>
+    <rect x="264" y="18" width="52" height="8" rx="2" fill="#c8d8f0" fill-opacity=".85" />
+    <rect x="964" y="11" width="212" height="22" rx="4" fill="#0b1a28" stroke="#2a4a66" />
+    <rect x="976" y="16" width="12" height="12" rx="2" fill="none" stroke="#00eeff" />
+    <path d="M976 20h12" stroke="#00eeff" />
+    <rect x="998" y="18" width="150" height="8" rx="2" fill="#2a4a66" />
+
+    <!-- KPI tiles -->
+    <use href="#kpi" x="176" y="60" />
+    <use href="#kpi" x="379" y="60" />
+    <use href="#kpi" x="582" y="60" />
+    <use href="#kpi" x="785" y="60" />
+    <use href="#kpi" x="988" y="60" />
+    <g fill="#4a6a88">
+        <text x="190" y="80">TOTAL SPEND</text>
+        <text x="393" y="80">REQUESTS</text>
+        <text x="596" y="80">TOKENS</text>
+        <text x="799" y="80">TOK / REQ</text>
+        <text x="1002" y="80">$ / 1M TOK</text>
+    </g>
+    <g fill="none" stroke="#00eeff" stroke-width="1.5">
+        <path d="M290 108l12-6 12 3 12-9 12 4 12-10 12 2" />
+        <path d="M493 106l12-2 12-7 12 5 12-6 12-3 12-5" />
+        <path d="M696 108l12-8 12 4 12-3 12-7 12 2 12-6" />
+        <path d="M899 100l12 4 12-2 12 3 12-4 12 1 12-2" />
+        <path d="M1102 98l12 3 12-1 12 4 12 2 12-3 12 4" />
+    </g>
+
+    <!-- spend by model -->
+    <rect x="176" y="138" width="612" height="202" rx="4" fill="#0b1a28" stroke="#16324a" />
+    <text x="192" y="160" fill="#4a6a88">SPEND BY MODEL</text>
+    <g fill="#4a6a88">
+        <rect x="640" y="153" width="8" height="8" fill="#00eeff" /><rect x="652" y="155" width="22" height="4" rx="2" />
+        <rect x="682" y="153" width="8" height="8" fill="#7c8cff" /><rect x="694" y="155" width="22" height="4" rx="2" />
+        <rect x="724" y="153" width="8" height="8" fill="#ffb020" /><rect x="736" y="155" width="22" height="4" rx="2" />
+    </g>
+    <g stroke="#14304a" stroke-dasharray="3 4">
+        <path d="M192 196H772" />
+        <path d="M192 236H772" />
+        <path d="M192 276H772" />
+    </g>
+    <path d="M192 316H772" stroke="#2a4a66" />
+    <use href="#sbar" transform="translate(200 316) scale(1 .44)" />
+    <use href="#sbar" transform="translate(229 316) scale(1 .52)" />
+    <use href="#sbar" transform="translate(258 316) scale(1 .40)" />
+    <use href="#sbar" transform="translate(287 316) scale(1 .61)" />
+    <use href="#sbar" transform="translate(316 316) scale(1 .58)" />
+    <use href="#sbar" transform="translate(345 316) scale(1 .72)" />
+    <use href="#sbar" transform="translate(374 316) scale(1 .66)" />
+    <use href="#sbar" transform="translate(403 316) scale(1 .50)" />
+    <use href="#sbar" transform="translate(432 316) scale(1 .80)" />
+    <use href="#sbar" transform="translate(461 316) scale(1 .88)" />
+    <use href="#sbar" transform="translate(490 316) scale(1 .76)" />
+    <use href="#sbar" transform="translate(519 316) scale(1 .64)" />
+    <use href="#sbar" transform="translate(548 316) scale(1 .94)" />
+    <use href="#sbar" transform="translate(577 316) scale(1 .86)" />
+    <use href="#sbar" transform="translate(606 316) scale(1 .70)" />
+    <use href="#sbar" transform="translate(635 316) scale(1 .82)" />
+    <use href="#sbar" transform="translate(664 316) scale(1 1)" />
+    <use href="#sbar" transform="translate(693 316) scale(1 .92)" />
+    <use href="#sbar" transform="translate(722 316) scale(1 1.04)" />
+    <use href="#sbar" transform="translate(751 316) scale(1 1.12)" />
+
+    <!-- top API keys -->
+    <rect x="804" y="138" width="372" height="202" rx="4" fill="#0b1a28" stroke="#16324a" />
+    <text x="820" y="160" fill="#4a6a88">TOP API KEYS</text>
+    <use href="#toprow" x="820" y="186" />
+    <use href="#toprow" x="820" y="216" />
+    <use href="#toprow" x="820" y="246" />
+    <use href="#toprow" x="820" y="276" />
+    <use href="#toprow" x="820" y="306" />
+    <g>
+        <rect x="1000" y="186" width="150" height="7" rx="3" fill="#00eeff" />
+        <rect x="1000" y="216" width="112" height="7" rx="3" fill="#00eeff" fill-opacity=".8" />
+        <rect x="1000" y="246" width="84" height="7" rx="3" fill="#00eeff" fill-opacity=".65" />
+        <rect x="1000" y="276" width="58" height="7" rx="3" fill="#00eeff" fill-opacity=".5" />
+        <rect x="1000" y="306" width="30" height="7" rx="3" fill="#00eeff" fill-opacity=".35" />
+    </g>
+</svg>

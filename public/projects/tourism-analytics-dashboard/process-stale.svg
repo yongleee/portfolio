@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="8" letter-spacing="1">
+    <!-- Process: the chart builder tags each fetch with a request ID. Responses that come back after a newer edit are dropped, and only the latest one renders. Diagram only. -->
+    <defs>
+        <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+            <path d="M0 0L10 5 0 10z" fill="#00eeff" />
+        </marker>
+        <marker id="arrh" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+            <path d="M0 0L10 5 0 10z" fill="#ff0066" />
+        </marker>
+    </defs>
+
+    <rect width="400" height="300" fill="#07111c" />
+    <rect x="10" y="10" width="380" height="280" rx="4" fill="#0b1a28" stroke="#16324a" />
+    <path d="M14 10h372a4 4 0 0 1 4 4v14H10V14a4 4 0 0 1 4-4z" fill="#00eeff" />
+    <text x="20" y="23" fill="#07111c" font-weight="bold" font-size="9" letter-spacing="1.5">BUILDER // LATEST REQUEST WINS</text>
+
+    <!-- edits -->
+    <g fill="#4a6a88" text-anchor="middle">
+        <text x="70" y="50">EDIT</text>
+        <text x="130" y="50">EDIT</text>
+        <text x="190" y="50">EDIT</text>
+    </g>
+    <path d="M70 56v114M130 56v114M190 56v114" stroke="#14304a" stroke-dasharray="2 3" />
+
+    <!-- lanes -->
+    <g fill="#c8d8f0">
+        <text x="22" y="83">#1</text>
+        <text x="22" y="123">#2</text>
+        <text x="22" y="163">#3</text>
+    </g>
+    <circle cx="70" cy="80" r="4" fill="#07111c" stroke="#4a6a88" stroke-width="1.5" />
+    <path d="M74 80h228" stroke="#ff0066" stroke-opacity=".7" stroke-dasharray="4 3" marker-end="url(#arrh)" />
+    <circle cx="130" cy="120" r="4" fill="#07111c" stroke="#4a6a88" stroke-width="1.5" />
+    <path d="M134 120h88" stroke="#ff0066" stroke-opacity=".7" stroke-dasharray="4 3" marker-end="url(#arrh)" />
+    <circle cx="190" cy="160" r="4" fill="#07111c" stroke="#00eeff" stroke-width="1.5" />
+    <path d="M194 160h72" stroke="#00eeff" stroke-width="1.5" marker-end="url(#arr)" />
+
+    <!-- verdicts -->
+    <g font-size="8" text-anchor="middle">
+        <rect x="314" y="72" width="62" height="16" rx="8" fill="#ff0066" fill-opacity=".12" stroke="#ff0066" stroke-opacity=".6" />
+        <text x="345" y="83" fill="#ff0066">DROP</text>
+        <rect x="234" y="112" width="62" height="16" rx="8" fill="#ff0066" fill-opacity=".12" stroke="#ff0066" stroke-opacity=".6" />
+        <text x="265" y="123" fill="#ff0066">DROP</text>
+        <rect x="278" y="152" width="70" height="16" rx="8" fill="#00eeff" fill-opacity=".14" stroke="#00eeff" />
+        <text x="313" y="163" fill="#00eeff">RENDER</text>
+    </g>
+
+    <!-- chart that only sees #3 -->
+    <path d="M313 168v32" stroke="#00eeff" stroke-width="1.5" marker-end="url(#arr)" />
+    <rect x="20" y="202" width="360" height="72" rx="3" fill="#0a1724" stroke="#14304a" />
+    <text x="32" y="220" fill="#4a6a88">CURRENT ID</text>
+    <text x="32" y="246" fill="#00eeff" font-size="20" letter-spacing="2">3</text>
+    <path d="M190 262h176" stroke="#2a4a66" />
+    <g fill="#00eeff">
+        <rect x="198" y="236" width="20" height="26" />
+        <rect x="228" y="226" width="20" height="36" />
+        <rect x="258" y="242" width="20" height="20" />
+        <rect x="288" y="218" width="20" height="44" />
+        <rect x="318" y="230" width="20" height="32" />
+    </g>
+</svg>

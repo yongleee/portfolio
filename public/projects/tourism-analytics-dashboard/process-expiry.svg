@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="8" letter-spacing="1">
+    <!-- Process: session cookies now expire with whichever token dies first. Before, they followed the access token and outlived a shorter ID token, so calls failed with a silent 401; now the next request goes back to sign-in. Diagram only. -->
+    <defs>
+        <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+            <path d="M0 0L10 5 0 10z" fill="#00eeff" />
+        </marker>
+        <pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+            <path d="M0 0v6" stroke="#ff0066" stroke-width="2" stroke-opacity=".6" />
+        </pattern>
+    </defs>
+
+    <rect width="400" height="300" fill="#07111c" />
+    <rect x="10" y="10" width="380" height="280" rx="4" fill="#0b1a28" stroke="#16324a" />
+    <path d="M14 10h372a4 4 0 0 1 4 4v14H10V14a4 4 0 0 1 4-4z" fill="#00eeff" />
+    <text x="20" y="23" fill="#07111c" font-weight="bold" font-size="9" letter-spacing="1.5">SESSION // COOKIE LIFETIME</text>
+
+    <!-- expiry marker -->
+    <path d="M250 50v186" stroke="#c8d8f0" stroke-opacity=".5" stroke-dasharray="3 3" />
+
+    <!-- access token -->
+    <text x="40" y="58" fill="#4a6a88">ACCESS TOKEN</text>
+    <rect x="40" y="64" width="290" height="10" rx="2" fill="#2a4a66" />
+    <!-- id token -->
+    <text x="40" y="98" fill="#4a6a88">ID TOKEN</text>
+    <rect x="40" y="104" width="210" height="10" rx="2" fill="#7c8cff" fill-opacity=".8" />
+    <!-- before -->
+    <text x="40" y="138" fill="#4a6a88">COOKIES · BEFORE</text>
+    <rect x="40" y="144" width="210" height="10" rx="2" fill="#2a4a66" />
+    <rect x="250" y="144" width="80" height="10" fill="url(#hatch)" stroke="#ff0066" stroke-opacity=".7" />
+    <text x="290" y="138" fill="#ff0066" text-anchor="middle">SILENT 401</text>
+    <!-- now -->
+    <text x="40" y="178" fill="#c8d8f0">COOKIES · NOW</text>
+    <rect x="40" y="184" width="210" height="10" rx="2" fill="#00eeff" />
+    <path d="M252 189h20" stroke="#00eeff" stroke-width="1.5" marker-end="url(#arr)" />
+    <rect x="274" y="179" width="96" height="20" rx="3" fill="#00eeff" fill-opacity=".14" stroke="#00eeff" />
+    <text x="322" y="192" fill="#00eeff" text-anchor="middle">SIGN IN</text>
+
+    <!-- time axis -->
+    <path d="M40 236h330" stroke="#2a4a66" />
+    <g stroke="#2a4a66">
+        <path d="M40 232v8M330 232v8" />
+    </g>
+    <text x="40" y="252" fill="#4a6a88">LOGIN</text>
+    <text x="250" y="252" fill="#c8d8f0" text-anchor="middle">ID EXP</text>
+    <text x="330" y="252" fill="#4a6a88" text-anchor="middle">ACCESS EXP</text>
+    <circle cx="250" cy="236" r="3" fill="#07111c" stroke="#c8d8f0" />
+
+    <text x="40" y="276" fill="#00eeff">MAXAGE = MIN(ACCESS EXP, ID EXP)</text>
+</svg>

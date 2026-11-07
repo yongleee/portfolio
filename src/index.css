@@ -4,6 +4,7 @@
 @import "@fontsource/share-tech-mono";
 @import "@fontsource/rajdhani/400.css";
 @import "@fontsource/rajdhani/500.css";
+@import "@fontsource/rajdhani/600.css";
 @import "@fontsource/rajdhani/700.css";
 
 @custom-variant dark (&:is(.dark *));
@@ -13,7 +14,6 @@
     --font-sans: "Rajdhani", sans-serif;
     --font-mono: "Share Tech Mono", monospace;
     --color-hot: var(--hot);
-    --color-online: var(--online);
     --color-sidebar-ring: var(--sidebar-ring);
     --color-sidebar-border: var(--sidebar-border);
     --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -54,12 +54,13 @@
     --radius-4xl: calc(var(--radius) * 2.6);
 }
 
-/* Cyberpunk "noir" palette. Accent-derived tints use color-mix so changing
+/* Cyberpunk "noir" palette: --hot (red) frames the chrome, --primary (cyan)
+   marks what's active or live. Accent-derived tints use color-mix so changing
    --primary / --hot at runtime (see applyTheme in src/config.ts) cascades. */
 :root {
-    --background: #050a14;
-    --foreground: #c8d8f0;
-    --card: #091622;
+    --background: #07080c;
+    --foreground: #dfe3e8;
+    --card: #0d1016;
     --card-foreground: var(--foreground);
     --popover: #0d1f30;
     --popover-foreground: var(--foreground);
@@ -68,15 +69,14 @@
     --secondary: #0d1f30;
     --secondary-foreground: var(--foreground);
     --muted: #0d1f30;
-    --muted-foreground: color-mix(in srgb, var(--foreground) 38%, transparent);
+    --muted-foreground: color-mix(in srgb, var(--foreground) 55%, transparent);
     --accent: color-mix(in srgb, var(--primary) 6%, transparent);
     --accent-foreground: var(--primary);
     --destructive: #ff3355;
-    --border: color-mix(in srgb, var(--primary) 14%, transparent);
+    --border: color-mix(in srgb, var(--hot) 30%, transparent);
     --input: color-mix(in srgb, var(--primary) 22%, transparent);
     --ring: var(--primary);
-    --hot: #ff0066;
-    --online: #00ff88;
+    --hot: #ff2a4a;
     --chart-1: oklch(0.87 0 0);
     --chart-2: oklch(0.556 0 0);
     --chart-3: oklch(0.439 0 0);
@@ -103,14 +103,18 @@
     body {
         @apply overflow-x-hidden bg-background text-foreground;
     }
+    ::selection {
+        background: var(--hot);
+        color: var(--background);
+    }
     ::-webkit-scrollbar {
-        width: 3px;
+        width: 4px;
     }
     ::-webkit-scrollbar-track {
         background: var(--background);
     }
     ::-webkit-scrollbar-thumb {
-        background: var(--primary);
+        background: var(--hot);
     }
 }
 
@@ -121,9 +125,34 @@
     --text-shadow-glow:
         0 0 12px color-mix(in srgb, var(--primary) 50%, transparent),
         0 0 32px color-mix(in srgb, var(--primary) 18%, transparent);
+    --text-shadow-glow-hot: 0 0 14px color-mix(in srgb, var(--hot) 55%, transparent);
+    --shadow-glow: 0 0 12px color-mix(in srgb, var(--primary) 50%, transparent);
+    --shadow-glow-hot: 0 0 14px color-mix(in srgb, var(--hot) 55%, transparent);
 
     --animate-blink: blink 1s infinite;
     --animate-blink-slow: blink 2.4s infinite;
+    --animate-flick: flick 8s infinite;
+
+    /* Brief neon-tube dips in brightness. */
+    @keyframes flick {
+        0%,
+        93%,
+        100% {
+            opacity: 1;
+        }
+        94% {
+            opacity: 0.35;
+        }
+        95% {
+            opacity: 1;
+        }
+        97% {
+            opacity: 0.6;
+        }
+        98% {
+            opacity: 1;
+        }
+    }
 
     @keyframes blink {
         0%,
@@ -144,13 +173,13 @@
         86% {
             opacity: 1;
             clip-path: inset(8% 0 72% 0);
-            transform: translate(-5px, 1px);
+            transform: translate(-6px, 1px);
         }
         87%,
         90% {
             opacity: 1;
             clip-path: inset(55% 0 12% 0);
-            transform: translate(5px, -1px);
+            transform: translate(6px, -1px);
         }
         91% {
             opacity: 0;
@@ -166,13 +195,13 @@
         87% {
             opacity: 1;
             clip-path: inset(38% 0 48% 0);
-            transform: translate(4px, 2px);
+            transform: translate(5px, 2px);
         }
         88%,
         92% {
             opacity: 1;
             clip-path: inset(70% 0 8% 0);
-            transform: translate(-3px, -2px);
+            transform: translate(-4px, -2px);
         }
         93% {
             opacity: 0;
@@ -222,7 +251,16 @@
 @utility bg-hatch {
     background: repeating-linear-gradient(
         45deg,
-        color-mix(in srgb, var(--primary) 2.5%, transparent) 0 10px,
-        color-mix(in srgb, var(--primary) 5%, transparent) 10px 20px
+        color-mix(in srgb, var(--hot) 5%, transparent) 0 10px,
+        color-mix(in srgb, var(--hot) 10%, transparent) 10px 20px
+    );
+}
+
+/* Denser hatch for the case-file image slots. */
+@utility bg-hatch-strong {
+    background: repeating-linear-gradient(
+        45deg,
+        color-mix(in srgb, var(--primary) 4%, transparent) 0 10px,
+        color-mix(in srgb, var(--primary) 9%, transparent) 10px 20px
     );
 }

@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="9" letter-spacing="1" text-anchor="middle">
+    <!-- Sketch: the Hugging Face download wizard and the job lifecycle it starts. -->
+    <defs>
+        <marker id="arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto">
+            <path d="M0 0l8 4-8 4z" fill="#00eeff" />
+        </marker>
+        <marker id="arrow-hot" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto">
+            <path d="M0 0l8 4-8 4z" fill="#ff0066" />
+        </marker>
+        <g id="step">
+            <circle r="11" fill="#0d2133" stroke="#00eeff" stroke-opacity=".6" />
+        </g>
+    </defs>
+
+    <rect width="400" height="300" fill="#07111c" />
+    <text x="24" y="36" font-size="10" letter-spacing="2" fill="#00eeff" text-anchor="start">03 // MODEL DOWNLOAD</text>
+    <rect x="24" y="44" width="352" height="1" fill="#16324a" />
+
+    <!-- wizard steps -->
+    <path d="M44 70H356" stroke="#2a4a66" stroke-width="1.5" />
+    <use href="#step" x="44" y="70" />
+    <use href="#step" x="122" y="70" />
+    <use href="#step" x="200" y="70" />
+    <use href="#step" x="278" y="70" />
+    <circle cx="356" cy="70" r="11" fill="#00eeff" />
+    <g fill="#00eeff">
+        <text x="44" y="73">1</text>
+        <text x="122" y="73">2</text>
+        <text x="200" y="73">3</text>
+        <text x="278" y="73">4</text>
+    </g>
+    <text x="356" y="73" fill="#07111c" font-weight="bold">5</text>
+    <g fill="#c8d8f0">
+        <text x="44" y="98">TOKEN</text>
+        <text x="122" y="98">SEARCH</text>
+        <text x="200" y="98">FILES</text>
+        <text x="278" y="98">STORAGE</text>
+        <text x="356" y="98">START</text>
+    </g>
+
+    <!-- job lifecycle -->
+    <g fill="#0b1a28" stroke="#2a4a66">
+        <rect x="20" y="124" width="78" height="26" />
+        <rect x="290" y="124" width="90" height="26" />
+    </g>
+    <rect x="144" y="124" width="90" height="26" fill="#0d2133" stroke="#00eeff" />
+    <rect x="290" y="160" width="90" height="22" rx="11" fill="#ff0066" fill-opacity=".12" stroke="#ff0066" stroke-opacity=".6" />
+    <text x="59" y="140" fill="#c8d8f0">PENDING</text>
+    <text x="189" y="137" fill="#c8d8f0">DOWNLOADING</text>
+    <rect x="152" y="142" width="74" height="3" fill="#14304a" />
+    <rect x="152" y="142" width="46" height="3" fill="#00eeff" />
+    <text x="335" y="140" fill="#c8d8f0">COMPLETED</text>
+    <text x="335" y="174" fill="#ff0066">FAILED</text>
+
+    <g fill="none" stroke="#00eeff" stroke-width="1.5" marker-end="url(#arrow)">
+        <path d="M98 137h42" />
+        <path d="M234 137h52" />
+    </g>
+    <g fill="none" stroke="#ff0066" stroke-width="1.5" stroke-dasharray="3 2">
+        <path d="M234 146H262V171H286" marker-end="url(#arrow-hot)" />
+        <path d="M335 182V192H59V154" marker-end="url(#arrow-hot)" />
+    </g>
+    <text x="197" y="188" fill="#ff0066">RETRY</text>
+
+    <!-- notes -->
+    <rect x="24" y="206" width="352" height="1" fill="#16324a" />
+    <g fill="#c8d8f0" text-anchor="start">
+        <text x="30" y="230"><tspan fill="#00eeff">›</tspan> TOKEN ONLY NEEDED FOR GATED MODELS</text>
+        <text x="30" y="254"><tspan fill="#00eeff">›</tspan> DISK SPACE CHECKED BEFORE IT STARTS</text>
+        <text x="30" y="278"><tspan fill="#00eeff">›</tspan> JOBS CAN BE CANCELLED OR RETRIED</text>
+    </g>
+</svg>

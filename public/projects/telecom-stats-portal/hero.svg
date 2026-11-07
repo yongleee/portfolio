@@ -1,0 +1,191 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 700" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="10" letter-spacing="1.5">
+    <!-- Main visual: the public statistics portal in a desktop browser (sector dashboard with map, trend and bar charts) plus the responsive phone layout. Wireframe only: no real data or geography. -->
+    <defs>
+        <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+            <path d="M32 0H0V32" fill="none" stroke="#0d2133" />
+        </pattern>
+        <radialGradient id="glow" cx=".5" cy=".5" r=".5">
+            <stop offset="0" stop-color="#00eeff" stop-opacity=".1" />
+            <stop offset="1" stop-color="#00eeff" stop-opacity="0" />
+        </radialGradient>
+        <filter id="lift" x="-10%" y="-10%" width="120%" height="130%">
+            <feDropShadow dy="18" stdDeviation="22" flood-color="#000" flood-opacity=".55" />
+        </filter>
+        <clipPath id="screen">
+            <rect x="1296" y="150" width="212" height="460" rx="14" />
+        </clipPath>
+        <path id="hex" d="M0-20L17.3-10V10L0 20-17.3 10V-10z" />
+        <g id="hexmap" fill="#00eeff" stroke="#0a1724" stroke-width="2">
+            <use href="#hex" x="34.6" y="0" fill-opacity=".25" />
+            <use href="#hex" x="69.2" y="0" fill-opacity=".45" />
+            <use href="#hex" x="103.8" y="0" fill-opacity=".3" />
+            <use href="#hex" x="17.3" y="30" fill-opacity=".2" />
+            <use href="#hex" x="51.9" y="30" fill-opacity=".55" />
+            <use href="#hex" x="86.5" y="30" fill-opacity=".8" />
+            <use href="#hex" x="121.1" y="30" fill-opacity=".4" />
+            <use href="#hex" x="155.7" y="30" fill-opacity=".15" />
+            <use href="#hex" x="0" y="60" fill-opacity=".35" />
+            <use href="#hex" x="34.6" y="60" fill-opacity=".7" />
+            <use href="#hex" x="69.2" y="60" fill-opacity=".95" />
+            <use href="#hex" x="103.8" y="60" fill-opacity=".6" />
+            <use href="#hex" x="138.4" y="60" fill-opacity=".3" />
+            <use href="#hex" x="51.9" y="90" fill-opacity=".5" />
+            <use href="#hex" x="86.5" y="90" fill-opacity=".4" />
+            <use href="#hex" x="121.1" y="90" fill-opacity=".25" />
+            <use href="#hex" x="69.2" y="120" fill-opacity=".3" />
+            <use href="#hex" x="103.8" y="120" fill-opacity=".15" />
+        </g>
+    </defs>
+
+    <rect width="1600" height="700" fill="#07111c" />
+    <rect width="1600" height="700" fill="url(#grid)" />
+    <ellipse cx="760" cy="360" rx="720" ry="320" fill="url(#glow)" />
+
+    <!-- browser window -->
+    <rect x="80" y="60" width="1160" height="580" rx="8" fill="#0b1a28" stroke="#16324a" filter="url(#lift)" />
+    <path d="M88 60h1144a8 8 0 0 1 8 8v24H80V68a8 8 0 0 1 8-8z" fill="#0d2133" />
+    <circle cx="100" cy="76" r="4" fill="#ff0066" fill-opacity=".7" />
+    <circle cx="114" cy="76" r="4" fill="#ffb020" fill-opacity=".7" />
+    <circle cx="128" cy="76" r="4" fill="#2a4a66" />
+    <rect x="460" y="68" width="400" height="16" rx="8" fill="#07111c" stroke="#16324a" />
+
+    <!-- site header -->
+    <rect x="80" y="92" width="1160" height="48" fill="#0a1724" />
+    <path d="M80 140h1160" stroke="#14304a" />
+    <rect x="104" y="106" width="22" height="22" rx="4" fill="none" stroke="#2a4a66" />
+    <rect x="136" y="110" width="110" height="8" rx="2" fill="#c8d8f0" fill-opacity=".85" />
+    <rect x="136" y="122" width="72" height="5" rx="2" fill="#1b3550" />
+    <g fill="#4a6a88">
+        <text x="640" y="121">DASHBOARDS</text>
+        <text x="772" y="121">CATALOGUE</text>
+        <text x="894" y="121">QUERY</text>
+        <text x="978" y="121">REPORTS</text>
+    </g>
+    <path d="M640 130h84" stroke="#00eeff" stroke-width="2" />
+    <rect x="1124" y="104" width="92" height="24" rx="3" fill="none" stroke="#00eeff" />
+    <text x="1170" y="120" fill="#00eeff" text-anchor="middle">LOGIN</text>
+
+    <!-- sidebar -->
+    <rect x="80" y="140" width="190" height="500" fill="#0a1724" />
+    <path d="M270 140v500" stroke="#14304a" />
+    <text x="100" y="170" fill="#4a6a88">COMMUNICATIONS</text>
+    <g fill="#1b3550">
+        <rect x="108" y="188" width="104" height="6" rx="2" />
+        <rect x="108" y="244" width="96" height="6" rx="2" />
+        <rect x="108" y="268" width="84" height="6" rx="2" />
+    </g>
+    <rect x="96" y="208" width="160" height="24" rx="2" fill="#00eeff" fill-opacity=".12" />
+    <rect x="96" y="208" width="3" height="24" fill="#00eeff" />
+    <rect x="112" y="217" width="92" height="6" rx="2" fill="#00eeff" />
+    <text x="100" y="314" fill="#4a6a88">POSTAL</text>
+    <g fill="#1b3550">
+        <rect x="108" y="332" width="70" height="6" rx="2" />
+        <rect x="108" y="356" width="88" height="6" rx="2" />
+    </g>
+
+    <!-- page title + sector tabs -->
+    <rect x="300" y="164" width="260" height="14" rx="2" fill="#c8d8f0" fill-opacity=".85" />
+    <rect x="300" y="186" width="420" height="6" rx="2" fill="#1b3550" />
+    <rect x="300" y="198" width="360" height="6" rx="2" fill="#1b3550" />
+    <rect x="980" y="164" width="96" height="26" rx="3" fill="#07111c" stroke="#2a4a66" />
+    <rect x="992" y="174" width="50" height="6" rx="2" fill="#c8d8f0" fill-opacity=".7" />
+    <path d="M1058 174l5 5 5-5" fill="none" stroke="#4a6a88" stroke-width="1.5" />
+    <rect x="1088" y="164" width="128" height="26" rx="3" fill="none" stroke="#2a4a66" />
+    <text x="1152" y="181" fill="#c8d8f0" text-anchor="middle">PRINT</text>
+
+    <!-- KPI tiles -->
+    <g fill="#0a1724" stroke="#14304a">
+        <rect x="300" y="222" width="220" height="66" />
+        <rect x="532" y="222" width="220" height="66" />
+        <rect x="764" y="222" width="220" height="66" />
+        <rect x="996" y="222" width="220" height="66" />
+    </g>
+    <g fill="#1b3550">
+        <rect x="316" y="236" width="80" height="6" rx="2" />
+        <rect x="548" y="236" width="96" height="6" rx="2" />
+        <rect x="780" y="236" width="70" height="6" rx="2" />
+        <rect x="1012" y="236" width="88" height="6" rx="2" />
+    </g>
+    <g fill="#c8d8f0" fill-opacity=".85">
+        <rect x="316" y="254" width="104" height="16" rx="2" />
+        <rect x="548" y="254" width="86" height="16" rx="2" />
+        <rect x="780" y="254" width="118" height="16" rx="2" />
+        <rect x="1012" y="254" width="94" height="16" rx="2" />
+    </g>
+    <g fill="#00eeff">
+        <rect x="474" y="258" width="30" height="8" rx="2" />
+        <rect x="706" y="258" width="30" height="8" rx="2" />
+        <rect x="938" y="258" width="30" height="8" rx="2" />
+    </g>
+    <rect x="1170" y="258" width="30" height="8" rx="2" fill="#ff0066" />
+
+    <!-- map panel -->
+    <rect x="300" y="302" width="340" height="270" fill="#0a1724" stroke="#14304a" />
+    <text x="314" y="322" fill="#4a6a88">BY REGION</text>
+    <rect x="510" y="310" width="120" height="22" rx="11" fill="#07111c" stroke="#2a4a66" />
+    <rect x="512" y="312" width="58" height="18" rx="9" fill="#00eeff" fill-opacity=".15" stroke="#00eeff" />
+    <g transform="translate(372 368) scale(1.25)">
+        <use href="#hexmap" />
+        <use href="#hex" x="86.5" y="30" fill="none" stroke="#c8d8f0" stroke-width="2" />
+    </g>
+
+    <!-- trend panel -->
+    <rect x="652" y="302" width="564" height="160" fill="#0a1724" stroke="#14304a" />
+    <text x="666" y="322" fill="#4a6a88">TREND</text>
+    <g fill="none" stroke="#14304a" stroke-dasharray="2 4">
+        <path d="M680 360h510M680 400h510" />
+    </g>
+    <path d="M680 336v104h510" fill="none" stroke="#2a4a66" />
+    <polyline points="680,426 731,420 782,412 833,410 884,398 935,390 986,380 1037,372 1088,362 1139,354 1190,346" fill="none" stroke="#4a6a88" stroke-width="2" stroke-dasharray="5 4" />
+    <polyline points="680,420 731,410 782,404 833,392 884,386 935,372 986,364 1037,352 1088,348 1139,338 1190,330" fill="none" stroke="#00eeff" stroke-width="2.5" />
+    <circle cx="1088" cy="348" r="5" fill="#07111c" stroke="#00eeff" stroke-width="2" />
+
+    <!-- bar panel -->
+    <rect x="652" y="474" width="564" height="98" fill="#0a1724" stroke="#14304a" />
+    <text x="666" y="494" fill="#4a6a88">BY SEGMENT</text>
+    <path d="M680 560h510" stroke="#2a4a66" />
+    <g fill="#2a4a66" fill-opacity=".55">
+        <rect x="690" y="530" width="34" height="30" />
+        <rect x="742" y="522" width="34" height="38" />
+        <rect x="794" y="514" width="34" height="46" />
+        <rect x="898" y="526" width="34" height="34" />
+        <rect x="950" y="518" width="34" height="42" />
+        <rect x="1002" y="510" width="34" height="50" />
+        <rect x="1054" y="520" width="34" height="40" />
+        <rect x="1106" y="506" width="34" height="54" />
+        <rect x="1158" y="514" width="24" height="46" />
+    </g>
+    <rect x="846" y="502" width="34" height="58" fill="#00eeff" />
+
+    <!-- quarter slider -->
+    <rect x="300" y="602" width="916" height="4" rx="2" fill="#1b3550" />
+    <rect x="300" y="602" width="690" height="4" rx="2" fill="#00eeff" />
+    <circle cx="990" cy="604" r="8" fill="#07111c" stroke="#00eeff" stroke-width="2.5" />
+
+    <!-- phone -->
+    <rect x="1284" y="132" width="236" height="496" rx="26" fill="#0d2133" stroke="#2a4a66" filter="url(#lift)" />
+    <rect x="1296" y="150" width="212" height="460" rx="14" fill="#07111c" />
+    <g clip-path="url(#screen)">
+        <rect x="1296" y="150" width="212" height="40" fill="#0a1724" />
+        <rect x="1312" y="166" width="70" height="8" rx="2" fill="#c8d8f0" fill-opacity=".85" />
+        <g stroke="#c8d8f0" stroke-opacity=".7" stroke-width="2">
+            <path d="M1474 164h18M1474 170h18M1474 176h18" />
+        </g>
+        <rect x="1312" y="206" width="140" height="10" rx="2" fill="#c8d8f0" fill-opacity=".85" />
+        <rect x="1312" y="222" width="170" height="5" rx="2" fill="#1b3550" />
+        <rect x="1312" y="240" width="180" height="22" rx="11" fill="#07111c" stroke="#2a4a66" />
+        <rect x="1314" y="242" width="88" height="18" rx="9" fill="#00eeff" fill-opacity=".15" stroke="#00eeff" />
+        <rect x="1308" y="274" width="188" height="170" fill="#0a1724" stroke="#14304a" />
+        <g transform="translate(1340 306) scale(.82)">
+            <use href="#hexmap" />
+            <use href="#hex" x="86.5" y="30" fill="none" stroke="#c8d8f0" stroke-width="2.4" />
+        </g>
+        <rect x="1308" y="456" width="188" height="120" fill="#0a1724" stroke="#14304a" />
+        <path d="M1322 560h162" stroke="#2a4a66" />
+        <polyline points="1322,548 1349,540 1376,536 1403,524 1430,518 1457,506 1484,496" fill="none" stroke="#00eeff" stroke-width="2" />
+        <polyline points="1322,552 1349,548 1376,542 1403,538 1430,530 1457,524 1484,518" fill="none" stroke="#4a6a88" stroke-width="1.5" stroke-dasharray="4 3" />
+        <rect x="1312" y="590" width="180" height="3" rx="1.5" fill="#1b3550" />
+        <rect x="1312" y="590" width="136" height="3" rx="1.5" fill="#00eeff" />
+        <circle cx="1448" cy="591.5" r="5" fill="#07111c" stroke="#00eeff" stroke-width="2" />
+    </g>
+</svg>

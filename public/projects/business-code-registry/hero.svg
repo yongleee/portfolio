@@ -1,0 +1,236 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 700" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="10" letter-spacing="1.5">
+    <!-- Main visual: admin console, public portal on a phone, live publish toast. Wireframe only: no real data. -->
+    <defs>
+        <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse">
+            <circle cx="2" cy="2" r="1" fill="#14304a" />
+        </pattern>
+        <radialGradient id="glow" cx=".42" cy=".5" r=".55">
+            <stop offset="0" stop-color="#00eeff" stop-opacity=".12" />
+            <stop offset="1" stop-color="#00eeff" stop-opacity="0" />
+        </radialGradient>
+        <filter id="lift" x="-10%" y="-10%" width="120%" height="130%">
+            <feDropShadow dy="18" stdDeviation="22" flood-color="#000" flood-opacity=".55" />
+        </filter>
+        <clipPath id="window"><rect x="60" y="60" width="1060" height="580" rx="8" /></clipPath>
+        <clipPath id="screen"><rect x="1160" y="100" width="260" height="540" rx="24" /></clipPath>
+        <g id="row">
+            <rect width="836" height="40" fill="#0a1724" />
+            <rect y="39" width="836" height="1" fill="#14304a" />
+            <rect x="16" y="15" width="64" height="10" rx="2" fill="#2a4a66" />
+            <rect x="760" y="11" width="18" height="18" rx="3" fill="none" stroke="#2a4a66" />
+            <rect x="788" y="11" width="18" height="18" rx="3" fill="none" stroke="#2a4a66" />
+        </g>
+        <g id="pub"><rect width="70" height="18" rx="9" fill="#00eeff" fill-opacity=".12" stroke="#00eeff" stroke-opacity=".6" /><rect x="15" y="6" width="40" height="6" rx="3" fill="#00eeff" /></g>
+        <g id="edt"><rect width="70" height="18" rx="9" fill="#ffb020" fill-opacity=".12" stroke="#ffb020" stroke-opacity=".6" /><rect x="15" y="6" width="40" height="6" rx="3" fill="#ffb020" /></g>
+        <g id="new"><rect width="70" height="18" rx="9" fill="#7c8cff" fill-opacity=".12" stroke="#7c8cff" stroke-opacity=".6" /><rect x="15" y="6" width="40" height="6" rx="3" fill="#7c8cff" /></g>
+        <g id="exp"><rect width="70" height="18" rx="9" fill="#ff0066" fill-opacity=".12" stroke="#ff0066" stroke-opacity=".6" /><rect x="15" y="6" width="40" height="6" rx="3" fill="#ff0066" /></g>
+        <g id="result">
+            <rect width="232" height="66" rx="6" fill="#0b1a28" stroke="#16324a" />
+            <rect x="14" y="13" width="56" height="11" rx="2" fill="#00eeff" fill-opacity=".85" />
+            <rect x="14" y="33" width="176" height="7" rx="2" fill="#2a4a66" />
+            <rect x="14" y="47" width="128" height="7" rx="2" fill="#1b3550" />
+            <path d="M206 13h12v15l-6-5-6 5z" fill="none" stroke="#4a6a88" stroke-width="1.5" />
+        </g>
+    </defs>
+
+    <rect width="1600" height="700" fill="#07111c" />
+    <rect width="1600" height="700" fill="url(#dots)" />
+    <rect width="1600" height="700" fill="url(#glow)" />
+
+    <!-- ============ admin console window ============ -->
+    <rect x="60" y="60" width="1060" height="580" rx="8" fill="#07111c" filter="url(#lift)" />
+    <g clip-path="url(#window)">
+        <rect x="60" y="60" width="1060" height="580" fill="#07111c" />
+
+        <!-- chrome -->
+        <rect x="60" y="60" width="1060" height="32" fill="#0d2133" />
+        <circle cx="80" cy="76" r="5" fill="#ff0066" fill-opacity=".7" />
+        <circle cx="98" cy="76" r="5" fill="#ffb020" fill-opacity=".7" />
+        <circle cx="116" cy="76" r="5" fill="#00eeff" fill-opacity=".7" />
+        <rect x="390" y="68" width="400" height="16" rx="8" fill="#07111c" />
+        <rect x="404" y="73" width="8" height="6" rx="1" fill="#4a6a88" />
+        <rect x="420" y="74" width="150" height="4" rx="2" fill="#1b3550" />
+
+        <!-- sidebar -->
+        <rect x="60" y="92" width="160" height="548" fill="#0a1724" />
+        <rect x="219" y="92" width="1" height="548" fill="#14304a" />
+        <rect x="82" y="112" width="28" height="28" rx="5" fill="#00eeff" fill-opacity=".9" />
+        <rect x="120" y="122" width="60" height="9" rx="2" fill="#2a4a66" />
+        <rect x="70" y="232" width="140" height="32" rx="3" fill="#00eeff" fill-opacity=".1" />
+        <rect x="70" y="232" width="3" height="32" fill="#00eeff" />
+        <g fill="#2a4a66">
+            <rect x="86" y="168" width="14" height="14" rx="3" /><rect x="110" y="171" width="64" height="8" rx="2" />
+            <rect x="86" y="200" width="14" height="14" rx="3" /><rect x="110" y="203" width="52" height="8" rx="2" />
+            <rect x="86" y="282" width="14" height="14" rx="3" /><rect x="110" y="285" width="70" height="8" rx="2" />
+            <rect x="86" y="314" width="14" height="14" rx="3" /><rect x="110" y="317" width="56" height="8" rx="2" />
+            <rect x="86" y="346" width="14" height="14" rx="3" /><rect x="110" y="349" width="62" height="8" rx="2" />
+            <rect x="86" y="378" width="14" height="14" rx="3" /><rect x="110" y="381" width="48" height="8" rx="2" />
+        </g>
+        <rect x="86" y="241" width="14" height="14" rx="3" fill="#00eeff" /><rect x="110" y="244" width="76" height="8" rx="2" fill="#00eeff" />
+        <rect x="80" y="596" width="120" height="28" rx="3" fill="none" stroke="#16324a" />
+        <circle cx="96" cy="610" r="7" fill="#1b3550" />
+        <rect x="110" y="606" width="70" height="7" rx="2" fill="#2a4a66" />
+
+        <!-- top bar -->
+        <rect x="220" y="92" width="900" height="52" fill="#0a1724" />
+        <rect x="220" y="143" width="900" height="1" fill="#14304a" />
+        <rect x="252" y="114" width="70" height="8" rx="2" fill="#2a4a66" />
+        <rect x="332" y="114" width="96" height="8" rx="2" fill="#4a6a88" />
+        <circle cx="1084" cy="118" r="12" fill="#1b3550" stroke="#2a4a66" />
+        <circle cx="1050" cy="118" r="9" fill="none" stroke="#2a4a66" />
+        <circle cx="1056" cy="111" r="3" fill="#ff0066" />
+
+        <!-- heading -->
+        <rect x="252" y="168" width="240" height="16" rx="2" fill="#c8d8f0" fill-opacity=".85" />
+        <rect x="252" y="194" width="320" height="8" rx="2" fill="#2a4a66" />
+
+        <!-- stat cards -->
+        <g fill="#0b1a28" stroke="#14304a">
+            <rect x="252" y="222" width="196" height="80" rx="3" />
+            <rect x="464" y="222" width="196" height="80" rx="3" />
+            <rect x="676" y="222" width="196" height="80" rx="3" />
+            <rect x="888" y="222" width="196" height="80" rx="3" />
+        </g>
+        <g fill="#2a4a66">
+            <rect x="268" y="238" width="70" height="7" rx="2" />
+            <rect x="480" y="238" width="84" height="7" rx="2" />
+            <rect x="692" y="238" width="60" height="7" rx="2" />
+            <rect x="904" y="238" width="76" height="7" rx="2" />
+        </g>
+        <rect x="268" y="258" width="58" height="20" rx="2" fill="#00eeff" />
+        <rect x="480" y="258" width="44" height="20" rx="2" fill="#c8d8f0" fill-opacity=".85" />
+        <rect x="692" y="258" width="66" height="20" rx="2" fill="#c8d8f0" fill-opacity=".85" />
+        <rect x="904" y="258" width="38" height="20" rx="2" fill="#c8d8f0" fill-opacity=".85" />
+        <polyline points="360,286 374,276 388,281 402,266 416,271 430,260" fill="none" stroke="#00eeff" stroke-width="2" />
+        <polyline points="572,286 586,282 600,284 614,274 628,277 642,270" fill="none" stroke="#2a4a66" stroke-width="2" />
+        <polyline points="784,276 798,284 812,272 826,279 840,268 854,273" fill="none" stroke="#2a4a66" stroke-width="2" />
+        <g fill="#16324a">
+            <rect x="1000" y="276" width="10" height="10" />
+            <rect x="1014" y="268" width="10" height="18" />
+            <rect x="1028" y="272" width="10" height="14" />
+            <rect x="1042" y="262" width="10" height="24" />
+        </g>
+        <rect x="1056" y="256" width="10" height="30" fill="#ff0066" fill-opacity=".7" />
+
+        <!-- toolbar -->
+        <rect x="252" y="322" width="300" height="34" rx="3" fill="#0a1724" stroke="#16324a" />
+        <circle cx="272" cy="339" r="6" fill="none" stroke="#4a6a88" stroke-width="2" />
+        <rect x="288" y="335" width="110" height="8" rx="2" fill="#1b3550" />
+        <rect x="562" y="322" width="96" height="34" rx="3" fill="none" stroke="#2a4a66" />
+        <rect x="582" y="335" width="56" height="8" rx="2" fill="#4a6a88" />
+        <rect x="976" y="322" width="112" height="34" rx="3" fill="#00eeff" />
+        <rect x="998" y="335" width="68" height="8" rx="2" fill="#07111c" />
+
+        <!-- table -->
+        <rect x="252" y="372" width="836" height="34" fill="#0d2133" />
+        <g fill="#4a6a88">
+            <rect x="268" y="386" width="44" height="7" rx="2" />
+            <rect x="352" y="386" width="70" height="7" rx="2" />
+            <rect x="640" y="386" width="50" height="7" rx="2" />
+            <rect x="1010" y="386" width="50" height="7" rx="2" />
+        </g>
+        <use href="#row" x="252" y="406" />
+        <use href="#row" x="252" y="446" />
+        <use href="#row" x="252" y="486" />
+        <use href="#row" x="252" y="526" />
+        <use href="#row" x="252" y="566" />
+        <use href="#row" x="252" y="606" />
+        <g fill="#1b3550">
+            <rect x="352" y="421" width="230" height="10" rx="2" />
+            <rect x="352" y="461" width="176" height="10" rx="2" />
+            <rect x="352" y="501" width="250" height="10" rx="2" />
+            <rect x="352" y="541" width="160" height="10" rx="2" />
+            <rect x="352" y="581" width="210" height="10" rx="2" />
+            <rect x="352" y="621" width="190" height="10" rx="2" />
+        </g>
+        <use href="#pub" x="636" y="417" />
+        <use href="#edt" x="636" y="457" />
+        <use href="#pub" x="636" y="497" />
+        <use href="#new" x="636" y="537" />
+        <use href="#exp" x="636" y="577" />
+        <use href="#pub" x="636" y="617" />
+        <rect x="252" y="446" width="836" height="40" fill="#00eeff" fill-opacity=".05" />
+    </g>
+    <rect x="60" y="60" width="1060" height="580" rx="8" fill="none" stroke="#2a4a66" />
+
+    <!-- ============ publish toast ============ -->
+    <g filter="url(#lift)">
+        <rect x="770" y="452" width="300" height="148" fill="#0b1a28" stroke="#00eeff" stroke-opacity=".7" />
+    </g>
+    <rect x="770" y="452" width="300" height="22" fill="#00eeff" />
+    <text x="782" y="467" font-weight="bold" fill="#07111c" letter-spacing="2">PUBLISH // STREAMING</text>
+    <circle cx="1056" cy="463" r="4" fill="#ff0066" />
+    <rect x="786" y="490" width="160" height="9" rx="2" fill="#c8d8f0" fill-opacity=".85" />
+    <rect x="786" y="512" width="268" height="8" fill="#0d2133" />
+    <rect x="786" y="512" width="228" height="8" fill="#00eeff" />
+    <g fill="#00eeff" fill-opacity=".15" stroke="#00eeff" stroke-opacity=".6">
+        <circle cx="792" cy="542" r="6" />
+        <circle cx="792" cy="562" r="6" />
+    </g>
+    <circle cx="792" cy="582" r="6" fill="#07111c" stroke="#00eeff" stroke-width="2" />
+    <circle cx="792" cy="582" r="2.5" fill="#00eeff" />
+    <g fill="#4a6a88">
+        <text x="806" y="546">SYNC MASTER TABLE</text>
+        <text x="806" y="566">SYNC TYPE TABLE</text>
+    </g>
+    <text x="806" y="586" fill="#00eeff">INSERT CHUNKS</text>
+    <g text-anchor="end">
+        <text x="1054" y="546" fill="#4a6a88">OK</text>
+        <text x="1054" y="566" fill="#4a6a88">OK</text>
+        <text x="1054" y="586" fill="#00eeff">85%</text>
+    </g>
+
+    <!-- ============ public portal phone ============ -->
+    <rect x="1150" y="90" width="280" height="560" rx="34" fill="#0d2133" stroke="#2a4a66" stroke-width="2" filter="url(#lift)" />
+    <g clip-path="url(#screen)">
+        <rect x="1160" y="100" width="260" height="540" fill="#07111c" />
+
+        <!-- status + header -->
+        <rect x="1178" y="114" width="32" height="7" rx="2" fill="#4a6a88" />
+        <rect x="1374" y="114" width="28" height="7" rx="2" fill="#4a6a88" />
+        <rect x="1176" y="136" width="22" height="22" rx="5" fill="#00eeff" fill-opacity=".9" />
+        <rect x="1206" y="143" width="56" height="8" rx="2" fill="#2a4a66" />
+        <rect x="1356" y="137" width="46" height="20" rx="10" fill="none" stroke="#2a4a66" />
+        <rect x="1358" y="139" width="22" height="16" rx="8" fill="#00eeff" fill-opacity=".2" />
+        <text x="1363" y="151" font-size="8" letter-spacing="1" fill="#00eeff">EN</text>
+        <text x="1385" y="151" font-size="8" letter-spacing="1" fill="#4a6a88">BM</text>
+
+        <!-- hero -->
+        <rect x="1176" y="180" width="164" height="13" rx="2" fill="#c8d8f0" fill-opacity=".85" />
+        <rect x="1176" y="200" width="112" height="13" rx="2" fill="#c8d8f0" fill-opacity=".85" />
+        <rect x="1176" y="222" width="190" height="7" rx="2" fill="#2a4a66" />
+
+        <!-- search -->
+        <rect x="1174" y="244" width="232" height="38" rx="19" fill="#0b1a28" stroke="#00eeff" stroke-opacity=".6" />
+        <circle cx="1195" cy="263" r="6.5" fill="none" stroke="#00eeff" stroke-width="2" />
+        <path d="M1200 268l5 5" stroke="#00eeff" stroke-width="2" />
+        <rect x="1212" y="259" width="100" height="8" rx="2" fill="#2a4a66" />
+        <rect x="1374" y="249" width="28" height="28" rx="14" fill="#00eeff" />
+        <path d="M1382 263h12m-4-4l4 4-4 4" fill="none" stroke="#07111c" stroke-width="2" />
+
+        <!-- mode tabs -->
+        <rect x="1174" y="294" width="232" height="28" rx="4" fill="#0a1724" />
+        <rect x="1176" y="296" width="76" height="24" rx="3" fill="#00eeff" fill-opacity=".15" stroke="#00eeff" stroke-opacity=".5" />
+        <text x="1190" y="312" font-size="8" letter-spacing="1" fill="#00eeff">KEYWORD</text>
+        <text x="1270" y="312" font-size="8" letter-spacing="1" fill="#4a6a88">CODE</text>
+        <text x="1326" y="312" font-size="8" letter-spacing="1" fill="#4a6a88">STRUCTURE</text>
+
+        <!-- results -->
+        <use href="#result" x="1174" y="336" />
+        <use href="#result" x="1174" y="412" />
+        <use href="#result" x="1174" y="488" />
+
+        <!-- assistant sheet -->
+        <rect x="1160" y="548" width="260" height="100" rx="18" fill="#0b1a28" stroke="#2a4a66" />
+        <rect x="1270" y="556" width="40" height="4" rx="2" fill="#2a4a66" />
+        <circle cx="1188" cy="584" r="11" fill="#ff0066" fill-opacity=".2" stroke="#ff0066" />
+        <rect x="1182" y="581" width="12" height="6" rx="2" fill="#ff0066" />
+        <rect x="1206" y="572" width="162" height="26" rx="10" fill="#0d2133" />
+        <rect x="1218" y="582" width="116" height="6" rx="2" fill="#4a6a88" />
+        <rect x="1282" y="606" width="124" height="22" rx="10" fill="#00eeff" fill-opacity=".18" />
+        <rect x="1294" y="614" width="86" height="6" rx="2" fill="#00eeff" />
+    </g>
+    <rect x="1252" y="95" width="76" height="4" rx="2" fill="#2a4a66" />
+
+    <text x="60" y="676" font-size="9" fill="#2a4a66">SYS.VISUAL // ADMIN CONSOLE · PUBLIC PORTAL · LIVE PUBLISH</text>
+</svg>

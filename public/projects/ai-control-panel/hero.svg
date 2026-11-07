@@ -1,0 +1,217 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 700" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="9" letter-spacing="1.5">
+    <!-- Main visual: the live cluster overview, with the new-provider sheet floating over it. Wireframe only: no real data. -->
+    <defs>
+        <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse">
+            <circle cx="2" cy="2" r="1" fill="#14304a" />
+        </pattern>
+        <radialGradient id="glow" cx=".42" cy=".5" r=".55">
+            <stop offset="0" stop-color="#00eeff" stop-opacity=".12" />
+            <stop offset="1" stop-color="#00eeff" stop-opacity="0" />
+        </radialGradient>
+        <filter id="lift" x="-10%" y="-10%" width="120%" height="130%">
+            <feDropShadow dy="18" stdDeviation="22" flood-color="#000" flood-opacity=".55" />
+        </filter>
+        <clipPath id="window"><rect x="60" y="60" width="1100" height="580" rx="8" /></clipPath>
+        <g id="nav">
+            <rect width="14" height="14" rx="3" fill="#1b3550" />
+            <rect x="24" y="3" width="96" height="8" rx="2" fill="#1b3550" />
+        </g>
+        <g id="gauge">
+            <rect width="264" height="120" rx="4" fill="#0b1a28" stroke="#16324a" />
+            <path d="M26 96A44 44 0 0 1 114 96" fill="none" stroke="#14304a" stroke-width="10" />
+            <rect x="140" y="22" width="60" height="7" rx="2" fill="#4a6a88" />
+            <rect x="140" y="42" width="92" height="14" rx="2" fill="#c8d8f0" fill-opacity=".85" />
+            <rect x="140" y="70" width="104" height="6" rx="2" fill="#1b3550" />
+            <rect x="140" y="84" width="80" height="6" rx="2" fill="#1b3550" />
+        </g>
+        <g id="gpu">
+            <rect width="792" height="24" fill="#0a1724" />
+            <rect y="23" width="792" height="1" fill="#14304a" />
+            <rect x="14" y="8" width="70" height="8" rx="2" fill="#2a4a66" />
+            <rect x="120" y="9" width="260" height="6" rx="3" fill="#14304a" />
+            <rect x="660" y="8" width="40" height="8" rx="2" fill="#2a4a66" />
+            <rect x="720" y="8" width="52" height="8" rx="2" fill="#2a4a66" />
+        </g>
+        <g id="event">
+            <rect width="816" height="24" fill="#0a1724" />
+            <rect y="23" width="816" height="1" fill="#14304a" />
+            <rect x="96" y="8" width="180" height="8" rx="2" fill="#2a4a66" />
+            <rect x="300" y="8" width="300" height="8" rx="2" fill="#1b3550" />
+            <rect x="740" y="8" width="56" height="8" rx="2" fill="#2a4a66" />
+        </g>
+        <g id="ok"><rect width="64" height="16" rx="8" fill="#00eeff" fill-opacity=".12" stroke="#00eeff" stroke-opacity=".6" /><rect x="14" y="5" width="36" height="6" rx="3" fill="#00eeff" /></g>
+        <g id="warn"><rect width="64" height="16" rx="8" fill="#ffb020" fill-opacity=".12" stroke="#ffb020" stroke-opacity=".6" /><rect x="14" y="5" width="36" height="6" rx="3" fill="#ffb020" /></g>
+        <g id="type">
+            <rect width="120" height="40" rx="4" fill="#0a1724" stroke="#16324a" />
+        </g>
+        <g id="field">
+            <rect width="380" height="28" rx="3" fill="#07111c" stroke="#2a4a66" />
+        </g>
+    </defs>
+
+    <rect width="1600" height="700" fill="#07111c" />
+    <rect width="1600" height="700" fill="url(#dots)" />
+    <rect width="1600" height="700" fill="url(#glow)" />
+
+    <!-- ============ dashboard window ============ -->
+    <rect x="60" y="60" width="1100" height="580" rx="8" fill="#07111c" filter="url(#lift)" />
+    <g clip-path="url(#window)">
+        <rect x="60" y="60" width="1100" height="580" fill="#07111c" />
+
+        <!-- chrome -->
+        <rect x="60" y="60" width="1100" height="32" fill="#0d2133" />
+        <circle cx="80" cy="76" r="5" fill="#ff0066" fill-opacity=".7" />
+        <circle cx="98" cy="76" r="5" fill="#ffb020" fill-opacity=".7" />
+        <circle cx="116" cy="76" r="5" fill="#00eeff" fill-opacity=".7" />
+        <rect x="420" y="68" width="380" height="16" rx="8" fill="#07111c" />
+
+        <!-- sidebar -->
+        <rect x="60" y="92" width="180" height="548" fill="#0a1724" />
+        <rect x="240" y="92" width="1" height="548" fill="#14304a" />
+        <rect x="80" y="110" width="24" height="24" rx="5" fill="#00eeff" />
+        <rect x="114" y="118" width="84" height="8" rx="2" fill="#c8d8f0" fill-opacity=".85" />
+        <rect x="70" y="156" width="160" height="30" rx="4" fill="#00eeff" fill-opacity=".12" />
+        <rect x="80" y="164" width="14" height="14" rx="3" fill="#00eeff" />
+        <rect x="104" y="167" width="72" height="8" rx="2" fill="#00eeff" />
+        <use href="#nav" x="80" y="204" />
+        <use href="#nav" x="80" y="240" />
+        <use href="#nav" x="80" y="276" />
+        <use href="#nav" x="80" y="312" />
+        <use href="#nav" x="80" y="348" />
+        <circle cx="94" cy="606" r="12" fill="#1b3550" />
+        <rect x="116" y="598" width="80" height="7" rx="2" fill="#2a4a66" />
+        <rect x="116" y="610" width="56" height="6" rx="2" fill="#1b3550" />
+
+        <!-- top header -->
+        <rect x="241" y="92" width="919" height="44" fill="#07111c" />
+        <rect x="241" y="136" width="919" height="1" fill="#14304a" />
+        <rect x="264" y="110" width="80" height="8" rx="2" fill="#c8d8f0" fill-opacity=".85" />
+        <rect x="1000" y="104" width="68" height="20" rx="10" fill="#ff0066" fill-opacity=".12" stroke="#ff0066" stroke-opacity=".6" />
+        <circle cx="1014" cy="114" r="3.5" fill="#ff0066" />
+        <text x="1024" y="117" fill="#ff0066">LIVE</text>
+
+        <!-- cluster health -->
+        <rect x="264" y="152" width="816" height="100" rx="4" fill="#0b1a28" stroke="#16324a" />
+        <circle cx="314" cy="202" r="28" fill="none" stroke="#14304a" stroke-width="6" />
+        <circle cx="314" cy="202" r="28" fill="none" stroke="#00eeff" stroke-width="6" />
+        <path d="M302 202l8 8 15-16" fill="none" stroke="#00eeff" stroke-width="3" />
+        <rect x="362" y="180" width="180" height="14" rx="2" fill="#c8d8f0" fill-opacity=".85" />
+        <rect x="362" y="204" width="240" height="7" rx="2" fill="#2a4a66" />
+        <rect x="362" y="220" width="160" height="7" rx="2" fill="#1b3550" />
+        <use href="#ok" x="700" y="178" />
+        <use href="#ok" x="776" y="178" />
+        <use href="#ok" x="852" y="178" />
+        <use href="#ok" x="928" y="178" />
+        <g fill="#1b3550">
+            <rect x="700" y="208" width="64" height="6" rx="2" />
+            <rect x="776" y="208" width="64" height="6" rx="2" />
+            <rect x="852" y="208" width="64" height="6" rx="2" />
+            <rect x="928" y="208" width="64" height="6" rx="2" />
+        </g>
+
+        <!-- capacity gauges -->
+        <use href="#gauge" x="264" y="268" />
+        <use href="#gauge" x="540" y="268" />
+        <use href="#gauge" x="816" y="268" />
+        <g fill="none" stroke="#00eeff" stroke-width="10">
+            <path d="M290 364A44 44 0 0 1 350.2 323.1" />
+            <path d="M566 364A44 44 0 0 1 597.7 321.7" />
+            <path d="M842 364A44 44 0 0 1 919.9 336" />
+        </g>
+
+        <!-- GPU resources -->
+        <rect x="264" y="404" width="816" height="136" rx="4" fill="#0b1a28" stroke="#16324a" />
+        <text x="280" y="424" fill="#4a6a88">GPU · VRAM · MIG</text>
+        <use href="#gpu" x="276" y="436" />
+        <use href="#gpu" x="276" y="460" />
+        <use href="#gpu" x="276" y="484" />
+        <use href="#gpu" x="276" y="508" />
+        <g fill="#00eeff">
+            <rect x="396" y="445" width="188" height="6" rx="3" />
+            <rect x="396" y="469" width="132" height="6" rx="3" />
+            <rect x="396" y="493" width="226" height="6" rx="3" />
+            <rect x="396" y="517" width="74" height="6" rx="3" />
+        </g>
+        <!-- MIG slices on one card -->
+        <g fill="#7c8cff" fill-opacity=".7">
+            <rect x="680" y="442" width="22" height="12" rx="2" />
+            <rect x="706" y="442" width="22" height="12" rx="2" />
+            <rect x="732" y="442" width="22" height="12" rx="2" fill-opacity=".25" />
+            <rect x="758" y="442" width="22" height="12" rx="2" />
+        </g>
+
+        <!-- events -->
+        <rect x="264" y="556" width="816" height="24" fill="#0d2133" />
+        <text x="280" y="572" fill="#4a6a88">EVENTS</text>
+        <use href="#event" x="264" y="580" />
+        <use href="#event" x="264" y="604" />
+        <use href="#ok" x="276" y="584" />
+        <use href="#warn" x="276" y="608" />
+    </g>
+
+    <!-- ============ new provider sheet ============ -->
+    <rect x="1120" y="96" width="420" height="560" rx="8" fill="#0b1a28" stroke="#16324a" filter="url(#lift)" />
+    <path d="M1128 96h404a8 8 0 0 1 8 8v16h-420v-16a8 8 0 0 1 8-8z" fill="#00eeff" />
+    <text x="1140" y="112" fill="#07111c" font-weight="bold">PROVIDER // NEW</text>
+    <text x="1520" y="112" fill="#07111c" font-weight="bold" text-anchor="end">×</text>
+
+    <text x="1140" y="150" fill="#4a6a88">TYPE</text>
+    <use href="#type" x="1140" y="158" />
+    <use href="#type" x="1270" y="158" />
+    <use href="#type" x="1400" y="158" />
+    <use href="#type" x="1140" y="206" />
+    <use href="#type" x="1270" y="206" />
+    <rect x="1400" y="206" width="120" height="40" rx="4" fill="#00eeff" fill-opacity=".15" stroke="#00eeff" />
+    <use href="#type" x="1140" y="254" />
+    <use href="#type" x="1270" y="254" />
+    <use href="#type" x="1400" y="254" />
+    <g fill="#c8d8f0" text-anchor="middle">
+        <text x="1200" y="181">OPENAI</text>
+        <text x="1330" y="181">ANTHROPIC</text>
+        <text x="1460" y="181">VLLM</text>
+        <text x="1200" y="229">RESPONSES</text>
+        <text x="1330" y="229">GEMINI</text>
+        <text x="1460" y="229" fill="#00eeff">BEDROCK</text>
+        <text x="1200" y="277">BEDROCK ANTH</text>
+        <text x="1330" y="277">VERTEX AI</text>
+        <text x="1460" y="277">AI FOUNDRY</text>
+    </g>
+
+    <text x="1140" y="320" fill="#4a6a88">AUTH</text>
+    <rect x="1140" y="328" width="124" height="26" rx="3" fill="#0a1724" stroke="#16324a" />
+    <rect x="1268" y="328" width="124" height="26" rx="3" fill="#00eeff" fill-opacity=".15" stroke="#00eeff" />
+    <rect x="1396" y="328" width="124" height="26" rx="3" fill="#0a1724" stroke="#16324a" />
+    <g text-anchor="middle">
+        <text x="1202" y="344" fill="#4a6a88">API KEY</text>
+        <text x="1330" y="344" fill="#00eeff">AWS SIGV4</text>
+        <text x="1458" y="344" fill="#4a6a88">SERVICE ACCT</text>
+    </g>
+
+    <text x="1140" y="378" fill="#4a6a88">REGION</text>
+    <use href="#field" x="1140" y="386" />
+    <rect x="1152" y="397" width="90" height="7" rx="2" fill="#c8d8f0" fill-opacity=".85" />
+    <path d="M1498 396l6 6 6-6" fill="none" stroke="#4a6a88" stroke-width="1.5" />
+
+    <text x="1140" y="430" fill="#4a6a88">ACCESS KEY</text>
+    <use href="#field" x="1140" y="438" />
+    <text x="1152" y="456" fill="#4a6a88" letter-spacing="3">••••••••••••••••</text>
+
+    <text x="1140" y="482" fill="#4a6a88">SECRET</text>
+    <use href="#field" x="1140" y="490" />
+    <text x="1152" y="508" fill="#4a6a88" letter-spacing="3">••••••••••••••••••••••</text>
+
+    <text x="1140" y="534" fill="#4a6a88">ENDPOINT</text>
+    <use href="#field" x="1140" y="542" />
+    <rect x="1152" y="553" width="250" height="7" rx="2" fill="#1b3550" />
+    <rect x="1472" y="548" width="40" height="16" rx="8" fill="#7c8cff" fill-opacity=".12" stroke="#7c8cff" stroke-opacity=".6" />
+    <text x="1492" y="559" fill="#7c8cff" text-anchor="middle">AUTO</text>
+
+    <path d="M1120 590h420" stroke="#14304a" />
+    <rect x="1140" y="612" width="30" height="16" rx="8" fill="#00eeff" fill-opacity=".25" stroke="#00eeff" />
+    <circle cx="1162" cy="620" r="5" fill="#00eeff" />
+    <text x="1180" y="624" fill="#4a6a88">DISCOVERY</text>
+    <rect x="1330" y="606" width="90" height="28" rx="3" fill="none" stroke="#2a4a66" />
+    <text x="1375" y="624" fill="#c8d8f0" text-anchor="middle">CANCEL</text>
+    <rect x="1430" y="606" width="90" height="28" rx="3" fill="#00eeff" />
+    <text x="1475" y="624" fill="#07111c" font-weight="bold" text-anchor="middle">CREATE</text>
+</svg>

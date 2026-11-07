@@ -1,20 +1,22 @@
-import { Badge } from '@/components/ui/badge'
 import { SKILLS } from '@/config'
 import { Section } from './Section'
 
 export function Skills() {
     return (
-        <div className="bg-linear-to-b from-transparent via-primary/[0.025] to-transparent">
-            <Section id="skills" label="// 02. SKILLS" title="TECH STACK">
-                <ul className="flex flex-wrap gap-2.75">
-                    {SKILLS.map((skill) => (
-                        <li key={skill}>
-                            <Badge
-                                variant="outline"
-                                className="h-auto px-4.5 py-2 font-mono text-[11px] font-normal tracking-[2px] text-muted-foreground duration-200 hover:border-primary hover:bg-primary/6 hover:text-primary hover:text-shadow-glow-sm"
-                            >
+        <div className="border-y bg-linear-to-r from-[color-mix(in_srgb,var(--hot)_10%,color-mix(in_srgb,var(--background)_50%,transparent))] via-background/35 via-60% to-[color-mix(in_srgb,var(--primary)_6%,color-mix(in_srgb,var(--background)_40%,transparent))]">
+            <Section id="skills" idx="02" title="TECH STACK">
+                <ul className="grid grid-cols-[repeat(auto-fill,minmax(180px,1fr))] gap-2.5">
+                    {SKILLS.map((skill, i) => (
+                        <li
+                            key={skill}
+                            className="group relative flex items-center justify-between gap-2.5 border bg-card/70 px-4 py-3.5 backdrop-blur-[6px] transition-colors duration-150 before:absolute before:-inset-y-px before:-left-px before:w-0.75 before:bg-primary before:opacity-0 before:transition-opacity hover:border-primary hover:bg-[color-mix(in_srgb,var(--primary)_12%,var(--card))] hover:before:opacity-100"
+                        >
+                            <span className="text-[17px] font-semibold tracking-[1px] transition-colors group-hover:text-primary">
                                 {skill}
-                            </Badge>
+                            </span>
+                            <i className="font-mono text-[10px] tracking-[1px] text-hot not-italic">
+                                {String(i + 1).padStart(2, '0')}
+                            </i>
                         </li>
                     ))}
                 </ul>

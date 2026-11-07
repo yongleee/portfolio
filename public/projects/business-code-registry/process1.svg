@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="9" letter-spacing="1">
+    <!-- Sketch: Excel import, validated and chunked into SQL Server. -->
+    <defs>
+        <marker id="arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto">
+            <path d="M0 0l8 4-8 4z" fill="#00eeff" />
+        </marker>
+    </defs>
+
+    <rect width="400" height="400" fill="#07111c" />
+    <text x="24" y="36" font-size="10" letter-spacing="2" fill="#00eeff">01 // IMPORT</text>
+    <rect x="24" y="44" width="352" height="1" fill="#16324a" />
+
+    <!-- spreadsheet -->
+    <rect x="30" y="80" width="104" height="124" fill="#0b1a28" stroke="#2a4a66" />
+    <rect x="30" y="80" width="104" height="18" fill="#00eeff" fill-opacity=".25" />
+    <g stroke="#16324a">
+        <path d="M30 118h104M30 138h104M30 158h104M30 178h104" />
+        <path d="M60 80v124M100 80v124" />
+    </g>
+    <rect x="34" y="122" width="22" height="12" fill="none" stroke="#ff0066" stroke-dasharray="3 2" />
+    <text x="38" y="131" font-size="8" fill="#ff0066">0</text>
+    <text x="30" y="222" fill="#4a6a88">.XLSX</text>
+
+    <!-- chunks -->
+    <path d="M142 142h38" fill="none" stroke="#00eeff" stroke-width="1.5" marker-end="url(#arrow)" />
+    <g fill="#0b1a28" stroke="#00eeff" stroke-opacity=".6">
+        <rect x="190" y="84" width="96" height="24" />
+        <rect x="190" y="114" width="96" height="24" />
+        <rect x="190" y="144" width="96" height="24" />
+        <rect x="190" y="174" width="96" height="24" />
+    </g>
+    <g fill="#c8d8f0">
+        <text x="200" y="100">CHUNK 01</text>
+        <text x="200" y="130">CHUNK 02</text>
+        <text x="200" y="160">CHUNK 03</text>
+    </g>
+    <text x="200" y="190" fill="#4a6a88">CHUNK …</text>
+
+    <!-- database -->
+    <path d="M294 142h28" fill="none" stroke="#00eeff" stroke-width="1.5" marker-end="url(#arrow)" />
+    <ellipse cx="352" cy="110" rx="26" ry="9" fill="#0b1a28" stroke="#00eeff" />
+    <path d="M326 110v64c0 5 12 9 26 9s26-4 26-9v-64" fill="none" stroke="#00eeff" />
+    <path d="M326 132c0 5 12 9 26 9s26-4 26-9M326 154c0 5 12 9 26 9s26-4 26-9" fill="none" stroke="#00eeff" stroke-opacity=".4" />
+    <text x="330" y="204" fill="#4a6a88">DRAFT</text>
+
+    <!-- checks -->
+    <rect x="24" y="252" width="352" height="1" fill="#16324a" stroke-dasharray="4 4" />
+    <g fill="#c8d8f0">
+        <text x="30" y="282"><tspan fill="#00eeff">›</tspan> HEADERS MATCH EXPECTED SCHEMA</text>
+        <text x="30" y="304"><tspan fill="#00eeff">›</tspan> REJECT PASSWORD-PROTECTED / EMPTY</text>
+        <text x="30" y="326"><tspan fill="#00eeff">›</tspan> CODES KEPT AS STRINGS — NO LOST <tspan fill="#ff0066">0</tspan></text>
+        <text x="30" y="348"><tspan fill="#00eeff">›</tspan> CHUNKED UNDER SQL PARAM LIMIT</text>
+        <text x="30" y="370"><tspan fill="#00eeff">›</tspan> DUPLICATE CHECK BEFORE INSERT</text>
+    </g>
+</svg>

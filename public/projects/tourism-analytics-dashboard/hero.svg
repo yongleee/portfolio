@@ -1,0 +1,251 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 700" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="9" letter-spacing="1.5">
+    <!-- Hero: the overview dashboard (KPI cards, trend, abstract POI map, top five) with the export dialog floating over it, showing the four formats and a slide preview. Wireframe only: no real data or geography. -->
+    <defs>
+        <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+            <path d="M40 0H0v40" fill="none" stroke="#0d2133" />
+        </pattern>
+        <radialGradient id="glow" cx=".5" cy=".5" r=".5">
+            <stop offset="0" stop-color="#00eeff" stop-opacity=".1" />
+            <stop offset="1" stop-color="#00eeff" stop-opacity="0" />
+        </radialGradient>
+        <linearGradient id="area" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#00eeff" stop-opacity=".22" />
+            <stop offset="1" stop-color="#00eeff" stop-opacity="0" />
+        </linearGradient>
+        <filter id="lift" x="-10%" y="-10%" width="120%" height="130%">
+            <feDropShadow dy="18" stdDeviation="22" flood-color="#000" flood-opacity=".55" />
+        </filter>
+        <clipPath id="win">
+            <rect x="60" y="50" width="1120" height="610" rx="8" />
+        </clipPath>
+        <g id="kpi">
+            <rect width="196" height="86" fill="#0a1724" stroke="#14304a" />
+            <rect x="16" y="16" width="84" height="6" rx="2" fill="#1b3550" />
+            <rect x="16" y="34" width="112" height="16" rx="2" fill="#c8d8f0" fill-opacity=".85" />
+        </g>
+        <g id="up">
+            <path d="M0 6l5-6 5 6z" fill="#00eeff" />
+            <rect x="14" y="0" width="36" height="6" rx="2" fill="#00eeff" fill-opacity=".8" />
+            <rect x="58" y="0" width="54" height="6" rx="2" fill="#1b3550" />
+        </g>
+        <g id="down">
+            <path d="M0 0l5 6 5-6z" fill="#ff0066" />
+            <rect x="14" y="0" width="30" height="6" rx="2" fill="#ff0066" fill-opacity=".8" />
+            <rect x="52" y="0" width="54" height="6" rx="2" fill="#1b3550" />
+        </g>
+        <g id="rank">
+            <circle cx="8" cy="0" r="7" fill="#1b3550" stroke="#2a4a66" />
+            <rect x="24" y="-3" width="70" height="6" rx="2" fill="#2a4a66" />
+            <rect x="150" y="-3" width="40" height="6" rx="2" fill="#c8d8f0" fill-opacity=".7" />
+        </g>
+        <path id="hex" d="M0-18L15.6-9V9L0 18-15.6 9V-9z" />
+        <g id="pin">
+            <path d="M0 0c-6-8-9-12-9-16a9 9 0 0 1 18 0c0 4-3 8-9 16z" fill="#ff0066" />
+            <circle cx="0" cy="-16" r="3.5" fill="#07111c" />
+        </g>
+        <g id="check">
+            <rect width="14" height="14" rx="2" fill="#00eeff" />
+            <path d="M3 7l3 3 5-6" fill="none" stroke="#07111c" stroke-width="2" />
+        </g>
+        <g id="uncheck">
+            <rect width="14" height="14" rx="2" fill="none" stroke="#2a4a66" />
+        </g>
+    </defs>
+
+    <rect width="1600" height="700" fill="#07111c" />
+    <rect width="1600" height="700" fill="url(#grid)" />
+    <ellipse cx="760" cy="360" rx="720" ry="340" fill="url(#glow)" />
+
+    <!-- main window -->
+    <rect x="60" y="50" width="1120" height="610" rx="8" fill="#0b1a28" stroke="#16324a" filter="url(#lift)" />
+    <g clip-path="url(#win)">
+        <rect x="60" y="50" width="1120" height="32" fill="#0d2133" />
+        <circle cx="80" cy="66" r="4" fill="#ff0066" fill-opacity=".7" />
+        <circle cx="94" cy="66" r="4" fill="#ffb020" fill-opacity=".7" />
+        <circle cx="108" cy="66" r="4" fill="#00eeff" fill-opacity=".7" />
+        <rect x="440" y="58" width="360" height="16" rx="8" fill="#07111c" stroke="#16324a" />
+
+        <!-- sidebar -->
+        <rect x="60" y="82" width="180" height="578" fill="#0a1724" />
+        <path d="M240 82v578" stroke="#14304a" />
+        <rect x="80" y="102" width="110" height="12" rx="2" fill="#c8d8f0" fill-opacity=".85" />
+        <rect x="74" y="140" width="152" height="24" rx="2" fill="#00eeff" fill-opacity=".12" />
+        <rect x="74" y="140" width="3" height="24" fill="#00eeff" />
+        <rect x="88" y="149" width="96" height="6" rx="2" fill="#00eeff" />
+        <g fill="#1b3550">
+            <rect x="88" y="182" width="80" height="6" rx="2" />
+            <rect x="88" y="210" width="104" height="6" rx="2" />
+            <rect x="88" y="238" width="70" height="6" rx="2" />
+            <rect x="88" y="266" width="90" height="6" rx="2" />
+        </g>
+
+        <!-- header row: tabs, date filter, export -->
+        <g fill="#4a6a88">
+            <text x="268" y="114" fill="#00eeff">DOMESTIC</text>
+            <text x="368" y="114">INBOUND</text>
+            <text x="462" y="114">OUTBOUND</text>
+        </g>
+        <path d="M268 122h70" stroke="#00eeff" stroke-width="2" />
+        <path d="M260 130h900" stroke="#14304a" />
+        <rect x="836" y="98" width="160" height="22" rx="3" fill="#07111c" stroke="#2a4a66" />
+        <rect x="850" y="105" width="10" height="8" rx="1" fill="none" stroke="#4a6a88" />
+        <rect x="870" y="106" width="96" height="6" rx="2" fill="#c8d8f0" fill-opacity=".7" />
+        <rect x="1006" y="98" width="88" height="22" rx="3" fill="#00eeff" />
+        <text x="1050" y="113" fill="#07111c" text-anchor="middle" font-weight="bold">EXPORT</text>
+
+        <!-- KPI cards -->
+        <use href="#kpi" x="260" y="148" />
+        <use href="#kpi" x="472" y="148" />
+        <use href="#kpi" x="684" y="148" />
+        <use href="#kpi" x="896" y="148" />
+        <use href="#up" x="276" y="214" />
+        <use href="#up" x="488" y="214" />
+        <use href="#down" x="700" y="214" />
+        <use href="#up" x="912" y="214" />
+
+        <!-- trend chart -->
+        <rect x="260" y="252" width="520" height="190" fill="#0a1724" stroke="#14304a" />
+        <text x="274" y="272" fill="#4a6a88">VISITORS OVER TIME</text>
+        <path d="M288 420h472" stroke="#2a4a66" />
+        <g fill="none" stroke="#14304a" stroke-dasharray="2 4">
+            <path d="M288 312h472M288 348h472M288 384h472" />
+        </g>
+        <path d="M288 396L328 386 368 390 408 368 448 374 488 352 528 358 568 334 608 342 648 318 688 326 728 304 760 310V420H288z" fill="url(#area)" />
+        <path d="M288 396L328 386 368 390 408 368 448 374 488 352 528 358 568 334 608 342 648 318 688 326 728 304 760 310" fill="none" stroke="#00eeff" stroke-width="2" />
+        <circle cx="728" cy="304" r="4" fill="#07111c" stroke="#00eeff" stroke-width="2" />
+
+        <!-- POI map: abstract hex tiles -->
+        <rect x="800" y="252" width="292" height="390" fill="#0a1724" stroke="#14304a" />
+        <text x="814" y="272" fill="#4a6a88">POINTS OF INTEREST</text>
+        <g fill="#00eeff" stroke="#0a1724" stroke-width="2" transform="translate(850 330)">
+            <use href="#hex" x="31.2" y="0" fill-opacity=".2" />
+            <use href="#hex" x="62.4" y="0" fill-opacity=".35" />
+            <use href="#hex" x="93.6" y="0" fill-opacity=".25" />
+            <use href="#hex" x="15.6" y="27" fill-opacity=".3" />
+            <use href="#hex" x="46.8" y="27" fill-opacity=".55" />
+            <use href="#hex" x="78" y="27" fill-opacity=".7" />
+            <use href="#hex" x="109.2" y="27" fill-opacity=".4" />
+            <use href="#hex" x="140.4" y="27" fill-opacity=".15" />
+            <use href="#hex" x="0" y="54" fill-opacity=".25" />
+            <use href="#hex" x="31.2" y="54" fill-opacity=".6" />
+            <use href="#hex" x="62.4" y="54" fill-opacity=".9" />
+            <use href="#hex" x="93.6" y="54" fill-opacity=".5" />
+            <use href="#hex" x="124.8" y="54" fill-opacity=".3" />
+            <use href="#hex" x="156" y="54" fill-opacity=".2" />
+            <use href="#hex" x="15.6" y="81" fill-opacity=".35" />
+            <use href="#hex" x="46.8" y="81" fill-opacity=".45" />
+            <use href="#hex" x="78" y="81" fill-opacity=".65" />
+            <use href="#hex" x="109.2" y="81" fill-opacity=".3" />
+            <use href="#hex" x="140.4" y="81" fill-opacity=".2" />
+            <use href="#hex" x="46.8" y="135" fill-opacity=".25" />
+            <use href="#hex" x="78" y="135" fill-opacity=".4" />
+            <use href="#hex" x="109.2" y="162" fill-opacity=".2" />
+            <use href="#hex" x="140.4" y="162" fill-opacity=".35" />
+            <use href="#hex" x="171.6" y="162" fill-opacity=".15" />
+        </g>
+        <use href="#pin" x="912" y="384" />
+        <use href="#pin" x="944" y="358" />
+        <use href="#pin" x="880" y="412" />
+        <use href="#pin" x="976" y="498" />
+        <!-- hover popup -->
+        <rect x="954" y="314" width="112" height="40" rx="3" fill="#0d2133" stroke="#ff0066" stroke-opacity=".6" />
+        <rect x="966" y="324" width="76" height="6" rx="2" fill="#c8d8f0" fill-opacity=".8" />
+        <rect x="966" y="338" width="50" height="6" rx="2" fill="#4a6a88" />
+        <g fill="none" stroke="#2a4a66">
+            <rect x="814" y="590" width="120" height="36" rx="3" />
+        </g>
+        <rect x="824" y="600" width="12" height="6" rx="1" fill="#ff0066" />
+        <rect x="844" y="600" width="70" height="6" rx="2" fill="#1b3550" />
+        <rect x="824" y="614" width="12" height="6" rx="1" fill="#00eeff" />
+        <rect x="844" y="614" width="54" height="6" rx="2" fill="#1b3550" />
+
+        <!-- top five -->
+        <rect x="260" y="458" width="250" height="184" fill="#0a1724" stroke="#14304a" />
+        <text x="274" y="478" fill="#4a6a88">TOP 5 REGIONS</text>
+        <use href="#rank" x="276" y="504" />
+        <use href="#rank" x="276" y="534" />
+        <use href="#rank" x="276" y="564" />
+        <use href="#rank" x="276" y="594" />
+        <use href="#rank" x="276" y="624" />
+
+        <!-- transport mode -->
+        <rect x="526" y="458" width="254" height="184" fill="#0a1724" stroke="#14304a" />
+        <text x="540" y="478" fill="#4a6a88">TRANSPORT MODE</text>
+        <g fill="#2a4a66">
+            <rect x="540" y="498" width="190" height="14" />
+            <rect x="540" y="524" width="132" height="14" />
+            <rect x="540" y="550" width="96" height="14" />
+            <rect x="540" y="576" width="58" height="14" />
+            <rect x="540" y="602" width="30" height="14" />
+        </g>
+        <rect x="540" y="498" width="190" height="14" fill="#00eeff" />
+
+        <!-- right edge column, mostly under the dialog -->
+        <rect x="1108" y="148" width="60" height="494" fill="#0a1724" stroke="#14304a" />
+    </g>
+
+    <!-- export dialog -->
+    <g filter="url(#lift)">
+        <rect x="1110" y="104" width="430" height="520" rx="6" fill="#0b1a28" stroke="#16324a" />
+    </g>
+    <path d="M1116 104h418a6 6 0 0 1 6 6v18h-430v-18a6 6 0 0 1 6-6z" fill="#00eeff" />
+    <text x="1126" y="120" fill="#07111c" font-weight="bold">EXPORT // DOMESTIC</text>
+    <path d="M1514 112l8 8M1522 112l-8 8" stroke="#07111c" stroke-width="2" />
+
+    <text x="1130" y="156" fill="#4a6a88">FORMAT</text>
+    <g fill="#07111c" stroke="#2a4a66">
+        <rect x="1130" y="166" width="92" height="34" rx="3" />
+        <rect x="1230" y="166" width="92" height="34" rx="3" />
+        <rect x="1330" y="166" width="92" height="34" rx="3" />
+    </g>
+    <rect x="1430" y="166" width="92" height="34" rx="3" fill="#00eeff" fill-opacity=".14" stroke="#00eeff" />
+    <g text-anchor="middle">
+        <text x="1176" y="187" fill="#c8d8f0">CSV</text>
+        <text x="1276" y="187" fill="#c8d8f0">HTML</text>
+        <text x="1376" y="187" fill="#c8d8f0">IMAGE</text>
+        <text x="1476" y="187" fill="#00eeff">PPTX</text>
+    </g>
+
+    <text x="1130" y="232" fill="#4a6a88">WIDGETS</text>
+    <use href="#check" x="1130" y="244" />
+    <use href="#check" x="1130" y="270" />
+    <use href="#uncheck" x="1130" y="296" />
+    <use href="#check" x="1130" y="322" />
+    <g fill="#2a4a66">
+        <rect x="1154" y="248" width="110" height="6" rx="2" />
+        <rect x="1154" y="274" width="84" height="6" rx="2" />
+        <rect x="1154" y="300" width="96" height="6" rx="2" />
+        <rect x="1154" y="326" width="72" height="6" rx="2" />
+    </g>
+
+    <!-- slide preview -->
+    <text x="1300" y="232" fill="#4a6a88">SLIDE 2 / 3</text>
+    <rect x="1300" y="244" width="220" height="124" rx="2" fill="#c8d8f0" fill-opacity=".08" stroke="#2a4a66" />
+    <rect x="1320" y="256" width="180" height="70" fill="#0a1724" stroke="#14304a" />
+    <path d="M1330 314L1356 306 1382 308 1408 294 1434 298 1460 284 1490 280" fill="none" stroke="#00eeff" stroke-width="1.5" />
+    <rect x="1320" y="336" width="120" height="5" rx="2" fill="#4a6a88" />
+    <rect x="1320" y="348" width="90" height="5" rx="2" fill="#4a6a88" />
+    <path d="M1300 386h220" stroke="#14304a" />
+    <g fill="#2a4a66">
+        <rect x="1300" y="398" width="50" height="40" rx="2" fill-opacity=".5" />
+        <rect x="1360" y="398" width="50" height="40" rx="2" stroke="#00eeff" fill="#00eeff" fill-opacity=".12" />
+        <rect x="1420" y="398" width="50" height="40" rx="2" fill-opacity=".5" />
+    </g>
+
+    <!-- caption fields -->
+    <text x="1130" y="378" fill="#4a6a88">STAMP EACH ITEM</text>
+    <use href="#check" x="1130" y="390" />
+    <text x="1152" y="401" fill="#c8d8f0">DESCRIPTION</text>
+    <use href="#check" x="1130" y="414" />
+    <text x="1152" y="425" fill="#c8d8f0">TIMESTAMP</text>
+
+    <rect x="1130" y="466" width="390" height="56" rx="3" fill="#07111c" stroke="#16324a" />
+    <rect x="1144" y="480" width="300" height="6" rx="2" fill="#2a4a66" />
+    <rect x="1144" y="496" width="220" height="6" rx="2" fill="#2a4a66" />
+
+    <path d="M1130 548h390" stroke="#14304a" />
+    <rect x="1318" y="566" width="92" height="30" rx="3" fill="none" stroke="#2a4a66" />
+    <text x="1364" y="585" fill="#4a6a88" text-anchor="middle">CANCEL</text>
+    <rect x="1420" y="566" width="100" height="30" rx="3" fill="#00eeff" />
+    <text x="1470" y="585" fill="#07111c" text-anchor="middle" font-weight="bold">EXPORT 3</text>
+</svg>

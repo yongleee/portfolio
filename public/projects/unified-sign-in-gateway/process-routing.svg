@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="9" letter-spacing="1">
+    <!-- Process sketch: how the username-first step picks a route, with the Graph lookup outcomes. Generic labels only. -->
+    <defs>
+        <marker id="arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+            <path d="M0 0l8 4-8 4z" fill="#00eeff" />
+        </marker>
+    </defs>
+
+    <rect width="400" height="300" fill="#07111c" />
+    <text x="12" y="22" fill="#4a6a88">ROUTE // USERNAME FIRST</text>
+
+    <g fill="none" stroke="#00eeff" stroke-width="1.2" marker-end="url(#arrow)">
+        <path d="M110 55H136" />
+        <path d="M230 55H281" />
+        <path d="M185 70V101" />
+        <path d="M185 135V156" />
+        <path d="M185 194V234" />
+        <path d="M185 214H67V234" />
+        <path d="M185 214H310V234" />
+    </g>
+
+    <rect x="12" y="40" width="98" height="30" fill="#0b1a28" stroke="#00eeff" stroke-opacity=".6" />
+    <text x="61" y="59" fill="#c8d8f0" text-anchor="middle">USERNAME</text>
+
+    <rect x="140" y="40" width="90" height="30" fill="#0b1a28" stroke="#ffb020" stroke-opacity=".7" />
+    <text x="185" y="59" fill="#ffb020" text-anchor="middle">LOGIN MODE</text>
+
+    <text x="236" y="49" font-size="8" fill="#4a6a88">LOCAL</text>
+    <rect x="285" y="40" width="103" height="30" fill="#0b1a28" stroke="#2a4a66" />
+    <text x="336" y="53" fill="#c8d8f0" text-anchor="middle">PASSWORD</text>
+    <text x="336" y="64" font-size="8" fill="#4a6a88" text-anchor="middle">SAME PAGE</text>
+
+    <text x="192" y="90" font-size="8" fill="#4a6a88">ENTRA</text>
+    <rect x="140" y="105" width="90" height="30" fill="#0b1a28" stroke="#2a4a66" />
+    <text x="185" y="118" fill="#c8d8f0" text-anchor="middle">+ DOMAINS</text>
+    <text x="185" y="129" font-size="8" fill="#4a6a88" text-anchor="middle">CANDIDATES</text>
+
+    <rect x="130" y="160" width="110" height="34" fill="#0d2133" stroke="#00eeff" stroke-opacity=".8" />
+    <text x="185" y="175" fill="#c8d8f0" text-anchor="middle">GRAPH LOOKUP</text>
+    <text x="185" y="187" font-size="8" fill="#4a6a88" text-anchor="middle">CACHE · TIMEOUT</text>
+
+    <rect x="12" y="238" width="110" height="40" fill="#00eeff" fill-opacity=".1" stroke="#00eeff" stroke-opacity=".7" />
+    <text x="67" y="254" fill="#00eeff" text-anchor="middle">EXISTS</text>
+    <text x="67" y="268" font-size="8" fill="#c8d8f0" text-anchor="middle">REDIRECT ENTRA</text>
+
+    <rect x="130" y="238" width="110" height="40" fill="#ff0066" fill-opacity=".1" stroke="#ff0066" stroke-opacity=".7" />
+    <text x="185" y="254" fill="#ff0066" text-anchor="middle">NOT FOUND</text>
+    <text x="185" y="268" font-size="8" fill="#c8d8f0" text-anchor="middle">ERROR ON PAGE</text>
+
+    <rect x="255" y="238" width="110" height="40" fill="#ffb020" fill-opacity=".1" stroke="#ffb020" stroke-opacity=".7" />
+    <text x="310" y="254" fill="#ffb020" text-anchor="middle">UNKNOWN</text>
+    <text x="310" y="268" font-size="8" fill="#c8d8f0" text-anchor="middle">FAIL OPEN</text>
+
+    <text x="12" y="294" font-size="8" fill="#2a4a66">UNKNOWN IS NEVER CACHED · RETRIED NEXT LOGIN</text>
+</svg>

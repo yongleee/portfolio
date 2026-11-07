@@ -1,0 +1,134 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="9" letter-spacing="1.5">
+    <!-- Signature feature: a penetration-rate dashboard where an abstract hex-tile choropleth, a trend chart and a shared quarter slider stay in sync. Wireframe only: no real data or geography. -->
+    <defs>
+        <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse">
+            <circle cx="2" cy="2" r="1" fill="#14304a" />
+        </pattern>
+        <filter id="lift" x="-10%" y="-10%" width="120%" height="130%">
+            <feDropShadow dy="18" stdDeviation="22" flood-color="#000" flood-opacity=".55" />
+        </filter>
+        <linearGradient id="ramp" x1="0" x2="1">
+            <stop offset="0" stop-color="#00eeff" stop-opacity=".12" />
+            <stop offset="1" stop-color="#00eeff" stop-opacity=".95" />
+        </linearGradient>
+        <path id="hex" d="M0-20L17.3-10V10L0 20-17.3 10V-10z" />
+        <g id="hexmap" fill="#00eeff" stroke="#0b1a28" stroke-width="2">
+            <use href="#hex" x="34.6" y="0" fill-opacity=".25" />
+            <use href="#hex" x="69.2" y="0" fill-opacity=".45" />
+            <use href="#hex" x="103.8" y="0" fill-opacity=".3" />
+            <use href="#hex" x="17.3" y="30" fill-opacity=".2" />
+            <use href="#hex" x="51.9" y="30" fill-opacity=".55" />
+            <use href="#hex" x="86.5" y="30" fill-opacity=".8" />
+            <use href="#hex" x="121.1" y="30" fill-opacity=".4" />
+            <use href="#hex" x="155.7" y="30" fill-opacity=".15" />
+            <use href="#hex" x="0" y="60" fill-opacity=".35" />
+            <use href="#hex" x="34.6" y="60" fill-opacity=".7" />
+            <use href="#hex" x="69.2" y="60" fill-opacity=".95" />
+            <use href="#hex" x="103.8" y="60" fill-opacity=".6" />
+            <use href="#hex" x="138.4" y="60" fill-opacity=".3" />
+            <use href="#hex" x="51.9" y="90" fill-opacity=".5" />
+            <use href="#hex" x="86.5" y="90" fill-opacity=".4" />
+            <use href="#hex" x="121.1" y="90" fill-opacity=".25" />
+            <use href="#hex" x="69.2" y="120" fill-opacity=".3" />
+            <use href="#hex" x="103.8" y="120" fill-opacity=".15" />
+        </g>
+    </defs>
+
+    <rect width="800" height="500" fill="#07111c" />
+    <rect width="800" height="500" fill="url(#dots)" />
+
+    <!-- sheet -->
+    <rect x="40" y="30" width="720" height="440" rx="6" fill="#0b1a28" stroke="#16324a" filter="url(#lift)" />
+    <path d="M46 30h708a6 6 0 0 1 6 6v16H40V36a6 6 0 0 1 6-6z" fill="#00eeff" />
+    <text x="56" y="45" fill="#07111c" font-weight="bold">PENETRATION RATE // TREND + MAP</text>
+    <text x="744" y="45" fill="#07111c" font-weight="bold" text-anchor="end">LINKED</text>
+
+    <!-- controls -->
+    <rect x="56" y="68" width="186" height="26" rx="13" fill="#07111c" stroke="#2a4a66" />
+    <rect x="58" y="70" width="90" height="22" rx="11" fill="#00eeff" fill-opacity=".15" stroke="#00eeff" />
+    <text x="103" y="84" fill="#00eeff" text-anchor="middle">REGION</text>
+    <text x="195" y="84" fill="#4a6a88" text-anchor="middle">NATIONAL</text>
+    <rect x="258" y="68" width="150" height="26" rx="3" fill="#07111c" stroke="#2a4a66" />
+    <rect x="270" y="78" width="88" height="6" rx="2" fill="#c8d8f0" fill-opacity=".7" />
+    <path d="M390 78l5 5 5-5" fill="none" stroke="#4a6a88" stroke-width="1.5" />
+    <rect x="420" y="68" width="110" height="26" rx="3" fill="#07111c" stroke="#2a4a66" />
+    <rect x="432" y="78" width="50" height="6" rx="2" fill="#c8d8f0" fill-opacity=".7" />
+    <path d="M512 78l5 5 5-5" fill="none" stroke="#4a6a88" stroke-width="1.5" />
+    <rect x="652" y="68" width="92" height="26" rx="3" fill="none" stroke="#2a4a66" />
+    <text x="698" y="85" fill="#c8d8f0" text-anchor="middle">RESET</text>
+
+    <!-- map panel -->
+    <rect x="56" y="110" width="320" height="270" fill="#0a1724" stroke="#14304a" />
+    <text x="68" y="128" fill="#4a6a88">BY REGION</text>
+    <g transform="translate(119 165) scale(1.25)">
+        <use href="#hexmap" />
+        <use href="#hex" x="69.2" y="60" fill="none" stroke="#c8d8f0" stroke-width="2" />
+    </g>
+    <!-- hover popup -->
+    <path d="M212 248l28 36" stroke="#c8d8f0" stroke-opacity=".6" />
+    <rect x="236" y="284" width="128" height="54" rx="3" fill="#0d2133" stroke="#2a4a66" filter="url(#lift)" />
+    <rect x="248" y="295" width="64" height="7" rx="2" fill="#c8d8f0" fill-opacity=".85" />
+    <rect x="248" y="310" width="36" height="6" rx="2" fill="#1b3550" />
+    <rect x="248" y="323" width="50" height="6" rx="2" fill="#1b3550" />
+    <rect x="318" y="308" width="34" height="10" rx="2" fill="#00eeff" />
+    <rect x="324" y="321" width="28" height="10" rx="2" fill="#2a4a66" />
+    <!-- legend ramp -->
+    <rect x="68" y="356" width="160" height="8" rx="2" fill="url(#ramp)" />
+    <rect x="236" y="357" width="30" height="6" rx="2" fill="#1b3550" />
+
+    <!-- trend panel -->
+    <rect x="392" y="110" width="352" height="270" fill="#0a1724" stroke="#14304a" />
+    <text x="404" y="128" fill="#4a6a88">TREND</text>
+    <rect x="608" y="116" width="124" height="20" rx="10" fill="#00eeff" fill-opacity=".12" stroke="#00eeff" stroke-opacity=".6" />
+    <text x="660" y="129" fill="#00eeff" text-anchor="middle">REGION</text>
+    <text x="716" y="129" fill="#00eeff" text-anchor="middle">×</text>
+    <g stroke="#14304a" fill="none">
+        <path d="M420 170h300M420 210h300M420 250h300M420 290h300" stroke-dasharray="2 4" />
+        <path d="M420 150v180h300" stroke="#2a4a66" />
+    </g>
+    <g fill="#1b3550">
+        <rect x="398" y="167" width="16" height="6" rx="2" />
+        <rect x="398" y="207" width="16" height="6" rx="2" />
+        <rect x="398" y="247" width="16" height="6" rx="2" />
+        <rect x="398" y="287" width="16" height="6" rx="2" />
+    </g>
+    <!-- selected quarter guide -->
+    <path d="M660 150v180" stroke="#c8d8f0" stroke-opacity=".35" stroke-dasharray="3 3" />
+    <polyline points="420,310 450,302 480,296 510,288 540,280 570,272 600,264 630,255 660,248 690,240 720,232" fill="none" stroke="#4a6a88" stroke-width="2" stroke-dasharray="5 4" />
+    <polyline points="420,300 450,290 480,285 510,270 540,262 570,250 600,238 630,230 660,215 690,205 720,192" fill="none" stroke="#00eeff" stroke-width="2.5" />
+    <circle cx="660" cy="215" r="5" fill="#07111c" stroke="#00eeff" stroke-width="2" />
+    <circle cx="660" cy="248" r="4" fill="#07111c" stroke="#4a6a88" stroke-width="2" />
+    <g fill="#1b3550">
+        <rect x="430" y="340" width="22" height="6" rx="2" />
+        <rect x="520" y="340" width="22" height="6" rx="2" />
+        <rect x="610" y="340" width="22" height="6" rx="2" />
+        <rect x="700" y="340" width="22" height="6" rx="2" />
+    </g>
+    <rect x="404" y="358" width="14" height="4" fill="#00eeff" />
+    <text x="424" y="363" fill="#c8d8f0">REGION</text>
+    <rect x="490" y="358" width="14" height="4" fill="#4a6a88" />
+    <text x="510" y="363" fill="#4a6a88">NATIONAL</text>
+
+    <!-- shared quarter slider -->
+    <text x="56" y="404" fill="#4a6a88">QUARTER</text>
+    <rect x="56" y="420" width="688" height="4" rx="2" fill="#1b3550" />
+    <rect x="56" y="420" width="516" height="4" rx="2" fill="#00eeff" />
+    <g fill="#2a4a66">
+        <rect x="55" y="414" width="2" height="16" />
+        <rect x="141" y="416" width="2" height="12" />
+        <rect x="227" y="416" width="2" height="12" />
+        <rect x="313" y="416" width="2" height="12" />
+        <rect x="399" y="416" width="2" height="12" />
+        <rect x="485" y="416" width="2" height="12" />
+        <rect x="657" y="416" width="2" height="12" />
+        <rect x="743" y="414" width="2" height="16" />
+    </g>
+    <circle cx="572" cy="422" r="8" fill="#07111c" stroke="#00eeff" stroke-width="2.5" />
+    <g fill="#4a6a88" text-anchor="middle">
+        <text x="56" y="448">Q1</text>
+        <text x="228" y="448">Q3</text>
+        <text x="400" y="448">Q1</text>
+        <text x="744" y="448">Q1</text>
+    </g>
+    <text x="572" y="448" fill="#00eeff" text-anchor="middle">Q3</text>
+</svg>

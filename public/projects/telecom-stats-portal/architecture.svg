@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="9" letter-spacing="1">
+    <!-- Architecture: React SPA -> Express BFF (sessions, SSO, proxy) -> Express API -> SQL Server, with logging and the GitHub Actions image pipeline. No hostnames or real config. -->
+    <defs>
+        <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse">
+            <circle cx="2" cy="2" r="1" fill="#14304a" />
+        </pattern>
+        <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+            <path d="M0 0L10 5 0 10z" fill="#00eeff" />
+        </marker>
+        <marker id="arrow-dim" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+            <path d="M0 0L10 5 0 10z" fill="#4a6a88" />
+        </marker>
+        <g id="node">
+            <rect width="160" height="190" fill="#0b1a28" stroke="#16324a" />
+            <rect width="160" height="20" fill="#00eeff" />
+        </g>
+        <g id="side">
+            <rect width="160" height="44" fill="#0a1724" stroke="#2a4a66" stroke-dasharray="4 3" />
+        </g>
+    </defs>
+
+    <rect width="800" height="500" fill="#07111c" />
+    <rect width="800" height="500" fill="url(#dots)" />
+
+    <text x="30" y="44" fill="#4a6a88" letter-spacing="2">SYSTEM // ARCHITECTURE</text>
+    <text x="770" y="44" fill="#4a6a88" text-anchor="end" letter-spacing="2">DOCKER · TWO REPOS</text>
+
+    <!-- main row -->
+    <use href="#node" x="30" y="70" />
+    <use href="#node" x="226" y="70" />
+    <use href="#node" x="422" y="70" />
+    <use href="#node" x="618" y="70" />
+    <g fill="#07111c" font-weight="bold">
+        <text x="40" y="84">BROWSER // SPA</text>
+        <text x="236" y="84">FRONTEND // BFF</text>
+        <text x="432" y="84">CORE // API</text>
+        <text x="628" y="84">DATA // SQL</text>
+    </g>
+
+    <g fill="#c8d8f0">
+        <text x="42" y="112">REACT 18 + TS</text>
+        <text x="42" y="134">CHART.JS</text>
+        <text x="42" y="156">REACT-LEAFLET</text>
+        <text x="42" y="178">MUI</text>
+        <text x="42" y="200">REACT ROUTER</text>
+
+        <text x="238" y="112">EXPRESS + TS</text>
+        <text x="238" y="134">REDIS SESSIONS</text>
+        <text x="238" y="156">MSAL LOGIN</text>
+        <text x="238" y="178">HELMET · RATE LIMIT</text>
+        <text x="238" y="200">API PROXY</text>
+
+        <text x="434" y="112">EXPRESS + TS</text>
+        <text x="434" y="134">ROUTES</text>
+        <text x="434" y="156">CONTROLLERS</text>
+        <text x="434" y="178">SERVICES</text>
+        <text x="434" y="200">SWAGGER</text>
+
+        <text x="630" y="112">SQL SERVER</text>
+        <text x="630" y="134">TEDIOUS DRIVER</text>
+        <text x="630" y="156">STATS VIEWS</text>
+    </g>
+    <g fill="#4a6a88">
+        <text x="630" y="178">BY YEAR + QUARTER</text>
+        <text x="630" y="200">BY REGION</text>
+    </g>
+    <g fill="#1b3550">
+        <rect x="42" y="226" width="96" height="6" rx="2" />
+        <rect x="42" y="240" width="70" height="6" rx="2" />
+        <rect x="238" y="226" width="110" height="6" rx="2" />
+        <rect x="238" y="240" width="80" height="6" rx="2" />
+        <rect x="434" y="226" width="88" height="6" rx="2" />
+        <rect x="434" y="240" width="104" height="6" rx="2" />
+        <rect x="630" y="226" width="92" height="6" rx="2" />
+        <rect x="630" y="240" width="64" height="6" rx="2" />
+    </g>
+
+    <!-- main flow -->
+    <g stroke="#00eeff" stroke-width="1.5" marker-end="url(#arrow)">
+        <path d="M190 165h34" />
+        <path d="M386 165h34" />
+        <path d="M582 165h34" />
+    </g>
+
+    <!-- side services -->
+    <use href="#side" x="30" y="320" />
+    <use href="#side" x="226" y="320" />
+    <use href="#side" x="422" y="320" />
+    <g fill="#c8d8f0">
+        <text x="42" y="340">ENTRA ID</text>
+        <text x="238" y="340">REDIS</text>
+        <text x="434" y="340">APP INSIGHTS</text>
+    </g>
+    <g fill="#4a6a88">
+        <text x="42" y="354">SSO · ADMIN ROLES</text>
+        <text x="238" y="354">SESSIONS + CMS DATA</text>
+        <text x="434" y="354">WINSTON LOGS</text>
+    </g>
+    <g fill="none" stroke="#4a6a88" stroke-dasharray="4 3" marker-end="url(#arrow-dim)">
+        <path d="M250 260v30H110v28" />
+        <path d="M306 260v58" />
+        <path d="M362 260v30h100v28" />
+        <path d="M542 260v58" />
+    </g>
+
+    <!-- CI strip -->
+    <rect x="30" y="400" width="740" height="70" fill="#0a1724" stroke="#14304a" />
+    <text x="44" y="420" fill="#4a6a88" letter-spacing="2">GITHUB ACTIONS · PUSH TO DEV / MAIN</text>
+    <g fill="#0d2133" stroke="#2a4a66">
+        <rect x="44" y="432" width="130" height="26" rx="3" />
+        <rect x="214" y="432" width="130" height="26" rx="3" />
+        <rect x="384" y="432" width="160" height="26" rx="3" />
+        <rect x="584" y="432" width="172" height="26" rx="3" />
+    </g>
+    <g fill="#c8d8f0" text-anchor="middle">
+        <text x="109" y="449">GITLEAKS</text>
+        <text x="279" y="449">ESLINT</text>
+        <text x="464" y="449">DOCKER BUILD</text>
+        <text x="670" y="449">GHCR · DEV / MAIN</text>
+    </g>
+    <g stroke="#00eeff" stroke-width="1.5" marker-end="url(#arrow)">
+        <path d="M174 445h38" />
+        <path d="M344 445h38" />
+        <path d="M544 445h38" />
+    </g>
+</svg>

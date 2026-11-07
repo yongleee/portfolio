@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="9" letter-spacing="1">
+    <!-- Process: one shared quarter context drives separate map and chart fetches; clicking a region filters the chart, clicking away resets it. Wireframe only. -->
+    <defs>
+        <pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse">
+            <circle cx="2" cy="2" r="1" fill="#14304a" />
+        </pattern>
+        <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+            <path d="M0 0L10 5 0 10z" fill="#00eeff" />
+        </marker>
+        <marker id="arrow-dim" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+            <path d="M0 0L10 5 0 10z" fill="#4a6a88" />
+        </marker>
+        <path id="hex" d="M0-8L6.9-4V4L0 8-6.9 4V-4z" />
+    </defs>
+
+    <rect width="400" height="300" fill="#07111c" />
+    <rect width="400" height="300" fill="url(#dots)" />
+    <text x="20" y="26" fill="#4a6a88" letter-spacing="2">SYNC // ONE FILTER, MANY VIEWS</text>
+
+    <!-- shared context -->
+    <rect x="120" y="40" width="160" height="38" fill="#0b1a28" stroke="#00eeff" />
+    <text x="200" y="56" fill="#00eeff" text-anchor="middle">QUARTER CONTEXT</text>
+    <rect x="140" y="65" width="120" height="3" rx="1.5" fill="#1b3550" />
+    <rect x="140" y="65" width="80" height="3" rx="1.5" fill="#00eeff" />
+    <circle cx="220" cy="66.5" r="4" fill="#07111c" stroke="#00eeff" stroke-width="1.5" />
+
+    <!-- fetches -->
+    <g fill="#0a1724" stroke="#2a4a66">
+        <rect x="30" y="104" width="140" height="30" />
+        <rect x="230" y="104" width="140" height="30" />
+    </g>
+    <g fill="#c8d8f0" text-anchor="middle">
+        <text x="100" y="123">MAP FETCH</text>
+        <text x="300" y="123">CHART FETCH</text>
+    </g>
+    <g fill="none" stroke="#00eeff" stroke-width="1.5" marker-end="url(#arrow)">
+        <path d="M160 78v12H100v12" />
+        <path d="M240 78v12h60v12" />
+        <path d="M100 134v26" />
+        <path d="M300 134v26" />
+    </g>
+
+    <!-- views -->
+    <g fill="#0b1a28" stroke="#16324a">
+        <rect x="30" y="162" width="140" height="70" />
+        <rect x="230" y="162" width="140" height="70" />
+    </g>
+    <text x="40" y="178" fill="#4a6a88">CHOROPLETH</text>
+    <text x="240" y="178" fill="#4a6a88">TREND CHART</text>
+    <g fill="#00eeff" stroke="#0b1a28" stroke-width="1.5">
+        <use href="#hex" x="86" y="198" fill-opacity=".35" />
+        <use href="#hex" x="100" y="198" fill-opacity=".6" />
+        <use href="#hex" x="114" y="198" fill-opacity=".3" />
+        <use href="#hex" x="93" y="210" fill-opacity=".5" />
+        <use href="#hex" x="107" y="210" fill-opacity=".95" />
+        <use href="#hex" x="100" y="222" fill-opacity=".25" />
+    </g>
+    <use href="#hex" x="107" y="210" fill="none" stroke="#c8d8f0" stroke-width="1.5" />
+    <path d="M244 222h112" stroke="#2a4a66" />
+    <polyline points="244,216 262,212 280,206 298,204 316,196 334,192 352,186" fill="none" stroke="#00eeff" stroke-width="2" />
+
+    <!-- cross-view links -->
+    <path d="M170 188h58" stroke="#00eeff" stroke-width="1.5" marker-end="url(#arrow)" />
+    <text x="199" y="182" fill="#00eeff" text-anchor="middle">FILTER</text>
+    <path d="M230 214h-58" stroke="#4a6a88" stroke-dasharray="3 3" marker-end="url(#arrow-dim)" />
+    <text x="200" y="228" fill="#4a6a88" text-anchor="middle">RESET</text>
+
+    <!-- footnote -->
+    <rect x="30" y="250" width="340" height="32" fill="#0a1724" stroke="#14304a" />
+    <text x="200" y="264" fill="#c8d8f0" text-anchor="middle">useCallback · STABLE HANDLERS</text>
+    <text x="200" y="276" fill="#4a6a88" text-anchor="middle">NO RE-RENDER LOOP · NO STALE QUARTER</text>
+</svg>

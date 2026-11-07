@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="9" letter-spacing="1">
+    <!-- Architecture: staff browser and API clients into a Laravel app, whose integration layer fronts the provisioning system, the self-service backend and Huawei NCE, over the shared legacy DB. Wireframe only: no real hosts or names. -->
+    <defs>
+        <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+            <path d="M20 0H0v20" fill="none" stroke="#0d2133" />
+        </pattern>
+        <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+            <path d="M0 0l10 5-10 5z" fill="#00eeff" />
+        </marker>
+        <marker id="arr-dim" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+            <path d="M0 0l10 5-10 5z" fill="#4a6a88" />
+        </marker>
+    </defs>
+
+    <rect width="800" height="500" fill="#07111c" />
+    <rect width="800" height="500" fill="url(#grid)" />
+
+    <!-- clients -->
+    <text x="24" y="40" fill="#4a6a88" letter-spacing="2">CLIENTS</text>
+    <rect x="24" y="56" width="150" height="62" rx="6" fill="#0a1724" stroke="#16324a" />
+    <text x="38" y="78" fill="#c8d8f0">STAFF BROWSER</text>
+    <text x="38" y="94" fill="#4a6a88">React + Inertia</text>
+    <text x="38" y="108" fill="#4a6a88">desktop / phone</text>
+    <rect x="24" y="140" width="150" height="62" rx="6" fill="#0a1724" stroke="#16324a" />
+    <text x="38" y="162" fill="#c8d8f0">API CLIENTS</text>
+    <text x="38" y="178" fill="#4a6a88">/api/v1</text>
+    <text x="38" y="192" fill="#4a6a88">Sanctum token</text>
+
+    <!-- core -->
+    <rect x="224" y="40" width="300" height="300" rx="8" fill="#0a1724" stroke="#00eeff" stroke-opacity=".5" />
+    <rect x="224" y="40" width="300" height="24" rx="8" fill="#00eeff" />
+    <rect x="224" y="56" width="300" height="8" fill="#00eeff" />
+    <text x="238" y="56" fill="#07111c" font-weight="bold" letter-spacing="2">CORE // LARAVEL 13</text>
+    <text x="400" y="80" fill="#4a6a88" text-anchor="middle">Octane + FrankenPHP</text>
+
+    <rect x="244" y="92" width="260" height="40" rx="4" fill="#0d2133" stroke="#16324a" />
+    <text x="258" y="110" fill="#c8d8f0">ROUTES</text>
+    <text x="258" y="123" fill="#4a6a88">web pages + API v1, can: per route</text>
+
+    <rect x="244" y="148" width="260" height="40" rx="4" fill="#0d2133" stroke="#ff0066" stroke-opacity=".6" />
+    <text x="258" y="166" fill="#ff0066">SCOPE GUARD</text>
+    <text x="258" y="179" fill="#4a6a88">subscriber groups, every record</text>
+
+    <rect x="244" y="204" width="260" height="40" rx="4" fill="#0d2133" stroke="#16324a" />
+    <text x="258" y="222" fill="#c8d8f0">ACTIONS + SERVICES</text>
+    <text x="258" y="235" fill="#4a6a88">edit chains, activity log</text>
+
+    <rect x="244" y="260" width="260" height="64" rx="4" fill="#0d2133" stroke="#00eeff" stroke-opacity=".6" />
+    <text x="258" y="278" fill="#00eeff">INTEGRATIONS</text>
+    <rect x="258" y="288" width="70" height="24" rx="3" fill="#07111c" stroke="#2a4a66" />
+    <text x="293" y="304" fill="#c8d8f0" text-anchor="middle" font-size="8">PROV</text>
+    <rect x="339" y="288" width="70" height="24" rx="3" fill="#07111c" stroke="#2a4a66" />
+    <text x="374" y="304" fill="#c8d8f0" text-anchor="middle" font-size="8">SELF-SVC</text>
+    <rect x="420" y="288" width="70" height="24" rx="3" fill="#07111c" stroke="#2a4a66" />
+    <text x="455" y="304" fill="#c8d8f0" text-anchor="middle" font-size="8">NCE</text>
+
+    <g stroke="#2a4a66">
+        <path d="M374 132v16" />
+        <path d="M374 188v16" />
+        <path d="M374 244v16" />
+    </g>
+
+    <!-- client arrows -->
+    <path d="M174 87h44" stroke="#00eeff" marker-end="url(#arr)" />
+    <path d="M174 171h24v-60h20" fill="none" stroke="#00eeff" marker-end="url(#arr)" />
+
+    <!-- external systems -->
+    <text x="584" y="40" fill="#4a6a88" letter-spacing="2">UPSTREAM</text>
+    <rect x="584" y="56" width="192" height="58" rx="6" fill="#0a1724" stroke="#16324a" />
+    <text x="598" y="78" fill="#c8d8f0">PROVISIONING SYS</text>
+    <text x="598" y="94" fill="#4a6a88">broadband + VoIP</text>
+    <text x="598" y="106" fill="#4a6a88">JSON over POST</text>
+
+    <rect x="584" y="132" width="192" height="58" rx="6" fill="#0a1724" stroke="#16324a" />
+    <text x="598" y="154" fill="#c8d8f0">SELF-SERVICE WS</text>
+    <text x="598" y="170" fill="#4a6a88">ACS, TR-069</text>
+    <text x="598" y="182" fill="#4a6a88">-&gt; customer router</text>
+
+    <rect x="584" y="208" width="192" height="58" rx="6" fill="#0a1724" stroke="#16324a" />
+    <text x="598" y="230" fill="#c8d8f0">HUAWEI NCE</text>
+    <text x="598" y="246" fill="#4a6a88">fibre ONT services</text>
+    <text x="598" y="258" fill="#4a6a88">token auth</text>
+
+    <!-- integration arrows: leave the core's right edge, then fan out -->
+    <path d="M490 294h56V85h32" fill="none" stroke="#00eeff" marker-end="url(#arr)" />
+    <path d="M546 161h32" stroke="#00eeff" marker-end="url(#arr)" />
+    <path d="M546 237h32" stroke="#00eeff" marker-end="url(#arr)" />
+
+    <!-- data -->
+    <text x="24" y="392" fill="#4a6a88" letter-spacing="2">DATA + AUTH</text>
+    <rect x="224" y="376" width="300" height="80" rx="6" fill="#0b1a28" stroke="#16324a" />
+    <path d="M248 396c0-8 48-8 48 0v36c0 8-48 8-48 0z" fill="#0d2133" stroke="#2a4a66" />
+    <path d="M248 396c0 8 48 8 48 0" fill="none" stroke="#2a4a66" />
+    <text x="312" y="402" fill="#c8d8f0">SHARED MYSQL</text>
+    <text x="312" y="418" fill="#4a6a88">legacy schema, no migrations</text>
+    <text x="312" y="434" fill="#4a6a88">accounts, lines, ONTs, logs</text>
+
+    <rect x="24" y="408" width="150" height="48" rx="6" fill="#0a1724" stroke="#16324a" />
+    <text x="38" y="428" fill="#c8d8f0">LDAP</text>
+    <text x="38" y="444" fill="#4a6a88">staff directory</text>
+
+    <rect x="584" y="392" width="192" height="64" rx="6" fill="#0a1724" stroke="#2a4a66" stroke-dasharray="4 3" />
+    <text x="598" y="414" fill="#4a6a88">LEGACY PORTAL</text>
+    <text x="598" y="430" fill="#4a6a88">CodeIgniter, retired</text>
+    <text x="598" y="444" fill="#4a6a88">screen by screen</text>
+
+    <path d="M374 340v30" stroke="#00eeff" marker-end="url(#arr)" />
+    <path d="M224 310h-64v92" fill="none" stroke="#4a6a88" stroke-dasharray="4 3" marker-end="url(#arr-dim)" />
+    <path d="M584 424h-54" stroke="#4a6a88" stroke-dasharray="4 3" marker-end="url(#arr-dim)" />
+</svg>

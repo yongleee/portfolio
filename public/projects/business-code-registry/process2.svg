@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="9" letter-spacing="1" text-anchor="middle">
+    <!-- Sketch: content status lifecycle. -->
+    <defs>
+        <marker id="arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto">
+            <path d="M0 0l8 4-8 4z" fill="#4a6a88" />
+        </marker>
+    </defs>
+
+    <rect width="400" height="400" fill="#07111c" />
+    <text x="24" y="36" font-size="10" letter-spacing="2" fill="#00eeff" text-anchor="start">02 // LIFECYCLE</text>
+    <rect x="24" y="44" width="352" height="1" fill="#16324a" />
+
+    <!-- transitions -->
+    <g fill="none" stroke="#4a6a88" stroke-width="1.5" marker-end="url(#arrow)">
+        <path d="M120 140L276 264" />
+        <path d="M318 256V152" />
+        <path d="M302 152V256" stroke="#00eeff" />
+        <path d="M268 300H134" />
+        <path d="M70 88C40 40 140 40 108 86" />
+    </g>
+    <g fill="#4a6a88">
+        <text x="196" y="178" transform="rotate(40 196 178)">PUBLISH</text>
+        <text x="350" y="206">EDIT /</text>
+        <text x="350" y="218">DELETE</text>
+        <text x="268" y="206" fill="#00eeff">PUBLISH</text>
+        <text x="200" y="320">SUPERSEDED</text>
+        <text x="40" y="64">EDIT</text>
+    </g>
+
+    <!-- states -->
+    <circle cx="90" cy="116" r="34" fill="#7c8cff" fill-opacity=".1" stroke="#7c8cff" />
+    <text x="90" y="120" fill="#7c8cff">NEW</text>
+    <circle cx="310" cy="116" r="34" fill="#ffb020" fill-opacity=".1" stroke="#ffb020" />
+    <text x="310" y="120" fill="#ffb020">EDITED</text>
+    <circle cx="310" cy="300" r="40" fill="#00eeff" fill-opacity=".12" stroke="#00eeff" stroke-width="2" />
+    <text x="310" y="304" fill="#00eeff">PUBLISHED</text>
+    <circle cx="90" cy="300" r="34" fill="#ff0066" fill-opacity=".1" stroke="#ff0066" />
+    <text x="90" y="304" fill="#ff0066">EXPIRED</text>
+
+    <text x="200" y="378" fill="#2a4a66">EVERY TRANSITION WRITES AN AUDIT ROW</text>
+</svg>

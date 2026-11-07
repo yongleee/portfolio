@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="9" letter-spacing="1.5">
+    <!-- Search by structure: hierarchy drill-down beside the assistant. Wireframe only. -->
+    <defs>
+        <g id="item">
+            <rect width="130" height="30" fill="#0b1a28" stroke="#16324a" />
+            <rect x="10" y="11" width="28" height="8" rx="2" fill="#2a4a66" />
+            <path d="M116 11l4 4-4 4" fill="none" stroke="#2a4a66" stroke-width="1.5" />
+        </g>
+        <g id="pick">
+            <rect width="130" height="30" fill="#00eeff" fill-opacity=".12" stroke="#00eeff" />
+            <rect x="10" y="11" width="28" height="8" rx="2" fill="#00eeff" />
+            <path d="M116 11l4 4-4 4" fill="none" stroke="#00eeff" stroke-width="1.5" />
+        </g>
+    </defs>
+
+    <rect width="800" height="400" fill="#07111c" />
+
+    <!-- level headers -->
+    <g fill="#4a6a88">
+        <text x="30" y="52">LEVEL 1</text>
+        <text x="170" y="52">LEVEL 2</text>
+        <text x="310" y="52">LEVEL 3</text>
+        <text x="450" y="52">LEVEL 4</text>
+    </g>
+    <g fill="#16324a">
+        <rect x="30" y="58" width="130" height="1" />
+        <rect x="170" y="58" width="130" height="1" />
+        <rect x="310" y="58" width="130" height="1" />
+        <rect x="450" y="58" width="130" height="1" />
+    </g>
+
+    <!-- level 1 -->
+    <use href="#item" x="30" y="70" />
+    <use href="#item" x="30" y="106" />
+    <use href="#pick" x="30" y="142" />
+    <use href="#item" x="30" y="178" />
+    <use href="#item" x="30" y="214" />
+    <use href="#item" x="30" y="250" />
+    <use href="#item" x="30" y="286" />
+    <use href="#item" x="30" y="322" />
+    <!-- level 2 -->
+    <use href="#item" x="170" y="70" />
+    <use href="#pick" x="170" y="106" />
+    <use href="#item" x="170" y="142" />
+    <use href="#item" x="170" y="178" />
+    <use href="#item" x="170" y="214" />
+    <use href="#item" x="170" y="250" />
+    <!-- level 3 -->
+    <use href="#item" x="310" y="70" />
+    <use href="#item" x="310" y="106" />
+    <use href="#item" x="310" y="142" />
+    <use href="#pick" x="310" y="178" />
+    <use href="#item" x="310" y="214" />
+    <!-- level 4 -->
+    <use href="#item" x="450" y="70" />
+    <use href="#pick" x="450" y="106" />
+    <use href="#item" x="450" y="142" />
+
+    <!-- labels -->
+    <g fill="#1b3550">
+        <rect x="76" y="82" width="60" height="6" rx="2" />
+        <rect x="76" y="118" width="48" height="6" rx="2" />
+        <rect x="76" y="190" width="56" height="6" rx="2" />
+        <rect x="76" y="226" width="40" height="6" rx="2" />
+        <rect x="76" y="262" width="62" height="6" rx="2" />
+        <rect x="76" y="298" width="50" height="6" rx="2" />
+        <rect x="76" y="334" width="44" height="6" rx="2" />
+        <rect x="216" y="82" width="52" height="6" rx="2" />
+        <rect x="216" y="154" width="60" height="6" rx="2" />
+        <rect x="216" y="190" width="42" height="6" rx="2" />
+        <rect x="216" y="226" width="56" height="6" rx="2" />
+        <rect x="216" y="262" width="46" height="6" rx="2" />
+        <rect x="356" y="82" width="58" height="6" rx="2" />
+        <rect x="356" y="118" width="44" height="6" rx="2" />
+        <rect x="356" y="154" width="52" height="6" rx="2" />
+        <rect x="356" y="226" width="40" height="6" rx="2" />
+        <rect x="496" y="82" width="54" height="6" rx="2" />
+        <rect x="496" y="154" width="46" height="6" rx="2" />
+    </g>
+    <g fill="#c8d8f0" fill-opacity=".8">
+        <rect x="76" y="154" width="58" height="6" rx="2" />
+        <rect x="216" y="118" width="50" height="6" rx="2" />
+        <rect x="356" y="190" width="56" height="6" rx="2" />
+        <rect x="496" y="118" width="48" height="6" rx="2" />
+    </g>
+
+    <!-- path between picks -->
+    <g fill="none" stroke="#00eeff" stroke-width="1.5">
+        <path d="M160 157h5v-36h5" />
+        <path d="M300 121h5v72h5" />
+        <path d="M440 193h5v-72h5" />
+    </g>
+
+    <!-- leaf detail -->
+    <rect x="450" y="190" width="130" height="160" fill="#0b1a28" stroke="#00eeff" stroke-opacity=".5" />
+    <rect x="450" y="190" width="130" height="16" fill="#00eeff" />
+    <text x="458" y="201" fill="#07111c" font-weight="bold">DETAIL</text>
+    <rect x="460" y="218" width="54" height="12" rx="2" fill="#00eeff" />
+    <g fill="#2a4a66">
+        <rect x="460" y="240" width="108" height="6" rx="2" />
+        <rect x="460" y="252" width="96" height="6" rx="2" />
+        <rect x="460" y="264" width="102" height="6" rx="2" />
+        <rect x="460" y="282" width="80" height="6" rx="2" />
+        <rect x="460" y="294" width="90" height="6" rx="2" />
+    </g>
+    <rect x="460" y="318" width="52" height="20" fill="none" stroke="#00eeff" />
+    <rect x="470" y="325" width="32" height="6" rx="2" fill="#00eeff" />
+    <rect x="518" y="318" width="52" height="20" fill="none" stroke="#2a4a66" />
+    <rect x="528" y="325" width="32" height="6" rx="2" fill="#4a6a88" />
+
+    <!-- assistant -->
+    <rect x="610" y="40" width="160" height="320" fill="#0b1a28" stroke="#16324a" />
+    <rect x="610" y="40" width="160" height="26" fill="#0d2133" />
+    <circle cx="626" cy="53" r="6" fill="#ff0066" fill-opacity=".25" stroke="#ff0066" />
+    <text x="638" y="57" fill="#c8d8f0">ASSISTANT</text>
+    <rect x="620" y="80" width="120" height="40" rx="8" fill="#0d2133" />
+    <rect x="630" y="92" width="96" height="6" rx="2" fill="#4a6a88" />
+    <rect x="630" y="104" width="70" height="6" rx="2" fill="#4a6a88" />
+    <rect x="660" y="132" width="100" height="26" rx="8" fill="#00eeff" fill-opacity=".18" />
+    <rect x="670" y="142" width="74" height="6" rx="2" fill="#00eeff" />
+    <rect x="620" y="170" width="130" height="64" rx="8" fill="#0d2133" />
+    <rect x="630" y="182" width="104" height="6" rx="2" fill="#4a6a88" />
+    <rect x="630" y="194" width="88" height="6" rx="2" fill="#4a6a88" />
+    <rect x="630" y="210" width="40" height="14" rx="7" fill="none" stroke="#00eeff" />
+    <rect x="676" y="210" width="40" height="14" rx="7" fill="none" stroke="#00eeff" />
+    <rect x="620" y="324" width="140" height="26" rx="13" fill="#07111c" stroke="#2a4a66" />
+    <rect x="632" y="334" width="70" height="6" rx="2" fill="#1b3550" />
+    <circle cx="748" cy="337" r="8" fill="#00eeff" />
+</svg>
