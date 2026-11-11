@@ -115,14 +115,20 @@ npm run build:deploy             # fetch, then build: the build command for the 
 reached, the fetch keeps the last snapshot for the affected projects and exits 0, so a
 deploy still succeeds.
 
-### Weekly refresh
+### Refreshing and deploying
 
-- **The host can reach GitLab:** set the env vars on the host, use `npm run build:deploy`
-  as the build command, and trigger a weekly rebuild through the host's deploy hook (for
-  example a scheduled GitHub Actions job that `curl -X POST`s the hook URL).
-- **It can't (VPN or IP allowlist):** run `npm run fetch-commits` on a machine that can,
-  such as a weekly cron job, then commit and push the JSON. The push starts the deploy.
+The GitLab firewall drops connections from cloud CI (GitHub Actions times out with
+`UND_ERR_CONNECT_TIMEOUT`), so run the refresh by hand from a machine GitLab lets in:
 
-To check reachability, put
+```sh
+scripts/refresh-commits.sh            # fetch, then commit and push the JSON if it changed
+scripts/refresh-commits.sh --dry-run  # everything but the real push
+```
+
+The script fetches in its own worktree at `~/.cache/portfolio-commit-refresh`, reads `.env`
+from this checkout, and pushes to `main` only when the counts changed. The push starts the
+Netlify deploy, which stays a plain `npm run build`. Your own checkout is never touched, so
+`git pull` afterwards to pick up the commit.
+
+To check whether a machine can reach GitLab:
 `curl -sf -H "PRIVATE-TOKEN: $GITLAB_TOKEN" "$GITLAB_URL/api/v4/version" >/dev/null && echo reachable`
-in front of the build command for one deploy.
